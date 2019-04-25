@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class MstUserJln extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+      Schema::create('mst_user_jln', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('nama',100);
+        $table->string('nip',20);
+        $table->date('tgl_dari');
+        $table->date('tgl_sampai');
+        $table->text('perihal');
+        $table->string('tujuan',100);
+        $table->integer('lamanya',false,10);
+        $table->integer('kendaraan_id',false,11);
+        $table->foreign('kendaraan_id')->references('id')->on('mst_jln_kendaraan');
+        $table->integer('jln_id',false,11);
+        $table->foreign('jln_id')->references('id')->on('mst_form_jln');
+        $table->timestamps();
+      });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('mst_user_jln');
+    }
+}

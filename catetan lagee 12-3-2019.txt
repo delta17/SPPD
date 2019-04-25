@@ -1,0 +1,3 @@
+catatan untuk joli. 
+1. form isian surat tugas itu mending dipisah apa ngga halamannya sama wysiwyg
+2. menjembatani tujuan andi biar bisa ngesave data dulu di servernya, jadi mending ada tombol simpan surat tugas. nanti kalo sudah diklik baru munculin tombol eksport as word sama as pdf nya. jadi tombol simpan bertujuan buat ngesave surtug tsb di sisi server

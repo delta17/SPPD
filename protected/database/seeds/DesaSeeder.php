@@ -1,0 +1,122 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class DesaSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $data = [
+            ['id'=>'010001','desa'=>'Sungai Perlu','waktu_tempuh'=>'5.13','kec_id'=>'010'],
+            ['id'=>'010002','desa'=>'Kuala Pembuang Dua','waktu_tempuh'=>'0.2','kec_id'=>'010'],
+            ['id'=>'010005','desa'=>'Kuala Pembuang Satu','waktu_tempuh'=>'0.2','kec_id'=>'010'],
+            ['id'=>'010006','desa'=>'Pematang Limau','waktu_tempuh'=>'1.17','kec_id'=>'010'],
+            ['id'=>'010007','desa'=>'Tanjung Rangas','waktu_tempuh'=>'2','kec_id'=>'010'],
+            ['id'=>'010008','desa'=>'Muara Dua','waktu_tempuh'=>'1.67','kec_id'=>'010'],
+            ['id'=>'010009','desa'=>'Jahitan','waktu_tempuh'=>'3','kec_id'=>'010'],
+            ['id'=>'010010','desa'=>'Baung','waktu_tempuh'=>'4','kec_id'=>'010'],
+            ['id'=>'010016','desa'=>'Sungai Undang','waktu_tempuh'=>'0.33','kec_id'=>'010'],
+            ['id'=>'010017','desa'=>'Persil Raya','waktu_tempuh'=>'0.25','kec_id'=>'010'],
+            ['id'=>'011001','desa'=>'Pematang Panjang','waktu_tempuh'=>'0.33','kec_id'=>'011'],
+            ['id'=>'011002','desa'=>'Sungai Bakau','waktu_tempuh'=>'0.58','kec_id'=>'011'],
+            ['id'=>'011003','desa'=>'Kartika Bhakti','waktu_tempuh'=>'0.37','kec_id'=>'011'],
+            ['id'=>'011004','desa'=>'Bangun Harja','waktu_tempuh'=>'0.5','kec_id'=>'011'],
+            ['id'=>'011005','desa'=>'Halimaung Jaya','waktu_tempuh'=>'0.83','kec_id'=>'011'],
+            ['id'=>'011006','desa'=>'Mekar Indah','waktu_tempuh'=>'2','kec_id'=>'011'],
+            ['id'=>'020001','desa'=>'Telaga Pulang','waktu_tempuh'=>'7','kec_id'=>'020'],
+            ['id'=>'020002','desa'=>'Sembuluh II','waktu_tempuh'=>'5.33','kec_id'=>'020'],
+            ['id'=>'020003','desa'=>'Cempaka Baru','waktu_tempuh'=>'4.75','kec_id'=>'020'],
+            ['id'=>'020004','desa'=>'Palingkau','waktu_tempuh'=>'7.5','kec_id'=>'020'],
+            ['id'=>'020005','desa'=>'Ulak Batu','waktu_tempuh'=>'7.67','kec_id'=>'020'],
+            ['id'=>'020006','desa'=>'Paren','waktu_tempuh'=>'8','kec_id'=>'020'],
+            ['id'=>'020007','desa'=>'Banua Usang','waktu_tempuh'=>'9','kec_id'=>'020'],
+            ['id'=>'020008','desa'=>'Sembuluh I','waktu_tempuh'=>'5.47','kec_id'=>'020'],
+            ['id'=>'021001','desa'=>'Tabiku','waktu_tempuh'=>'6','kec_id'=>'021'],
+            ['id'=>'021002','desa'=>'Bangkal','waktu_tempuh'=>'5.33','kec_id'=>'021'],
+            ['id'=>'021003','desa'=>'Lanpasa','waktu_tempuh'=>'6.5','kec_id'=>'021'],
+            ['id'=>'021004','desa'=>'Terawan','waktu_tempuh'=>'6','kec_id'=>'021'],
+            ['id'=>'021005','desa'=>'Salunuk','waktu_tempuh'=>'5.44','kec_id'=>'021'],
+            ['id'=>'030001','desa'=>'Tanjung Hanau','waktu_tempuh'=>'9','kec_id'=>'030'],
+            ['id'=>'030002','desa'=>'Parang Batang','waktu_tempuh'=>'9','kec_id'=>'030'],
+            ['id'=>'030003','desa'=>'Bahaur','waktu_tempuh'=>'7.7','kec_id'=>'030'],
+            ['id'=>'030004','desa'=>'Pembuang Hulu I','waktu_tempuh'=>'7','kec_id'=>'030'],
+            ['id'=>'030005','desa'=>'Pembuang Hulu II','waktu_tempuh'=>'7','kec_id'=>'030'],
+            ['id'=>'030006','desa'=>'Derangga','waktu_tempuh'=>'7.2','kec_id'=>'030'],
+            ['id'=>'030012','desa'=>'Paring raya','waktu_tempuh'=>'8.75','kec_id'=>'030'],
+            ['id'=>'031001','desa'=>'Asam Baru','waktu_tempuh'=>'6.11','kec_id'=>'031'],
+            ['id'=>'031002','desa'=>'Rungau Raya','waktu_tempuh'=>'6.25','kec_id'=>'031'],
+            ['id'=>'031003','desa'=>'Tanjung Hara','waktu_tempuh'=>'6.5','kec_id'=>'031'],
+            ['id'=>'031004','desa'=>'Tanjung Paring','waktu_tempuh'=>'6.71','kec_id'=>'031'],
+            ['id'=>'031005','desa'=>'Panimba Raya','waktu_tempuh'=>'7','kec_id'=>'031'],
+            ['id'=>'031006','desa'=>'Tanjung Rangas II','waktu_tempuh'=>'7.25','kec_id'=>'031'],
+            ['id'=>'040003','desa'=>'Bumi Jaya','waktu_tempuh'=>'8.25','kec_id'=>'040'],
+            ['id'=>'040004','desa'=>'Sukorejo','waktu_tempuh'=>'8.45','kec_id'=>'040'],
+            ['id'=>'040008','desa'=>'Suka Maju','waktu_tempuh'=>'8.73','kec_id'=>'040'],
+            ['id'=>'040009','desa'=>'Suka Makmur','waktu_tempuh'=>'9','kec_id'=>'040'],
+            ['id'=>'040011','desa'=>'Suka Jaya','waktu_tempuh'=>'11','kec_id'=>'040'],
+            ['id'=>'040012','desa'=>'Batu Agung','waktu_tempuh'=>'11','kec_id'=>'040'],
+            ['id'=>'040015','desa'=>'Panca Jaya','waktu_tempuh'=>'11','kec_id'=>'040'],
+            ['id'=>'040016','desa'=>'Ringin Agung','waktu_tempuh'=>'11','kec_id'=>'040'],
+            ['id'=>'040018','desa'=>'Gantung Pengayuh','waktu_tempuh'=>'9.15','kec_id'=>'040'],
+            ['id'=>'040019','desa'=>'Teluk Bahur','waktu_tempuh'=>'11','kec_id'=>'040'],
+            ['id'=>'040020','desa'=>'Suka Mandang','waktu_tempuh'=>'10','kec_id'=>'040'],
+            ['id'=>'040021','desa'=>'Ayawan','waktu_tempuh'=>'10','kec_id'=>'040'],
+            ['id'=>'040022','desa'=>'Mugi Panyuhu','waktu_tempuh'=>'11','kec_id'=>'040'],
+            ['id'=>'040023','desa'=>'Bukit Buluh','waktu_tempuh'=>'11.3','kec_id'=>'040'],
+            ['id'=>'040024','desa'=>'Tumbang Bai','waktu_tempuh'=>'11.45','kec_id'=>'040'],
+            ['id'=>'040025','desa'=>'Durian Tunggal','waktu_tempuh'=>'11.5','kec_id'=>'040'],
+            ['id'=>'040026','desa'=>'Rantau Pulut','waktu_tempuh'=>'9','kec_id'=>'040'],
+            ['id'=>'040027','desa'=>'Penyumpa','waktu_tempuh'=>'10.5','kec_id'=>'040'],
+            ['id'=>'040028','desa'=>'Pangke','waktu_tempuh'=>'12','kec_id'=>'040'],
+            ['id'=>'040029','desa'=>'Tangga Batu','waktu_tempuh'=>'10.5','kec_id'=>'040'],
+            ['id'=>'041001','desa'=>'Sebabi','waktu_tempuh'=>'6.5','kec_id'=>'041'],
+            ['id'=>'041002','desa'=>'Sandul','waktu_tempuh'=>'7','kec_id'=>'041'],
+            ['id'=>'041003','desa'=>'Suka Mulya','waktu_tempuh'=>'8.5','kec_id'=>'041'],
+            ['id'=>'041004','desa'=>'Kalang','waktu_tempuh'=>'8','kec_id'=>'041'],
+            ['id'=>'041005','desa'=>'Durian Kait','waktu_tempuh'=>'8','kec_id'=>'041'],
+            ['id'=>'041006','desa'=>'Sahabu','waktu_tempuh'=>'8','kec_id'=>'041'],
+            ['id'=>'041007','desa'=>'Wana Tirta','waktu_tempuh'=>'8.75','kec_id'=>'041'],
+            ['id'=>'041008','desa'=>'Batu Manangis','waktu_tempuh'=>'8.5','kec_id'=>'041'],
+            ['id'=>'041009','desa'=>'Derawa','waktu_tempuh'=>'8.75','kec_id'=>'041'],
+            ['id'=>'050008','desa'=>'Marandang','waktu_tempuh'=>'16','kec_id'=>'050'],
+            ['id'=>'050009','desa'=>'Tumbang Suei','waktu_tempuh'=>'16.5','kec_id'=>'050'],
+            ['id'=>'050010','desa'=>'Tumbang Manjul','waktu_tempuh'=>'14','kec_id'=>'050'],
+            ['id'=>'050011','desa'=>'Mojang Baru','waktu_tempuh'=>'13','kec_id'=>'050'],
+            ['id'=>'050012','desa'=>'Rantau Panjang','waktu_tempuh'=>'16','kec_id'=>'050'],
+            ['id'=>'050013','desa'=>'Mongoh Juoi','waktu_tempuh'=>'17.5','kec_id'=>'050'],
+            ['id'=>'050014','desa'=>'Tusuk Belawan','waktu_tempuh'=>'14.75','kec_id'=>'050'],
+            ['id'=>'050015','desa'=>'Tumbang Kalam','waktu_tempuh'=>'15.75','kec_id'=>'050'],
+            ['id'=>'050016','desa'=>'Tumbang Bahan','waktu_tempuh'=>'16.5','kec_id'=>'050'],
+            ['id'=>'050017','desa'=>'Tumbang Darap','waktu_tempuh'=>'18','kec_id'=>'050'],
+            ['id'=>'050019','desa'=>'Tumbang Kasai','waktu_tempuh'=>'19','kec_id'=>'050'],
+            ['id'=>'050020','desa'=>'Tumbang Setawai','waktu_tempuh'=>'20','kec_id'=>'050'],
+            ['id'=>'050021','desa'=>'Sepundu Hantu','waktu_tempuh'=>'19','kec_id'=>'050'],
+            ['id'=>'050022','desa'=>'Tumbang Kubang','waktu_tempuh'=>'19.75','kec_id'=>'050'],
+            ['id'=>'050023','desa'=>'Tumbang Sepan','waktu_tempuh'=>'20.75','kec_id'=>'050'],
+            ['id'=>'050024','desa'=>'Riam Batang','waktu_tempuh'=>'22','kec_id'=>'050'],
+            ['id'=>'050025','desa'=>'Tumbang Laku','waktu_tempuh'=>'21','kec_id'=>'050'],
+            ['id'=>'050026','desa'=>'Buntut Sapau','waktu_tempuh'=>'21.75','kec_id'=>'050'],
+            ['id'=>'050027','desa'=>'Tumbang Taberau','waktu_tempuh'=>'22.5','kec_id'=>'050'],
+            ['id'=>'050028','desa'=>'Tanjung Paku','waktu_tempuh'=>'24.5','kec_id'=>'050'],
+            ['id'=>'051001','desa'=>'Tumbang Magin','waktu_tempuh'=>'21','kec_id'=>'051'],
+            ['id'=>'051002','desa'=>'Tumbang Setoli','waktu_tempuh'=>'20','kec_id'=>'051'],
+            ['id'=>'051003','desa'=>'Tumbang Hentas','waktu_tempuh'=>'18','kec_id'=>'051'],
+            ['id'=>'051004','desa'=>'Tumbang Langkai','waktu_tempuh'=>'18','kec_id'=>'051'],
+            ['id'=>'051005','desa'=>'Tanjung Tukal','waktu_tempuh'=>'17','kec_id'=>'051'],
+            ['id'=>'051006','desa'=>'Rangkang Munduk','waktu_tempuh'=>'17.5','kec_id'=>'051'],
+            ['id'=>'051007','desa'=>'Tumbang Salau','waktu_tempuh'=>'17','kec_id'=>'051'],
+            ['id'=>'051008','desa'=>'Rantau Betung','waktu_tempuh'=>'17.5','kec_id'=>'051'],
+            ['id'=>'051009','desa'=>'Tumbang Gugup','waktu_tempuh'=>'18','kec_id'=>'051']
+        ];
+
+        foreach ($data as $dt)
+        {
+            (new \App\Desa())->create($dt);
+        }
+    }
+}
