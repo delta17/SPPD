@@ -15,6 +15,8 @@ class MstSurtugPersonal extends Migration
     {
       Schema::create('mst_surtug_personal', function (Blueprint $table) {
         $table->increments('id');
+        $table->integer('no_agenda',false,11);
+        $table->foreign('no_agenda')->references('id')->on('mst_agenda');
         $table->string('nama',100);
         $table->string('nip',20);
         $table->string('jabatan',100);
@@ -28,6 +30,7 @@ class MstSurtugPersonal extends Migration
         $table->foreign('desa_id')->references('id')->on('mst_desa')->nullable();
         $table->date('tgl_mulai');
         $table->date('tgl_selesai');
+        $table->integer('jml_visum',false,5);
         $table->timestamps();
       });
     }

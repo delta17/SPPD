@@ -15,7 +15,7 @@ class MstPerusahaan extends Migration
     {
       Schema::create('mst_perusahaan', function (Blueprint $table) {
         $table->increments('id');
-        $table->string('perusahaan',50);
+        $table->string('perusahaan');
         $table->string('waktu_tempuh',11);
         $table->timestamps();
       });

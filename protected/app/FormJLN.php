@@ -39,4 +39,6 @@ class FormJLN extends Model
     public function Akun(){
       $this->hasOne('App\Akun','id','akun_id');
     }
+
+
 }

@@ -19,7 +19,8 @@ class MstUserJln extends Migration
         $table->string('nip',20);
         $table->date('tgl_dari');
         $table->date('tgl_sampai');
-        $table->text('perihal');
+        $table->integer('uraian_id',false,11);
+        $table->foreign('uraian_id')->references('id')->on('mst_kegiatan_uraian');
         $table->string('tujuan',100);
         $table->integer('lamanya',false,10);
         $table->integer('kendaraan_id',false,11);
