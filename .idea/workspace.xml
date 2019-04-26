@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8c45d4fe-c967-4ef8-be8e-d5933e9f882e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,15 +15,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_26_093911_mst_surtug_grup.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/app/Agenda.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,11 +42,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_26_093207_mst_agenda.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/database/seeds/KendaraanSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="39" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -288,6 +287,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -298,31 +298,13 @@
             <path>
               <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
               <item name="SPPD" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPPD" type="462c0819:PsiDirectoryNode" />
               <item name="protected" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPPD" type="462c0819:PsiDirectoryNode" />
-              <item name="protected" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
               <item name="SPPD" type="462c0819:PsiDirectoryNode" />
               <item name="protected" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPPD" type="462c0819:PsiDirectoryNode" />
-              <item name="protected" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
@@ -331,24 +313,10 @@
               <item name="database" type="462c0819:PsiDirectoryNode" />
               <item name="seeds" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPPD" type="462c0819:PsiDirectoryNode" />
-              <item name="protected" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPPD" type="462c0819:PsiDirectoryNode" />
-              <item name="protected" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -404,6 +372,8 @@
       <workItem from="1556008472580" duration="5748000" />
       <workItem from="1556096334943" duration="27823000" />
       <workItem from="1556193213745" duration="597000" />
+      <workItem from="1556237357091" duration="3000" />
+      <workItem from="1556241477718" duration="235000" />
     </task>
     <task id="LOCAL-00001" summary="tambahan &#10;- mst_agenda&#10;- mst_surtug_grup&#10;&#10;perubahan&#10;- DatabaseSeeder&#10;- mst_user_jln&#10;- mst_surtug_personal&#10;- mst_perusahaan&#10;- FormJLN">
       <created>1556187810246</created>
@@ -416,7 +386,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71552000" />
+    <option name="totallyTimeSpent" value="71817000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -432,7 +402,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.27609682" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.28517398" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4977307" weight="0.32850242" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -461,13 +431,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="tambahan &#10;- mst_agenda&#10;- mst_surtug_grup&#10;&#10;perubahan&#10;- DatabaseSeeder&#10;- mst_user_jln&#10;- mst_surtug_personal&#10;- mst_perusahaan&#10;- FormJLN" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_19_054753_mst_seksi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/app/Kegiatan.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -795,6 +758,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/database/seeds/KendaraanSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="39" />
         </state>
       </provider>
     </entry>

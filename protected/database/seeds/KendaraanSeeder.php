@@ -12,10 +12,8 @@ class KendaraanSeeder extends Seeder
     public function run()
     {
       $data = [
-        ['id' => '1', 'jenis' => 'Dinas'],
-        ['id' => '2', 'jenis' => 'Darat'],
-        ['id' => '3', 'jenis' => 'Air'],
-        ['id' => '4', 'jenis' => 'Campuran']
+        ['id' => '1', 'jenis' => 'Kendaraan Dinas'],
+        ['id' => '2', 'jenis' => 'Angkutan Umum']
       ];
 
       foreach ($data as $dt)
