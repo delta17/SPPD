@@ -8,6 +8,7 @@ class AgendaController extends Controller
 {
     public function showAgenda()
     {
+
       return view('agenda');
     }
 

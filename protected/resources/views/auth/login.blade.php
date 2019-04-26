@@ -20,7 +20,8 @@
 
   <div class="login-box animated fadeInDown">
     <div class="login-body">
-      <div class="login-title"><strong>Selamat datang</strong>, Silahkan masuk</div>
+      <div class="login-title">Selamat datang <strong>di SI'PAUDIN</strong></div>
+      <div class="login-title">(Sistem Pengelolaan Surat Tugas dan Surat Perjalanan Dinas)</div>
       <form action="{{url('login')}}" class="form-horizontal" method="POST" role="form" aria-label="{{ __('login')}}">
 
         {{ csrf_field() }}

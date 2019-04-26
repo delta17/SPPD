@@ -54,13 +54,12 @@
               <label class="col-md-3 col-xs-12 control-label">Sub Bagian/Seksi</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select">
-                  <option>[1] Tata Usaha</option>
-                  <option>[2] Statistik Produksi</option>
-                  <option>[3] Neraca Wilayah Analisis Statistik</option>
-                  <option>[4] Statistik Distribusi</option>
-                  <option>[5] Statistik Sosial</option>
-                  <option>[6] Integrasi Pengolahan dan Diseminasi Statistik</option>
-
+                  <option value="" disabled selected>Silahkan pilih seksi</option>
+                  @foreach($seksis as $key => $seksi)
+                    @if($key>0 & $key<7)
+                    <option value="{{$seksi->id}}">[{{$seksi->id}}] {{$seksi->seksi}}</option>
+                    @endif
+                  @endforeach
                 </select>
               </div>
             </div>
@@ -69,13 +68,22 @@
               <label class="col-md-3 col-xs-12 control-label">Program</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select">
-                  <option>[1] Tata Usaha</option>
-                  <option>[2] Statistik Produksi</option>
-                  <option>[3] Neraca Wilayah Analisis Statistik</option>
-                  <option>[4] Statistik Distribusi</option>
-                  <option>[5] Statistik Sosial</option>
-                  <option>[6] Integrasi Pengolahan dan Diseminasi Statistik</option>
+                  <option value="" disabled selected>Silahkan pilih program</option>
+                  @foreach($programs as $program)
+                    <option value="{{$program->id}}">[{{$program->kode}}] {{$program->program}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
 
+            <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label">Kegiatan</label>
+              <div class="col-md-6 col-xs-12">
+                <select class="form-control select">
+                  <option value="" disabled selected>Silahkan pilih kegiatan</option>
+                  @foreach($kegiatans as $kegiatan)
+                    <option value="{{$kegiatan->id}}">[{{$kegiatan->kode}}] {{$kegiatan->kegiatan}}</option>
+                  @endforeach
                 </select>
               </div>
             </div>
@@ -84,13 +92,46 @@
               <label class="col-md-3 col-xs-12 control-label">Keluaran (output)</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select">
-                  <option>[1] Tata Usaha</option>
-                  <option>[2] Statistik Produksi</option>
-                  <option>[3] Neraca Wilayah Analisis Statistik</option>
-                  <option>[4] Statistik Distribusi</option>
-                  <option>[5] Statistik Sosial</option>
-                  <option>[6] Integrasi Pengolahan dan Diseminasi Statistik</option>
+                  <option value="" disabled selected>Silahkan pilih output</option>
+                  @foreach($outputs as $output)
+                    <option value="{{$output->id}}">[{{$output->kode}}] {{$output->output}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
 
+            <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label">Komponen</label>
+              <div class="col-md-6 col-xs-12">
+                <select class="form-control select">
+                  <option value="" disabled selected>Silahkan pilih komponen</option>
+                  @foreach($komponens as $komponen)
+                    <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label">Subkomponen</label>
+              <div class="col-md-6 col-xs-12">
+                <select class="form-control select">
+                  <option value="" disabled selected>Silahkan pilih subkomponen</option>
+                  @foreach($subkomponens as $subkomponen)
+                    <option value="{{$subkomponen->id}}">[{{$subkomponen->kode}}] {{$subkomponen->subkomponen}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label">Akun</label>
+              <div class="col-md-6 col-xs-12">
+                <select class="form-control select">
+                  <option value="" disabled selected>Silahkan pilih akun</option>
+                  @foreach($akuns as $akun)
+                    <option value="{{$akun->id}}">[{{$akun->kode}}] {{$akun->akun}}</option>
+                  @endforeach
                 </select>
               </div>
             </div>
@@ -104,7 +145,6 @@
                 </div>
               </div>
             </div>
-
 
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label"><strong>Jumlah Sisa Anggaran di POK</strong></label>

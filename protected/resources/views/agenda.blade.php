@@ -39,14 +39,7 @@
               <td>Henny Anggraini</td>
               <td><button class="btn btn-primary"><a href="{{url('buat-surtug-personal')}}" />Buat Surat Tugas</button></td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>Pelatihan Petugas Pencacahan Susenas ke Palangka Raya</td>
-              <td>2019-02-07</td>
-              <td>Grup</td>
-              <td>-- Terlampir --</td>
-              <td><button class="btn btn-primary"><a href="{{url('buat-surtug-grup')}}" />Buat Surat Tugas</button></td>
-            </tr>
+
             </tbody>
           </table>
         </div>
