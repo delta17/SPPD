@@ -4,3 +4,7 @@
 - Selain itu, KPA dapat menentukan dinas yang sesuai kepada pegawai berdasarkan pertimbangan waktu tembuh dan waktu kegiatan yang dimunculkan oleh aplikasi
 - Aplikasi ini dibangun menggunakan framework PHP Laravel 5.4, framework CSS Bootstrap, serta database PgAdmin III
 - Ini adalah readme untuk branch retnocahya
+- langkah2 menggunakan git
+1. git add .
+2. git commit -m "pesan commit"
+3. git push github retnocahya kalau error pakai git push github retnocahya -f
