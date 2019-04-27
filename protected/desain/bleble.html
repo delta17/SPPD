@@ -1,0 +1,168 @@
+<html>
+<head>
+<title>How to Export HTML to Word Document with JavaScript</title>
+<style>
+
+@page {
+  size:8.27in 11.69in;
+  margin:0.59in 0.69in 1.0in 0.79in;
+  mso-header-margin:.5in;
+  mso-footer-margin:.5in;
+  mso-paper-source:0;
+
+}  
+
+@page Section2 {size:841.7pt 595.45pt;mso-page-orientation:landscape;margin:1.25in 1.0in 1.25in 1.0in;mso-header-margin:.5in;mso-footer-margin:.5in;mso-paper-source:0;}
+        div.Section2 {page:Section2;}
+
+body {
+      height: 842px;
+    width: 595px;
+       /* to centre page on screen*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    font-family: Arial;
+    line-height: 25px;
+}
+
+#btn-export {
+    background: #484848;
+    color: #FFF;
+    border: #000 1px solid;
+    padding: 10px 20px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.content-footer {
+    text-align: center;
+}
+.source-html-outer {
+    border: #d0d0d0 1px solid;
+    border-radius: 3px;
+    padding: 10px 20px 20px 20px;
+}
+
+</style>
+</head>
+<body>
+<div class="source-html-outer">
+    <div id="source-html">
+        <p style="text-align: center;"><strong><img src="img/bps/logoBPS.png" width="80" /></strong></p>
+        <p style="text-align: center;"><strong>SURAT TUGAS</strong></p>
+        <p style="text-align: center;">Nomor : 741/62080/07/2018</p>
+        <p>&nbsp;</p>
+        <p>Yang bertandatangan di bawah ini :</p>
+        <p style="text-align: center;">KEPALA BADAN PUSAT STATISTIK KABUPATEN SERUYAN</p>
+        <p>Memberi tugas kepada :</p>
+        <p>&nbsp;</p>
+        <table width="667">
+        <tbody>
+        <tr style="height: 89px;">
+        <td style="height: 89px;" width="149">
+        <p>Nama</p>
+        <p>NIP</p>
+        <p>Jabatan</p>
+        </td>
+        <td style="height: 89px;" width="16">
+        <p>:</p>
+        <p>:</p>
+        <p>:</p>
+        </td>
+        <td style="height: 89px;" width="382">
+        <p><em>terlampir</em></p>
+        <p>-</p>
+        <p>Mitra Statistik</p>
+        </td>
+        <td style="height: 89px;" width="120">
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr style="height: 30.8672px;">
+        <td style="height: 30.8672px;" width="149">
+        <p>Tujuan Tugas</p>
+        </td>
+        <td style="height: 30.8672px;" width="16">
+        <p>:</p>
+        </td>
+        <td style="height: 30.8672px;" colspan="2" width="503">
+        <p>Melakukan pengolahan data entri Survei Pertanian Antar Sensus (Sutas) 2018</p>
+        </td>
+        </tr>
+        <tr style="height: 30px;">
+        <td style="height: 30px;" width="149">
+        <p>Waktu Pelaksanaan</p>
+        </td>
+        <td style="height: 30px;" width="16">
+        <p>:&nbsp;&nbsp;</p>
+        </td>
+        <td style="height: 30px;" colspan="2" width="503">
+        <p>10 Juli 2018 &ndash; 31 Agustus 2018</p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="313">
+        <p>&nbsp;</p>
+        </td>
+        <td style="text-align: center;" width="353">
+        <p>Kuala Pembuang, 9 Juli 2018</p>
+        <p>Kepala Badan Pusat Statistik Kabupaten Seruyan</p>
+        </td>
+        </tr>
+        <tr>
+        <td width="313">
+        <p>&nbsp;</p>
+        </td>
+        <td style="text-align: center;" width="353">
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
+        <td width="313">
+        <p>&nbsp;</p>
+        </td>
+        <td style="text-align: center;" width="353">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p><strong>AGUS SUHENDAR</strong></p>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <hr />
+        <p style="text-align: center; font-size: 10pt">Jalan Moh.Hatta No. 7 Kuala Pembuang 74212</p>
+        <p style="text-align: center; font-size: 10pt">Telp/Fax. (0538) 2022436 email : <a href="mailto:bps6208@bps.go.id">bps6208@bps.go.id</a></p>
+    </div>
+    <div class="content-footer">
+        <button id="btn-export" onclick="exportHTML();">Export to word  doc</button>
+    </div>
+</div>
+    <script>
+    function exportHTML(){
+       var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+            "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+            "xmlns='http://www.w3.org/TR/REC-html40'>"+
+            "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+       var footer = "</body></html>";
+       var sourceHTML = header+document.getElementById("source-html").innerHTML+footer;
+       
+       var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+       var fileDownload = document.createElement("a");
+       document.body.appendChild(fileDownload);
+       fileDownload.href = source;
+       fileDownload.download = 'document.doc';
+       fileDownload.click();
+       document.body.removeChild(fileDownload);
+    }
+</script>
+</body>
+</html>
+
+

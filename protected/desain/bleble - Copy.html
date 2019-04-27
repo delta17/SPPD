@@ -1,0 +1,49 @@
+        <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+        <script src="js/plugins/table/jquery.tabledit.js"></script>
+<table class='table'>
+   <thead>
+      <tr>
+         <th>Id</th>
+         <th>Firstname</th>
+         <th>Lastname</th>
+         <th>Email</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>1</td>
+         <td>Doe</td>
+         <td>Doe</td>
+         <td>john@example.com</td>
+      </tr>
+   </tbody>
+</table>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $('.table').Tabledit({
+            columns: {
+            identifier: [0, 'Id'],
+            editable: [
+                [1, 'Firstname'],
+                [2, 'Lastname'],
+                [3, 'Email']
+            ]
+        },
+        onSuccess: function(data, textStatus, jqXHR) {
+            // deal with success there
+        },
+        onFail: function(jqXHR, textStatus, errorThrown) {
+            // deal with errors there
+        },
+        onAjax: function(action, serialize) {
+            // open your xhr here 
+            console.log("on Ajax");
+            console.log("action : ", action);
+            console.log("data : ", serialize);
+        }
+    });
+
+});
+</script>

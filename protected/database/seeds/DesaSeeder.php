@@ -1,0 +1,122 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class DesaSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $data = [
+            ['id'=>'010001','desa'=>'Sungai Perlu','kec_id'=>'010'],
+            ['id'=>'010002','desa'=>'Kuala Pembuang Dua','kec_id'=>'010'],
+            ['id'=>'010005','desa'=>'Kuala Pembuang Satu','kec_id'=>'010'],
+            ['id'=>'010006','desa'=>'Pematang Limau','kec_id'=>'010'],
+            ['id'=>'010007','desa'=>'Tanjung Rangas','kec_id'=>'010'],
+            ['id'=>'010008','desa'=>'Muara Dua','kec_id'=>'010'],
+            ['id'=>'010009','desa'=>'Jahitan','kec_id'=>'010'],
+            ['id'=>'010010','desa'=>'Baung','kec_id'=>'010'],
+            ['id'=>'010016','desa'=>'Sungai Undang','kec_id'=>'010'],
+            ['id'=>'010017','desa'=>'Persil Raya','kec_id'=>'010'],
+            ['id'=>'011001','desa'=>'Pematang Panjang','kec_id'=>'011'],
+            ['id'=>'011002','desa'=>'Sungai Bakau','kec_id'=>'011'],
+            ['id'=>'011003','desa'=>'Kartika Bhakti','kec_id'=>'011'],
+            ['id'=>'011004','desa'=>'Bangun Harja','kec_id'=>'011'],
+            ['id'=>'011005','desa'=>'Halimaung Jaya','kec_id'=>'011'],
+            ['id'=>'011006','desa'=>'Mekar Indah','kec_id'=>'011'],
+            ['id'=>'020001','desa'=>'Telaga Pulang','kec_id'=>'020'],
+            ['id'=>'020002','desa'=>'Sembuluh II','kec_id'=>'020'],
+            ['id'=>'020003','desa'=>'Cempaka Baru','kec_id'=>'020'],
+            ['id'=>'020004','desa'=>'Palingkau','kec_id'=>'020'],
+            ['id'=>'020005','desa'=>'Ulak Batu','kec_id'=>'020'],
+            ['id'=>'020006','desa'=>'Paren','kec_id'=>'020'],
+            ['id'=>'020007','desa'=>'Banua Usang','kec_id'=>'020'],
+            ['id'=>'020008','desa'=>'Sembuluh I','kec_id'=>'020'],
+            ['id'=>'021001','desa'=>'Tabiku','kec_id'=>'021'],
+            ['id'=>'021002','desa'=>'Bangkal','kec_id'=>'021'],
+            ['id'=>'021003','desa'=>'Lanpasa','kec_id'=>'021'],
+            ['id'=>'021004','desa'=>'Terawan','kec_id'=>'021'],
+            ['id'=>'021005','desa'=>'Salunuk','kec_id'=>'021'],
+            ['id'=>'030001','desa'=>'Tanjung Hanau','kec_id'=>'030'],
+            ['id'=>'030002','desa'=>'Parang Batang','kec_id'=>'030'],
+            ['id'=>'030003','desa'=>'Bahaur','kec_id'=>'030'],
+            ['id'=>'030004','desa'=>'Pembuang Hulu I','kec_id'=>'030'],
+            ['id'=>'030005','desa'=>'Pembuang Hulu II','kec_id'=>'030'],
+            ['id'=>'030006','desa'=>'Derangga','kec_id'=>'030'],
+            ['id'=>'030012','desa'=>'Paring raya','kec_id'=>'030'],
+            ['id'=>'031001','desa'=>'Asam Baru','kec_id'=>'031'],
+            ['id'=>'031002','desa'=>'Rungau Raya','kec_id'=>'031'],
+            ['id'=>'031003','desa'=>'Tanjung Hara','kec_id'=>'031'],
+            ['id'=>'031004','desa'=>'Tanjung Paring','kec_id'=>'031'],
+            ['id'=>'031005','desa'=>'Panimba Raya','kec_id'=>'031'],
+            ['id'=>'031006','desa'=>'Tanjung Rangas II','kec_id'=>'031'],
+            ['id'=>'040003','desa'=>'Bumi Jaya','kec_id'=>'040'],
+            ['id'=>'040004','desa'=>'Sukorejo','kec_id'=>'040'],
+            ['id'=>'040008','desa'=>'Suka Maju','kec_id'=>'040'],
+            ['id'=>'040009','desa'=>'Suka Makmur','kec_id'=>'040'],
+            ['id'=>'040011','desa'=>'Suka Jaya','kec_id'=>'040'],
+            ['id'=>'040012','desa'=>'Batu Agung','kec_id'=>'040'],
+            ['id'=>'040015','desa'=>'Panca Jaya','kec_id'=>'040'],
+            ['id'=>'040016','desa'=>'Ringin Agung','kec_id'=>'040'],
+            ['id'=>'040018','desa'=>'Gantung Pengayuh','kec_id'=>'040'],
+            ['id'=>'040019','desa'=>'Teluk Bahur','kec_id'=>'040'],
+            ['id'=>'040020','desa'=>'Suka Mandang','kec_id'=>'040'],
+            ['id'=>'040021','desa'=>'Ayawan','kec_id'=>'040'],
+            ['id'=>'040022','desa'=>'Mugi Panyuhu','kec_id'=>'040'],
+            ['id'=>'040023','desa'=>'Bukit Buluh','kec_id'=>'040'],
+            ['id'=>'040024','desa'=>'Tumbang Bai','kec_id'=>'040'],
+            ['id'=>'040025','desa'=>'Durian Tunggal','kec_id'=>'040'],
+            ['id'=>'040026','desa'=>'Rantau Pulut','kec_id'=>'040'],
+            ['id'=>'040027','desa'=>'Penyumpa','kec_id'=>'040'],
+            ['id'=>'040028','desa'=>'Pangke','kec_id'=>'040'],
+            ['id'=>'040029','desa'=>'Tangga Batu','kec_id'=>'040'],
+            ['id'=>'041001','desa'=>'Sebabi','kec_id'=>'041'],
+            ['id'=>'041002','desa'=>'Sandul','kec_id'=>'041'],
+            ['id'=>'041003','desa'=>'Suka Mulya','kec_id'=>'041'],
+            ['id'=>'041004','desa'=>'Kalang','kec_id'=>'041'],
+            ['id'=>'041005','desa'=>'Durian Kait','kec_id'=>'041'],
+            ['id'=>'041006','desa'=>'Sahabu','kec_id'=>'041'],
+            ['id'=>'041007','desa'=>'Wana Tirta','kec_id'=>'041'],
+            ['id'=>'041008','desa'=>'Batu Manangis','kec_id'=>'041'],
+            ['id'=>'041009','desa'=>'Derawa','kec_id'=>'041'],
+            ['id'=>'050008','desa'=>'Marandang','kec_id'=>'050'],
+            ['id'=>'050009','desa'=>'Tumbang Suei','kec_id'=>'050'],
+            ['id'=>'050010','desa'=>'Tumbang Manjul','kec_id'=>'050'],
+            ['id'=>'050011','desa'=>'Mojang Baru','kec_id'=>'050'],
+            ['id'=>'050012','desa'=>'Rantau Panjang','kec_id'=>'050'],
+            ['id'=>'050013','desa'=>'Mongoh Juoi','kec_id'=>'050'],
+            ['id'=>'050014','desa'=>'Tusuk Belawan','kec_id'=>'050'],
+            ['id'=>'050015','desa'=>'Tumbang Kalam','kec_id'=>'050'],
+            ['id'=>'050016','desa'=>'Tumbang Bahan','kec_id'=>'050'],
+            ['id'=>'050017','desa'=>'Tumbang Darap','kec_id'=>'050'],
+            ['id'=>'050019','desa'=>'Tumbang Kasai','kec_id'=>'050'],
+            ['id'=>'050020','desa'=>'Tumbang Setawai','kec_id'=>'050'],
+            ['id'=>'050021','desa'=>'Sepundu Hantu','kec_id'=>'050'],
+            ['id'=>'050022','desa'=>'Tumbang Kubang','kec_id'=>'050'],
+            ['id'=>'050023','desa'=>'Tumbang Sepan','kec_id'=>'050'],
+            ['id'=>'050024','desa'=>'Riam Batang','kec_id'=>'050'],
+            ['id'=>'050025','desa'=>'Tumbang Laku','kec_id'=>'050'],
+            ['id'=>'050026','desa'=>'Buntut Sapau','kec_id'=>'050'],
+            ['id'=>'050027','desa'=>'Tumbang Taberu','kec_id'=>'050'],
+            ['id'=>'050028','desa'=>'Tanjung Paku','kec_id'=>'050'],
+            ['id'=>'051001','desa'=>'Tumbang Magin','kec_id'=>'051'],
+            ['id'=>'051002','desa'=>'Tumbang Setoli','kec_id'=>'051'],
+            ['id'=>'051003','desa'=>'Tumbang Hentas','kec_id'=>'051'],
+            ['id'=>'051004','desa'=>'Tumbang Langkai','kec_id'=>'051'],
+            ['id'=>'051005','desa'=>'Tanjung Tukal','kec_id'=>'051'],
+            ['id'=>'051006','desa'=>'Rangkang Munduk','kec_id'=>'051'],
+            ['id'=>'051007','desa'=>'Tumbang Salau','kec_id'=>'051'],
+            ['id'=>'051008','desa'=>'Rantau Betung','kec_id'=>'051'],
+            ['id'=>'051009','desa'=>'Tumbang Gugup','kec_id'=>'051']
+        ];
+
+        foreach ($data as $dt)
+        {
+            (new \App\Desa())->create($dt);
+        }
+    }
+}
