@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8c45d4fe-c967-4ef8-be8e-d5933e9f882e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/theme-default.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/theme-default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protected/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/protected/resources/views/auth/login.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/resources/views/buat-form-jln.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
+            <state relative-caret-position="83">
+              <caret line="104" column="46" lean-forward="true" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -184,9 +182,9 @@
         <option value="$PROJECT_DIR$/protected/resources/views/agenda.blade.php" />
         <option value="$PROJECT_DIR$/protected/app/Http/Controllers/AgendaController.php" />
         <option value="$PROJECT_DIR$/protected/app/Http/Controllers/JLNController.php" />
-        <option value="$PROJECT_DIR$/protected/resources/views/buat-form-jln.blade.php" />
         <option value="$PROJECT_DIR$/protected/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/css/theme-default.css" />
+        <option value="$PROJECT_DIR$/protected/resources/views/buat-form-jln.blade.php" />
       </list>
     </option>
   </component>
@@ -410,7 +408,7 @@
       <workItem from="1556193213745" duration="597000" />
       <workItem from="1556237357091" duration="3000" />
       <workItem from="1556241477718" duration="6477000" />
-      <workItem from="1556339987352" duration="1523000" />
+      <workItem from="1556339987352" duration="2601000" />
     </task>
     <task id="LOCAL-00001" summary="tambahan &#10;- mst_agenda&#10;- mst_surtug_grup&#10;&#10;perubahan&#10;- DatabaseSeeder&#10;- mst_user_jln&#10;- mst_surtug_personal&#10;- mst_perusahaan&#10;- FormJLN">
       <created>1556187810246</created>
@@ -423,7 +421,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79555000" />
+    <option name="totallyTimeSpent" value="80633000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -781,8 +779,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/resources/views/buat-form-jln.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
+        <state relative-caret-position="83">
+          <caret line="104" column="46" lean-forward="true" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="46" />
         </state>
       </provider>
     </entry>
