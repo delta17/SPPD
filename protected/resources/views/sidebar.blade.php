@@ -28,8 +28,12 @@
       <a href="{{url('agenda')}}"><span class="fa fa-table"></span> <span class="xn-text">Agenda Surat Tugas</span></a>
     </li>
     <li class="xn-openable @yield('active')">
+<<<<<<< HEAD
       <a href="{{url('buat-form-jln')}}"><span class="fa fa-pencil"></span> <span class="xn-text">Buat Form JLN</span></a>
       <!--
+=======
+      <a href="#"><span class="fa fa-pencil"></span> <span class="xn-text">Buat Surat</span></a>
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
       <ul>
         <li @yield('active-jln')>
           <a href="{{url('buat-form-jln')}}"><span class="fa fa-file-text-o"></span> Buat Form JLN</a></li>
@@ -41,7 +45,11 @@
           </ul>
         </li>
         <li @yield('active-spd')><a href="{{url('buat-spd')}}"><span class="fa fa-list-alt"></span> Buat SPD</a></li>
+<<<<<<< HEAD
       </ul>-->
+=======
+      </ul>
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
     </li>
     <li {{Request::is('form-jln-saya') ? 'class=active' : ''}}>
       <a href="{{url('form-jln-saya')}}"><span class="fa fa-files-o"></span> <span class="xn-text">Form JLN Saya</span></a>

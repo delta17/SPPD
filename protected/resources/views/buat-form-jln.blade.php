@@ -34,7 +34,11 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Nomor Seksi</label>
               <div class="col-md-6 col-xs-12">
+<<<<<<< HEAD
                 <input type="number" class="form-control" value="003"/>
+=======
+                <input type="text" class="form-control" readonly value="003"/>
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
                 <span class="help-block">nomor sesuai database yang telah diinput</span>
               </div>
             </div>
@@ -54,6 +58,7 @@
               <label class="col-md-3 col-xs-12 control-label">Sub Bagian/Seksi</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select">
+<<<<<<< HEAD
                   <option>[1] Tata Usaha</option>
                   <option>[2] Statistik Produksi</option>
                   <option>[3] Neraca Wilayah Analisis Statistik</option>
@@ -61,6 +66,14 @@
                   <option>[5] Statistik Sosial</option>
                   <option>[6] Integrasi Pengolahan dan Diseminasi Statistik</option>
 
+=======
+                  <option value="" disabled selected>Silahkan pilih seksi</option>
+                  @foreach($seksis as $key => $seksi)
+                    @if($key>0 & $key<7)
+                    <option value="{{$seksi->id}}">[{{$seksi->id}}] {{$seksi->seksi}}</option>
+                    @endif
+                  @endforeach
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
                 </select>
               </div>
             </div>
@@ -69,6 +82,7 @@
               <label class="col-md-3 col-xs-12 control-label">Program</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select">
+<<<<<<< HEAD
                   <option>[1] Tata Usaha</option>
                   <option>[2] Statistik Produksi</option>
                   <option>[3] Neraca Wilayah Analisis Statistik</option>
@@ -76,6 +90,12 @@
                   <option>[5] Statistik Sosial</option>
                   <option>[6] Integrasi Pengolahan dan Diseminasi Statistik</option>
 
+=======
+                  <option value="" disabled selected>Silahkan pilih program</option>
+                  @foreach($programs as $program)
+                    <option value="{{$program->id}}">[{{$program->kode}}] {{$program->program}}</option>
+                  @endforeach
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
                 </select>
               </div>
             </div>
@@ -84,17 +104,25 @@
               <label class="col-md-3 col-xs-12 control-label">Kegiatan</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select">
+<<<<<<< HEAD
                   <option>[1] Tata Usaha</option>
                   <option>[2] Statistik Produksi</option>
                   <option>[3] Neraca Wilayah Analisis Statistik</option>
                   <option>[4] Statistik Distribusi</option>
                   <option>[5] Statistik Sosial</option>
                   <option>[6] Integrasi Pengolahan dan Diseminasi Statistik</option>
+=======
+                  <option value="" disabled selected>Silahkan pilih kegiatan</option>
+                  @foreach($kegiatans as $kegiatan)
+                    <option value="{{$kegiatan->id}}">[{{$kegiatan->kode}}] {{$kegiatan->kegiatan}}</option>
+                  @endforeach
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
                 </select>
               </div>
             </div>
 
             <div class="form-group">
+<<<<<<< HEAD
               <label class="col-md-3 col-xs-12 control-label">Output</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select">
@@ -104,11 +132,21 @@
                   <option>[4] Statistik Distribusi</option>
                   <option>[5] Statistik Sosial</option>
                   <option>[6] Integrasi Pengolahan dan Diseminasi Statistik</option>
+=======
+              <label class="col-md-3 col-xs-12 control-label">Keluaran (output)</label>
+              <div class="col-md-6 col-xs-12">
+                <select class="form-control select">
+                  <option value="" disabled selected>Silahkan pilih output</option>
+                  @foreach($outputs as $output)
+                    <option value="{{$output->id}}">[{{$output->kode}}] {{$output->output}}</option>
+                  @endforeach
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
                 </select>
               </div>
             </div>
 
             <div class="form-group">
+<<<<<<< HEAD
               <label class="col-md-3 col-xs-12 control-label">Akun</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select">
@@ -145,11 +183,34 @@
                   <option>[4] Statistik Distribusi</option>
                   <option>[5] Statistik Sosial</option>
                   <option>[6] Integrasi Pengolahan dan Diseminasi Statistik</option>
+=======
+              <label class="col-md-3 col-xs-12 control-label">Komponen</label>
+              <div class="col-md-6 col-xs-12">
+                <select class="form-control select">
+                  <option value="" disabled selected>Silahkan pilih komponen</option>
+                  @foreach($komponens as $komponen)
+                    <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen}} </option>
+                    <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen}} </option>
+                  @endforeach
                 </select>
               </div>
             </div>
 
             <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label">Subkomponen</label>
+              <div class="col-md-6 col-xs-12">
+                <select class="form-control select">
+                  <option value="" disabled selected>Silahkan pilih subkomponen</option>
+                  @foreach($subkomponens as $subkomponen)
+                    <option value="{{$subkomponen->id}}">[{{$subkomponen->kode}}] {{$subkomponen->subkomponen}}</option>
+                  @endforeach
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+<<<<<<< HEAD
               <label class="col-md-3 col-xs-12 control-label">Komponen</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select">
@@ -159,6 +220,15 @@
                   <option>[4] Statistik Distribusi</option>
                   <option>[5] Statistik Sosial</option>
                   <option>[6] Integrasi Pengolahan dan Diseminasi Statistik</option>
+=======
+              <label class="col-md-3 col-xs-12 control-label">Akun</label>
+              <div class="col-md-6 col-xs-12">
+                <select class="form-control select">
+                  <option value="" disabled selected>Silahkan pilih akun</option>
+                  @foreach($akuns as $akun)
+                    <option value="{{$akun->id}}">[{{$akun->kode}}] {{$akun->akun}}</option>
+                  @endforeach
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
                 </select>
               </div>
             </div>
@@ -166,6 +236,7 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label"><strong>Pembebanan MAK</strong></label>
               <div class="col-md-6 col-xs-12">
+<<<<<<< HEAD
                 <label class="control-label">[054.01.01].[2886].[970].[053].[524111]</label>
               </div>
             </div>
@@ -177,15 +248,28 @@
                 <div class="input-group">
                   <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                   <input type="text" class="form-control" value="Rp 5.000.000" />
+=======
+                <div class="input-group">
+                  <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                  <input type="text" class="form-control" value="054.01.06.2886.994.002.E.524111" />
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
                 </div>
               </div>
             </div>
 
             <div class="form-group">
+<<<<<<< HEAD
               <label class="col-md-3 col-xs-12 control-label"><strong>Keterangan</strong></label>
               <div class="col-md-6 col-xs-12">
                 <div class="input-group">
                   <textarea class="form-control" rows="5" cols="90"></textarea>
+=======
+              <label class="col-md-3 col-xs-12 control-label"><strong>Jumlah Sisa Anggaran di POK</strong></label>
+              <div class="col-md-6 col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                  <input type="text" class="form-control" value="Rp 5.000.000" />
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
                 </div>
               </div>
             </div>
@@ -253,8 +337,11 @@
               </div>
             </div>
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
           </div>
           <div class="panel-footer">
             <button class="btn btn-default">Clear Form</button>

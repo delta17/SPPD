@@ -38,6 +38,7 @@
               <label class="col-md-3 col-xs-12 control-label">Nomor Buku Kepala</label>
               <div class="col-md-6 col-xs-12">
                 <input type="text" class="form-control" readonly value="002"/>
+<<<<<<< HEAD
               </div>
             </div>
 
@@ -47,6 +48,12 @@
                       <input type="text" class="form-control" readonly value="002"/>
                   </div>
               </div>
+=======
+                <span class="help-block">nomor sesuai database yang telah diinput</span>
+              </div>
+            </div>
+
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
 
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label"><strong>Identitas Pelaksana</strong></label><br/>
@@ -96,6 +103,7 @@
               </div>
             </div>
 
+<<<<<<< HEAD
 
 
             <div class="form-group">
@@ -108,6 +116,12 @@
             </div>
 
               <div id="ddDalamKota">
+=======
+            <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label"><strong>Lokasi Pelaksanaan</strong></label>
+            </div>
+
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Kecamatan</label>
               <div class="col-md-6 col-xs-12">
@@ -144,6 +158,7 @@
                 </select>
               </div>
             </div>
+<<<<<<< HEAD
               </div>
 
               <div class="form-group" id="ddLuarKota">
@@ -181,6 +196,8 @@
                       </select>
                   </div>
               </div>
+=======
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
 
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label"><strong>Waktu Pelaksanaan</strong></label>
@@ -225,6 +242,7 @@
   <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
 
   <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+<<<<<<< HEAD
   <script>
       $(document).ready(function(){
           $("#ddDalamKota").hide();
@@ -251,5 +269,7 @@
           });
       });
   </script>
+=======
+>>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
   <!-- END THIS PAGE PLUGINS-->
 @endsection
