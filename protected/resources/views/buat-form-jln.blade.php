@@ -106,8 +106,7 @@
                 <select class="form-control select">
                   <option value="" disabled selected>Silahkan pilih komponen</option>
                   @foreach($komponens as $komponen)
-                    <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen}} </option>
-                    <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen}} </option>
+                    <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen}}</option>
                   @endforeach
                 </select>
               </div>
@@ -141,8 +140,8 @@
               <label class="col-md-3 col-xs-12 control-label"><strong>Pembebanan MAK</strong></label>
               <div class="col-md-6 col-xs-12">
                 <div class="input-group">
-                  <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                  <input type="text" class="form-control" value="054.01.06.2886.994.002.E.524111" />
+                  <span class="input-group-addon"><span class="fa fa-book"></span></span>
+                  <input type="text" class="form-control" readonly="" value="Readonly value">
                 </div>
               </div>
             </div>
@@ -151,8 +150,8 @@
               <label class="col-md-3 col-xs-12 control-label"><strong>Jumlah Sisa Anggaran di POK</strong></label>
               <div class="col-md-6 col-xs-12">
                 <div class="input-group">
-                  <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                  <input type="text" class="form-control" value="Rp 5.000.000" />
+                  <span class="input-group-addon">Rp</span>
+                  <input type="text" class="form-control" placeholder="Silahkan masukkan nilai">
                 </div>
               </div>
             </div>
@@ -217,6 +216,13 @@
                 <div class="input-group">
                   <button class="btn btn-primary pull-right">Tambah Pelaksana</button>
                 </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label"><strong>Keterangan</strong></label>
+              <div class="col-md-6 col-xs-12">
+                <textarea class="form-control" rows="5" placeholder="Tambahkan keterangan"></textarea>
               </div>
             </div>
 
