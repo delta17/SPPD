@@ -16,7 +16,7 @@
         </div>
         <div class="profile-data">
           <div class="profile-data-name">Badan Pusat Statistik</div>
-          <div class="profile-data-title">Kabupaten Seruyan</div>
+          <div class="profile-data-title">Kabupaten Seruyan </div>
         </div>
       </div>
     </li>
