@@ -106,7 +106,8 @@
                 <select class="form-control select">
                   <option value="" disabled selected>Silahkan pilih komponen</option>
                   @foreach($komponens as $komponen)
-                    <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen}}</option>
+                    <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen}} </option>
+                    <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen}} </option>
                   @endforeach
                 </select>
               </div>
