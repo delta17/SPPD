@@ -31,14 +31,30 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>1</td>
-              <td>Pencacahan Sakernas ke Bangkal</td>
-              <td>2019-02-07</td>
-              <td>Personal</td>
-              <td>Henny Anggraini</td>
-              <td><button class="btn btn-primary"><a href="{{url('buat-surtug-personal')}}" />Buat Surat Tugas</button></td>
-            </tr>
+            @foreach($agendas as $agenda)
+              <tr>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$agenda->getFormJLN->perihal}}</td>
+                <td>{{$agenda->updated_at->format('d-m-Y')}}</td>
+                <td>{{$agenda->personal}}</td>
+                <td>{{$agenda->pelaksana}}</td>
+                <td>
+                  <button class="btn btn-primary">
+                @switch($agenda->action)
+                  @case(0)
+                      <a href="{{url('buat-surtug-personal')}}"/>Buat Surat Tugas
+                  @break
+                  @case(1)
+                      <a href="{{url('buat-surtug-grup')}}"/>Buat Surat Tugas
+                  @break
+                  @case(2)
+                      <a href="{{url('buat-spd')}}"/>Buat SPD dan Surat Tugas
+                  @break
+                @endswitch
+                  </button>
+                </td>
+              </tr>
+            @endforeach
 
             </tbody>
           </table>

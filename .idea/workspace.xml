@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c45d4fe-c967-4ef8-be8e-d5933e9f882e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/SPPD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPPD.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protected/app/Agenda.php" beforeDir="false" afterPath="$PROJECT_DIR$/protected/app/Agenda.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protected/app/FormJLN.php" beforeDir="false" afterPath="$PROJECT_DIR$/protected/app/FormJLN.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protected/app/Http/Controllers/AgendaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/protected/app/Http/Controllers/AgendaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protected/app/Http/Controllers/JLNController.php" beforeDir="false" afterPath="$PROJECT_DIR$/protected/app/Http/Controllers/JLNController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protected/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/protected/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protected/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/protected/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protected/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/protected/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protected/database/migrations/2019_04_26_090240_mst_form_jln.php" beforeDir="false" afterPath="$PROJECT_DIR$/protected/database/migrations/2019_04_26_090240_mst_form_jln.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protected/database/migrations/2019_04_26_093207_mst_agenda.php" beforeDir="false" afterPath="$PROJECT_DIR$/protected/database/migrations/2019_04_26_093207_mst_agenda.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protected/database/migrations/2019_04_26_094756_mst_user_jln.php" beforeDir="false" afterPath="$PROJECT_DIR$/protected/database/migrations/2019_04_26_094756_mst_user_jln.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protected/resources/views/agenda.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/protected/resources/views/agenda.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/protected/resources/views/buat-form-jln.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/protected/resources/views/buat-form-jln.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protected/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/protected/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,72 +32,90 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/app/Http/Controllers/JLNController.php">
+        <entry file="file://$PROJECT_DIR$/protected/resources/views/buat-form-jln.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            <state relative-caret-position="-1802">
+              <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/resources/views/buat-form-jln.blade.php">
+        <entry file="file://$PROJECT_DIR$/protected/resources/views/agenda.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="226" column="18" lean-forward="true" selection-start-line="226" selection-start-column="18" selection-end-line="226" selection-end-column="18" />
+            <state relative-caret-position="17">
+              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_10_12_000000_create_users_table.php">
+        <entry file="file://$PROJECT_DIR$/protected/app/FormJLN.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+            <state relative-caret-position="-5">
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/database/seeds/AkunSeeder.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/database/seeds/UserSeeder.php">
+        <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_26_093207_mst_agenda.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+            <state relative-caret-position="143">
+              <caret line="17" column="36" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/resources/views/auth/login.blade.php">
+        <entry file="file://$PROJECT_DIR$/protected/app/Http/Controllers/AgendaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+            <state relative-caret-position="148">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#40#55#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/theme-default.css">
+        <entry file="file://$PROJECT_DIR$/protected/app/Http/Controllers/JLNController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="3905" column="21" lean-forward="true" selection-start-line="3905" selection-start-column="21" selection-end-line="3905" selection-end-column="21" />
+            <state relative-caret-position="335">
+              <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+              <folding>
+                <element signature="e#40#55#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/protected/app/Agenda.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="44" lean-forward="true" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_19_054753_mst_seksi.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/protected/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/app/UserJLN.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="37" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -95,9 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>openable</find>
-      <find>xn-openable</find>
-      <find>.xn-openable</find>
       <find>row</find>
       <find>LOGIN</find>
       <find>.login-container .login-box .login-body .form-control</find>
@@ -123,6 +154,11 @@
       <find>seksis</find>
       <find>login-subtitle</find>
       <find>login-title</find>
+      <find>perihal</find>
+      <find>strong</find>
+      <find>pad</find>
+      <find>getFormJLN</find>
+      <find>form_jln_id</find>
     </findStrings>
     <replaceStrings>
       <replace>#xn-openable</replace>
@@ -134,13 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/protected/database/seeds/KomponenSeeder.php" />
-        <option value="$PROJECT_DIR$/protected/app/User.php" />
-        <option value="$PROJECT_DIR$/protected/app/Subkomponen.php" />
-        <option value="$PROJECT_DIR$/protected/app/Komponen.php" />
-        <option value="$PROJECT_DIR$/protected/database/seeds/SubkomponenSeeder.php" />
-        <option value="$PROJECT_DIR$/protected/database/seeds/PerihalSeeder.php" />
-        <option value="$PROJECT_DIR$/protected/database/migrations/2019_04_19_054753_mst_seksi.php" />
         <option value="$PROJECT_DIR$/protected/database/seeds/KegiatanSeksiSeeder.php" />
         <option value="$PROJECT_DIR$/protected/database/migrations/2019_04_25_043159_mst_kegiatan_seksi.php" />
         <option value="$PROJECT_DIR$/protected/database/migrations/2019_04_25_021922_mst_perihal.php" />
@@ -165,8 +194,6 @@
         <option value="$PROJECT_DIR$/protected/database/seeds/LuarKotaSeeder.php" />
         <option value="$PROJECT_DIR$/protected/database/migrations/2019_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/protected/database/seeds/UserSeeder.php" />
-        <option value="$PROJECT_DIR$/protected/database/migrations/2019_04_26_090240_mst_form_jln.php" />
-        <option value="$PROJECT_DIR$/protected/database/migrations/2019_04_26_094756_mst_user_jln.php" />
         <option value="$PROJECT_DIR$/protected/database/migrations/2019_04_25_073207_mst_agenda.php" />
         <option value="$PROJECT_DIR$/protected/database/migrations/2019_04_26_072853_mst_surtug_personal.php" />
         <option value="$PROJECT_DIR$/protected/database/migrations/2019_04_26_072911_mst_surtug_grup.php" />
@@ -174,17 +201,26 @@
         <option value="$PROJECT_DIR$/protected/app/SurtugGrup.php" />
         <option value="$PROJECT_DIR$/protected/app/SurtugPersonal.php" />
         <option value="$PROJECT_DIR$/protected/app/UserSurtugGrup.php" />
-        <option value="$PROJECT_DIR$/protected/app/FormJLN.php" />
-        <option value="$PROJECT_DIR$/protected/app/Agenda.php" />
         <option value="$PROJECT_DIR$/protected/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/protected/database/migrations/2019_04_25_075033_mst_perusahaan.php" />
         <option value="$PROJECT_DIR$/protected/database/seeds/KendaraanSeeder.php" />
-        <option value="$PROJECT_DIR$/protected/resources/views/agenda.blade.php" />
-        <option value="$PROJECT_DIR$/protected/app/Http/Controllers/AgendaController.php" />
-        <option value="$PROJECT_DIR$/protected/app/Http/Controllers/JLNController.php" />
         <option value="$PROJECT_DIR$/protected/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/css/theme-default.css" />
+        <option value="$PROJECT_DIR$/protected/composer.json" />
+        <option value="$PROJECT_DIR$/protected/artisan" />
+        <option value="$PROJECT_DIR$/protected/config/database.php" />
+        <option value="$PROJECT_DIR$/protected/.env" />
+        <option value="$PROJECT_DIR$/protected/routes/web.php" />
+        <option value="$PROJECT_DIR$/protected/database/migrations/2019_04_26_094756_mst_user_jln.php" />
         <option value="$PROJECT_DIR$/protected/resources/views/buat-form-jln.blade.php" />
+        <option value="$PROJECT_DIR$/protected/database/migrations/2019_04_26_090240_mst_form_jln.php" />
+        <option value="$PROJECT_DIR$/protected/app/UserJLN.php" />
+        <option value="$PROJECT_DIR$/protected/database/migrations/2019_04_26_093207_mst_agenda.php" />
+        <option value="$PROJECT_DIR$/protected/app/Http/Controllers/JLNController.php" />
+        <option value="$PROJECT_DIR$/protected/app/FormJLN.php" />
+        <option value="$PROJECT_DIR$/protected/app/Http/Controllers/AgendaController.php" />
+        <option value="$PROJECT_DIR$/protected/app/Agenda.php" />
+        <option value="$PROJECT_DIR$/protected/resources/views/agenda.blade.php" />
       </list>
     </option>
   </component>
@@ -231,7 +267,6 @@
       <path value="$PROJECT_DIR$/protected/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/protected/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/protected/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/protected/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/protected/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/protected/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/protected/vendor/phpdocumentor/reflection-common" />
@@ -255,6 +290,23 @@
       <path value="$PROJECT_DIR$/protected/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/protected/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/protected/vendor/composer" />
+      <path value="$PROJECT_DIR$/protected/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/protected/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/protected/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/protected/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/protected/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/protected/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/protected/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/protected/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/protected/vendor/symfony/thanks" />
+      <path value="$PROJECT_DIR$/protected/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/protected/vendor/pusher/pusher-php-server" />
+      <path value="$PROJECT_DIR$/protected/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/protected/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/protected/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/protected/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/protected/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/protected/vendor/laravel-frontend-presets/bulma" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -274,11 +326,6 @@
             <path>
               <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
               <item name="SPPD" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPPD" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
@@ -317,7 +364,7 @@
               <item name="SPPD" type="462c0819:PsiDirectoryNode" />
               <item name="protected" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
@@ -331,20 +378,6 @@
               <item name="protected" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPPD" type="462c0819:PsiDirectoryNode" />
-              <item name="protected" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SPPD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SPPD" type="462c0819:PsiDirectoryNode" />
-              <item name="protected" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -360,7 +393,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -409,6 +442,8 @@
       <workItem from="1556237357091" duration="3000" />
       <workItem from="1556241477718" duration="6477000" />
       <workItem from="1556339987352" duration="3912000" />
+      <workItem from="1556437338069" duration="2685000" />
+      <workItem from="1556445630719" duration="23777000" />
     </task>
     <task id="LOCAL-00001" summary="tambahan &#10;- mst_agenda&#10;- mst_surtug_grup&#10;&#10;perubahan&#10;- DatabaseSeeder&#10;- mst_user_jln&#10;- mst_surtug_personal&#10;- mst_perusahaan&#10;- FormJLN">
       <created>1556187810246</created>
@@ -421,7 +456,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81944000" />
+    <option name="totallyTimeSpent" value="123534000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -437,9 +472,9 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.28971255" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2987897" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4977307" weight="0.32850242" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4977307" visible="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50226927" side_tool="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32850242" />
@@ -466,112 +501,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="tambahan &#10;- mst_agenda&#10;- mst_surtug_grup&#10;&#10;perubahan&#10;- DatabaseSeeder&#10;- mst_user_jln&#10;- mst_surtug_personal&#10;- mst_perusahaan&#10;- FormJLN" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/database/seeds/KegiatanUraianSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2686">
-          <caret line="158" column="116" selection-start-line="158" selection-start-column="116" selection-end-line="158" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_24_114105_mst_program.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_25_021140_mst_kegiatan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_25_021249_mst_output.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_25_021347_mst_komponen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_25_021700_mst_subkomponen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_25_021739_mst_akun.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_25_043159_mst_kegiatan_seksi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_19_061903_mst_desa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="22" column="9" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/seeds/KegiatanSeksiSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/seeds/DesaSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="113" column="77" lean-forward="true" selection-start-line="113" selection-start-column="77" selection-end-line="113" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/app/Perusahaan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/app/LuarKota.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/seeds/OutputSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="45" column="7" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="45" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/seeds/LuarKotaSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="18" column="82" selection-start-line="18" selection-start-column="82" selection-end-line="18" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_25_043221_mst_kegiatan_uraian.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
@@ -583,13 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_26_094756_mst_user_jln.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="30" column="9" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="30" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -634,24 +556,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/app/Agenda.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/app/UserSurtugGrup.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_26_090240_mst_form_jln.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -683,20 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/app/FormJLN.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_26_093207_mst_agenda.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/database/seeds/KendaraanSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -719,35 +613,23 @@
     <entry file="file://$PROJECT_DIR$/protected/.gitattributes">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/resources/views/agenda.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/protected/database/seeds/AkunSeeder.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/app/Http/Controllers/AgendaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/protected/config/view.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/app/Http/Controllers/JLNController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_10_12_000000_create_users_table.php">
+    <entry file="file://$PROJECT_DIR$/protected/vendor/laravel/framework/src/Illuminate/Support/Collection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+          <folding>
+            <element signature="e#38#51#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/seeds/AkunSeeder.php">
+    <entry file="file://$PROJECT_DIR$/protected/app/User.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/database/seeds/UserSeeder.php">
@@ -757,30 +639,173 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_19_054753_mst_seksi.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="391">
           <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/theme-default.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="3905" column="21" lean-forward="true" selection-start-line="3905" selection-start-column="21" selection-end-line="3905" selection-end-column="21" />
+        <state relative-caret-position="66385">
+          <caret line="3905" column="21" selection-start-line="3905" selection-start-column="21" selection-end-line="3905" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_19_054753_mst_seksi.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/composer.lock">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/phpunit.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-260" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/artisan">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/web.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/bootstrap/autoload.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/composer_backup.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/app/Seksi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_26_094756_mst_user_jln.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="22" column="79" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/app/UserJLN.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/resources/views/buat-form-jln.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="226" column="18" lean-forward="true" selection-start-line="226" selection-start-column="18" selection-end-line="226" selection-end-column="18" />
+        <state relative-caret-position="-1802">
+          <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_26_090240_mst_form_jln.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/app/Http/Controllers/JLNController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/app/Http/Controllers/AgendaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/app/FormJLN.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/app/Agenda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="44" lean-forward="true" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/database/migrations/2019_04_26_093207_mst_agenda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/resources/views/agenda.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
         </state>
       </provider>
     </entry>

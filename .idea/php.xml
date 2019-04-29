@@ -40,7 +40,6 @@
       <path value="$PROJECT_DIR$/protected/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/protected/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/protected/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/protected/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/protected/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/protected/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/protected/vendor/phpdocumentor/reflection-common" />
@@ -64,8 +63,26 @@
       <path value="$PROJECT_DIR$/protected/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/protected/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/protected/vendor/composer" />
+      <path value="$PROJECT_DIR$/protected/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/protected/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/protected/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/protected/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/protected/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/protected/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/protected/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/protected/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/protected/vendor/symfony/thanks" />
+      <path value="$PROJECT_DIR$/protected/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/protected/vendor/pusher/pusher-php-server" />
+      <path value="$PROJECT_DIR$/protected/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/protected/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/protected/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/protected/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/protected/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/protected/vendor/laravel-frontend-presets/bulma" />
     </include_path>
   </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7" />
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings load_method="CUSTOM_LOADER" custom_loader_path="$PROJECT_DIR$/protected/vendor/autoload.php" />

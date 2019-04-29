@@ -8,37 +8,36 @@ class FormJLN extends Model
 {
     protected $table = 'mst_form_jln';
 
-    public function relatedFormJLN(){
-      $this->hasMany('no_seksi','id');
-    }
+    protected $fillable = [
+      'perihal'
+    ];
 
-    public function Seksi(){
+    public function getSeksi(){
       $this->hasOne('App\Seksi','id','seksi_id');
     }
 
-    public function Program(){
+    public function getProgram(){
       $this->hasOne('App\Program','id','program_id');
     }
 
-    public function Kegiatan(){
+    public function getKegiatan(){
       $this->hasOne('App\Kegiatan','id','kegiatan_id');
     }
 
-    public function Output(){
+    public function getOutput(){
       $this->hasOne('App\Output','id','output_id');
     }
 
-    public function Komponen(){
+    public function getKomponen(){
       $this->hasOne('App\Komponen','id','komponen_id');
     }
 
-    public function Subkomponen(){
+    public function getSubkomponen(){
       $this->hasOne('App\Subkomponen','id','subkomponen_id');
     }
 
-    public function Akun(){
+    public function getAkun(){
       $this->hasOne('App\Akun','id','akun_id');
     }
-
 
 }

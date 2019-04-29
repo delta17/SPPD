@@ -15,13 +15,11 @@ class MstAgenda extends Migration
     {
       Schema::create('mst_agenda', function (Blueprint $table) {
         $table->increments('id');
-        $table->integer('uraian_id', false, 11);
-        $table->foreign('uraian_id')->references('id')->on('mst_kegiatan_uraian');
         $table->integer('form_jln_id',false,11);
         $table->foreign('form_jln_id')->references('id')->on('mst_form_jln');
-        $table->date('tanggal');
-        $table->string('personal',20);
-        $table->string('pelaksana',50)->nullable();
+        $table->string('personal',50);
+        $table->string('pelaksana',100);
+        $table->integer('action',false,11);
         $table->timestamps();
       });
     }

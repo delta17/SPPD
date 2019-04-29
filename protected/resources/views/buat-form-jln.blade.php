@@ -15,8 +15,15 @@
 @section('content')
   <div class="row">
     <div class="col-md-12">
-
-      <form class="form-horizontal">
+      @if (session('status'))
+        <div class="alert alert-info">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <strong>Sukses!</strong>
+          {{ session('status') }}
+        </div>
+      @endif
+      <form id="jvalidate" role="form" class="form-horizontal" action="{{url('/upload-form-jln')}}" method="post"
+            novalidate="novalidate">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Buat <strong>Form JLN</strong></h3>
@@ -24,27 +31,21 @@
               <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
             </ul>
           </div>
-
           <div class="panel-body">
-            <p></p>
-          </div>
-
-          <div class="panel-body">
-
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Nomor Seksi</label>
               <div class="col-md-6 col-xs-12">
-                <input type="text" class="form-control" readonly value="003"/>
-                <span class="help-block">nomor sesuai database yang telah diinput</span>
+                <input type="text" class="form-control" value="" name="no_seksi"/>
+                <span class="help-block">contoh: 003</span>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label"><strong>Perihal</strong></label>
+              <label class="col-md-3 col-xs-12 control-label">Perihal</label>
               <div class="col-md-6 col-xs-12">
                 <div class="input-group">
                   <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                  <input type="text" class="form-control" value="Pembinaan administrasi tahun 2019 BPS Provinsi ke kabupaten/kota" />
+                  <input type="text" class="form-control" value="" name="perihal" />
                 </div>
               </div>
             </div>
@@ -53,7 +54,7 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Sub Bagian/Seksi</label>
               <div class="col-md-6 col-xs-12">
-                <select class="form-control select">
+                <select class="form-control select" name="seksi">
                   <option value="" disabled selected>Silahkan pilih seksi</option>
                   @foreach($seksis as $key => $seksi)
                     @if($key>0 & $key<7)
@@ -67,7 +68,7 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Program</label>
               <div class="col-md-6 col-xs-12">
-                <select class="form-control select">
+                <select class="form-control select" name="program">
                   <option value="" disabled selected>Silahkan pilih program</option>
                   @foreach($programs as $program)
                     <option value="{{$program->id}}">[{{$program->kode}}] {{$program->program}}</option>
@@ -79,7 +80,7 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Kegiatan</label>
               <div class="col-md-6 col-xs-12">
-                <select class="form-control select">
+                <select class="form-control select" name="kegiatan">
                   <option value="" disabled selected>Silahkan pilih kegiatan</option>
                   @foreach($kegiatans as $kegiatan)
                     <option value="{{$kegiatan->id}}">[{{$kegiatan->kode}}] {{$kegiatan->kegiatan}}</option>
@@ -91,7 +92,7 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Keluaran (output)</label>
               <div class="col-md-6 col-xs-12">
-                <select class="form-control select">
+                <select class="form-control select" name="output">
                   <option value="" disabled selected>Silahkan pilih output</option>
                   @foreach($outputs as $output)
                     <option value="{{$output->id}}">[{{$output->kode}}] {{$output->output}}</option>
@@ -103,7 +104,7 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Komponen</label>
               <div class="col-md-6 col-xs-12">
-                <select class="form-control select">
+                <select class="form-control select" name="komponen">
                   <option value="" disabled selected>Silahkan pilih komponen</option>
                   @foreach($komponens as $komponen)
                     <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen}}</option>
@@ -115,7 +116,7 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Subkomponen</label>
               <div class="col-md-6 col-xs-12">
-                <select class="form-control select">
+                <select class="form-control select" name="subkomponen">
                   <option value="" disabled selected>Silahkan pilih subkomponen</option>
                   @foreach($subkomponens as $subkomponen)
                     <option value="{{$subkomponen->id}}">[{{$subkomponen->kode}}] {{$subkomponen->subkomponen}}</option>
@@ -127,7 +128,7 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Akun</label>
               <div class="col-md-6 col-xs-12">
-                <select class="form-control select">
+                <select class="form-control select" name="akun">
                   <option value="" disabled selected>Silahkan pilih akun</option>
                   @foreach($akuns as $akun)
                     <option value="{{$akun->id}}">[{{$akun->kode}}] {{$akun->akun}}</option>
@@ -137,27 +138,27 @@
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label"><strong>Pembebanan MAK</strong></label>
+              <label class="col-md-3 col-xs-12 control-label">Pembebanan MAK</label>
               <div class="col-md-6 col-xs-12">
                 <div class="input-group">
                   <span class="input-group-addon"><span class="fa fa-book"></span></span>
-                  <input type="text" class="form-control" readonly="" value="Readonly value">
+                  <input type="text" class="form-control" value="" name="mak">
                 </div>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label"><strong>Jumlah Sisa Anggaran di POK</strong></label>
+              <label class="col-md-3 col-xs-12 control-label">Jumlah Sisa Anggaran di POK</label>
               <div class="col-md-6 col-xs-12">
                 <div class="input-group">
                   <span class="input-group-addon">Rp</span>
-                  <input type="text" class="form-control" placeholder="Silahkan masukkan nilai">
+                  <input type="text" class="form-control" placeholder="Silahkan masukkan nilai" name="sisa_anggaran">
                 </div>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label"><strong>Daftar Peserta yang Berangkat</strong></label><br/>
+              <label class="col-md-3 col-xs-12 control-label">Daftar Peserta yang Berangkat</label><br/>
               <div class="input-group">
                 <div class="col-xs-12">
                   <table class="table datatable" id='idTabelLampiran'>
@@ -169,6 +170,7 @@
                       <th>Dari <br/> Tanggal</th>
                       <th>Sampai <br/> Tanggal</th>
                       <th>Tujuan</th>
+                      <th>Perihal</th>
                       <th>Lama <br/>(hari)</th>
                       <th>Jenis <br/>Kendaraan</th>
                     </tr>
@@ -176,33 +178,57 @@
                     <tbody>
                     <tr>
                       <td>1</td>
-                      <td>Henny Anggraini</td>
-                      <td>12345678 123456 1 123</td>
-                      <td>2019-02-1</td>
-                      <td>2019-02-4</td>
-                      <td>Bangkal</td>
-                      <td>4</td>
-                      <td>Darat</td>
+                      <td>
+                        <input type="hidden" name="nama[1]" value="Henny Anggraini">
+                        Henny Anggraini</td>
+                      <td>
+                        <input type="hidden" name="nip[1]" value="12345678 123456 1 123">
+                        12345678 123456 1 123</td>
+                      <td>
+                        <input type="hidden" name="tgl_dari[1]" value="2019-02-1">
+                        2019-02-1</td>
+                      <td>
+                        <input type="hidden" name="tgl_sampai[1]" value="2019-02-4">
+                        2019-02-4</td>
+                      <td>
+                        <input type="hidden" name="tujuan[1]" value="10009">
+                        Jahitan </td>
+                      <td>
+                        <input type="hidden" name="uraian_id[1]" value="1">
+                        1</td>
+                      <td>
+                        <input type="hidden" name="lamanya[1]" value="4">
+                        4</td>
+                      <td>
+                        <input type="hidden" name="kendaraan_id[1]" value="2">
+                        Angkutan Umum</td>
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td>Hendro Sukendro</td>
-                      <td>12345678 123456 1 123</td>
-                      <td>2019-02-1</td>
-                      <td>2019-02-6</td>
-                      <td>Tumbang Manjul</td>
-                      <td>6</td>
-                      <td>Campuran</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Adiv Fahrur A</td>
-                      <td>12345678 123456 1 123</td>
-                      <td>2019-02-1</td>
-                      <td>2019-02-5</td>
-                      <td>Asam Baru</td>
-                      <td>5</td>
-                      <td>Dinas</td>
+                      <td>
+                        <input type="hidden" name="nama[2]" value="Andi Wahyu Prawoko">
+                        Andi Wahyu Prawoko</td>
+                      <td>
+                        <input type="hidden" name="nip[2]" value="12345678 123456 1 123">
+                        12345678 123456 1 123</td>
+                      <td>
+                        <input type="hidden" name="tgl_dari[2]" value="2019-02-1">
+                        2019-02-1</td>
+                      <td>
+                        <input type="hidden" name="tgl_sampai[2]" value="2019-02-4">
+                        2019-02-4</td>
+                      <td>
+                        <input type="hidden" name="tujuan[2]" value="10009">
+                        Jahitan </td>
+                      <td>
+                        <input type="hidden" name="uraian_id[2]" value="1">
+                        1</td>
+                      <td>
+                        <input type="hidden" name="lamanya[2]" value="4">
+                        4</td>
+                      <td>
+                        <input type="hidden" name="kendaraan_id[2]" value="2">
+                        Angkutan Umum</td>
                     </tr>
                     </tbody>
                   </table>
@@ -220,21 +246,21 @@
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label"><strong>Keterangan</strong></label>
+              <label class="col-md-3 col-xs-12 control-label">Keterangan</label>
               <div class="col-md-6 col-xs-12">
-                <textarea class="form-control" rows="5" placeholder="Tambahkan keterangan"></textarea>
+                <textarea class="form-control" rows="5" placeholder="Tambahkan keterangan" name="keterangan"></textarea>
               </div>
             </div>
-
           </div>
-          <div class="panel-footer">
-            <button class="btn btn-default">Clear Form</button>
-            <button class="btn btn-primary pull-right"><a href="{{url('preview-form-jln')}}">Submit</a></button>
 
+          <div class="panel-footer">
+            <button class="btn btn-default pull-left">Clear Form</button>
+            <button class="btn btn-info pull-right" type="submit" onclick="notif()">Submit</button>
           </div>
         </div>
-      </form>
+      {{ csrf_field() }}
 
+      </form>
     </div>
   </div>
 @endsection
@@ -245,5 +271,57 @@
   <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
 
   <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="js/plugins/validationengine/languages/jquery.validationEngine-en.js"></script>
+  <script type="text/javascript" src="js/plugins/validationengine/jquery.validationEngine.js"></script>
+  <script type="text/javascript" src="js/plugins/jquery-validation/jquery.validate.js"></script>
+  <script type="text/javascript" src="js/plugins/maskedinput/jquery.maskedinput.min.js"></script>
   <!-- END THIS PAGE PLUGINS-->
+
+  <script type="text/javascript">
+      function notif() {
+          confirm("Apakah Anda yakin?")
+      }
+
+      var jvalidate = $("#jvalidate").validate({
+          ignore: [],
+          rules: {
+              no_seksi: {
+                  required: true,
+                  number: true
+              },
+              perihal: {
+                  required: true
+              },
+              seksi: {
+                  required: true
+              },
+              program: {
+                  required: true
+              },
+              kegiatan: {
+                  required: true
+              },
+              output: {
+                  required: true
+              },
+              komponen: {
+                  required: true
+              },
+              subkomponen: {
+                  required: true
+              },
+              akun: {
+                  required: true
+              },
+              mak: {
+                  required: true
+              },
+              sisa_anggaran: {
+                  required: true,
+                  minlength: 0,
+                  number:true
+              }
+          }
+      });
+  </script>
 @endsection

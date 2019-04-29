@@ -12,7 +12,7 @@ class Agenda extends Model
       $this->hasMany('id','id');
     }
 
-    public function FormJLN(){
-      $this->hasOne('App\FormJLN','id','form_jln_id');
+    public function getFormJLN(){
+      return $this->hasOne('App\FormJLN','id','form_jln_id');
     }
 }

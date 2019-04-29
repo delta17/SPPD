@@ -21,6 +21,7 @@ Route::get('/login',                    'Auth\LoginController@showLoginForm');
 Route::get('/dashboard',                'DashboardController@showDashboard');
 Route::get('/agenda',                   'AgendaController@showAgenda');
 Route::get('/buat-form-jln',            'JLNController@showJLN');
+Route::post('/upload-form-jln',         'JLNController@inputJLN');
 Route::get('/preview-form-jln',         'JLNController@showPreviewJLN');
 Route::get('/form-jln-saya',            'JLNController@showMyJLN');
 Route::get('/buat-surtug-personal',     'SurtugController@showSurtugPersonal');

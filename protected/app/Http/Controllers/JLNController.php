@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Agenda;
+use App\FormJLN;
 use App\Kegiatan;
 use App\Akun;
 use App\Komponen;
@@ -9,7 +11,9 @@ use App\Output;
 use App\Program;
 use App\Seksi;
 use App\Subkomponen;
+use App\UserJLN;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class JLNController extends Controller
 {
@@ -24,6 +28,71 @@ class JLNController extends Controller
 
       return view('buat-form-jln',compact('seksis','programs','kegiatans',
         'outputs','komponens','subkomponens','akuns'));
+    }
+
+    /**
+     * Fungsi Input FormJLN dan UserJLN
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function inputJLN(Request $request){
+      $formJLN = new FormJLN();
+
+      /**
+       * fungsi input ke formJLN
+       */
+      $formJLN->no_seksi        = $request->no_seksi;
+      $formJLN->perihal         = $request->perihal;
+      $formJLN->seksi_id        = $request->seksi;
+      $formJLN->program_id      = $request->program;
+      $formJLN->kegiatan_id     = $request->kegiatan;
+      $formJLN->output_id       = $request->output;
+      $formJLN->komponen_id     = $request->komponen;
+      $formJLN->subkomponen_id  = $request->subkomponen;
+      $formJLN->akun_id         = $request->akun;
+      $formJLN->mak             = $request->mak;
+      $formJLN->sisa_anggaran   = $request->sisa_anggaran;
+      $formJLN->keterangan      = $request->keterangan;
+      $formJLN->isApproved      = null;
+      $formJLN->save();
+
+      /**
+       * fungsi input UserJLN
+       */
+      for($i=1; $i<=count($request->input('nama.*'));$i++) {
+        $userJLN = new UserJLN();
+        $userJLN->nama          = $request->input('nama.'.$i);
+        $userJLN->nip           = $request->input('nip.'.$i);
+        $userJLN->tgl_dari      = $request->input('tgl_dari.'.$i);
+        $userJLN->tgl_sampai    = $request->input('tgl_sampai.'.$i);
+        $userJLN->uraian_id     = $request->input('uraian_id.'.$i);
+        $userJLN->tujuan        = $request->input('tujuan.'.$i);
+        $userJLN->lamanya       = $request->input('lamanya.'.$i);
+        $userJLN->kendaraan_id  = $request->input('kendaraan_id.'.$i);
+        $userJLN->jln_id        = $formJLN->id;
+        $userJLN->save();
+      }
+
+      /**
+       * fungsi input Agenda
+       */
+      $agenda = new Agenda();
+      $id = $formJLN->id;
+      $agenda->form_jln_id = $id;
+      $arr = $userJLN->all()->groupBy('jln_id')->toArray();
+      $count = count(array_get($arr,$id));
+      if($count>1){
+        $agenda->personal = "Grup";
+        $agenda->pelaksana = "--terlampir--";
+      } else {
+        $agenda->personal = "Personal";
+        $agenda->pelaksana = $userJLN->nama;
+      }
+      $agenda->action = 0;
+      $agenda->save();
+
+      return redirect('/buat-form-jln')->with('status','Data Berhasil Disimpan!');
     }
 
     public function showMyJLN(){
