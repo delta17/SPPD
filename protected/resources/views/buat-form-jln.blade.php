@@ -57,7 +57,7 @@
                 <select class="form-control select" name="seksi">
                   <option value="" disabled selected>Silahkan pilih seksi</option>
                   @foreach($seksis as $key => $seksi)
-                    @if($key>0 & $key<7)
+                    @if($key == Auth::user()->seksi_id)
                     <option value="{{$seksi->id}}">[{{$seksi->id}}] {{$seksi->seksi}}</option>
                     @endif
                   @endforeach
@@ -158,6 +158,17 @@
             </div>
 
             <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label">Personal/Kolektif</label>
+              <div class="col-md-6 col-xs-12">
+                <select class="form-control select" name="isPersonal">
+                  <option value="" disabled selected>Silahkan pilih</option>
+                  <option value="1">Personal</option>
+                  <option value="0">Kolektif</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Daftar Peserta yang Berangkat</label><br/>
               <div class="input-group">
                 <div class="col-xs-12">
@@ -194,7 +205,7 @@
                         <input type="hidden" name="tujuan[1]" value="10009">
                         Jahitan </td>
                       <td>
-                        <input type="hidden" name="uraian_id[1]" value="1">
+                        <input type="hidden" name="uraian_id[1]" value="2">
                         1</td>
                       <td>
                         <input type="hidden" name="lamanya[1]" value="4">

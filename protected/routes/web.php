@@ -15,21 +15,22 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Auth::routes();
-
 Route::get('/login',                    'Auth\LoginController@showLoginForm');
-Route::get('/dashboard',                'DashboardController@showDashboard');
-Route::get('/agenda',                   'AgendaController@showAgenda');
-Route::get('/buat-form-jln',            'JLNController@showJLN');
-Route::post('/upload-form-jln',         'JLNController@inputJLN');
-Route::get('/preview-form-jln',         'JLNController@showPreviewJLN');
-Route::get('/form-jln-saya',            'JLNController@showMyJLN');
-Route::get('/buat-surtug-personal',     'SurtugController@showSurtugPersonal');
-Route::get('/preview-surtug-personal',  'SurtugController@showPreviewSurtugPersonal');
-Route::get('/buat-surtug-grup',         'SurtugController@showSurtugGrup');
-Route::get('/preview-surtug-grup',      'SurtugController@showPreviewSurtugGrup');
-Route::get('/buat-spd',                 'SPDController@showSPD');
-Route::get('/preview-spd',              'SPDController@showPreviewSPD');
-Route::get('/arsip-saya',               'ArsipController@showArsip');
+//Route::get('/logout',                   'Auth\LoginController@showLoginForm');
+Route::get('/dashboard',                'DashboardController@showDashboard')->middleware('auth');
+Route::get('/agenda',                   'AgendaController@showAgenda')->middleware('auth');
+Route::get('/buat-form-jln',            'JLNController@showJLN')->middleware('auth');
+Route::post('/upload-form-jln',         'JLNController@inputJLN')->middleware('auth');
+Route::get('/preview-form-jln',         'JLNController@showPreviewJLN')->middleware('auth');
+Route::get('/form-jln-saya',            'JLNController@showMyJLN')->middleware('auth');
+Route::get('/buat-surtug-personal',     'SurtugController@showSurtugPersonal')->middleware('auth');
+Route::get('/preview-surtug-personal',  'SurtugController@showPreviewSurtugPersonal')->middleware('auth');
+Route::get('/buat-surtug-grup',         'SurtugController@showSurtugGrup')->middleware('auth');
+Route::get('/preview-surtug-grup',      'SurtugController@showPreviewSurtugGrup')->middleware('auth');
+Route::get('/buat-spd',                 'SPDController@showSPD')->middleware('auth');
+Route::get('/preview-spd',              'SPDController@showPreviewSPD')->middleware('auth');
+Route::get('/arsip-saya',               'ArsipController@showArsip')->middleware('auth');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();

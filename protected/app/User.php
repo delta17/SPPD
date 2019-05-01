@@ -33,11 +33,11 @@ class User extends Authenticatable
       $this->hasMany('name','id');
     }
 
-    public function level(){
+    public function getLevel(){
       return $this->hasOne('App\Level_user','id','level_id');
     }
 
-    public function seksi(){
+    public function getSeksi(){
       return $this->hasOne('App\Seksi','id','seksi_id');
     }
 }

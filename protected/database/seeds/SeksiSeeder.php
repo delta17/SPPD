@@ -14,11 +14,11 @@ class SeksiSeeder extends Seeder
         $data=[
             ['id' => '0', 'seksi' => 'Kepala'],
             ['id' => '1', 'seksi' => 'Tata Usaha'],
-            ['id' => '2', 'seksi' => 'Statistik Produksi'],
-            ['id' => '3', 'seksi' => 'Neraca Wilayah Analisis Statistik'],
-            ['id' => '4', 'seksi' => 'Statistik Distribusi'],
-            ['id' => '5', 'seksi' => 'Statistik Sosial'],
-            ['id' => '6', 'seksi' => 'Integrasi Pengolahan dan Diseminasi Statistik'],
+            ['id' => '2', 'seksi' => 'Produksi'],
+            ['id' => '3', 'seksi' => 'Nerwilis'],
+            ['id' => '4', 'seksi' => 'Distribusi'],
+            ['id' => '5', 'seksi' => 'Sosial'],
+            ['id' => '6', 'seksi' => 'IPDS'],
             ['id' => '7', 'seksi' => 'Koordinator Statistik Kecamatan']
         ];
 

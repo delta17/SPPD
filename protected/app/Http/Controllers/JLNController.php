@@ -7,6 +7,7 @@ use App\FormJLN;
 use App\Kegiatan;
 use App\Akun;
 use App\Komponen;
+use App\MyJLN;
 use App\Output;
 use App\Program;
 use App\Seksi;
@@ -14,6 +15,7 @@ use App\Subkomponen;
 use App\UserJLN;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 
 class JLNController extends Controller
 {
@@ -54,12 +56,18 @@ class JLNController extends Controller
       $formJLN->mak             = $request->mak;
       $formJLN->sisa_anggaran   = $request->sisa_anggaran;
       $formJLN->keterangan      = $request->keterangan;
-      $formJLN->isApproved      = null;
+
+      if($request->isPersonal == 1){
+        $formJLN->isPersonal = true;
+      }else{
+        $formJLN->isPersonal = false;
+      }
       $formJLN->save();
 
       /**
        * fungsi input UserJLN
        */
+      $user = collect([]);
       for($i=1; $i<=count($request->input('nama.*'));$i++) {
         $userJLN = new UserJLN();
         $userJLN->nama          = $request->input('nama.'.$i);
@@ -72,31 +80,50 @@ class JLNController extends Controller
         $userJLN->kendaraan_id  = $request->input('kendaraan_id.'.$i);
         $userJLN->jln_id        = $formJLN->id;
         $userJLN->save();
+        $user->push($userJLN->id);
       }
 
       /**
        * fungsi input Agenda
        */
-      $agenda = new Agenda();
-      $id = $formJLN->id;
-      $agenda->form_jln_id = $id;
-      $arr = $userJLN->all()->groupBy('jln_id')->toArray();
-      $count = count(array_get($arr,$id));
-      if($count>1){
-        $agenda->personal = "Grup";
+
+      if($formJLN->isPersonal){
+        for($i=1;$i<=count($request->input('nama.*'));$i++ ){
+          $agenda = new Agenda();
+          $agenda->form_jln_id = $formJLN->id;
+          $agenda->perihal = collect($userJLN->find($user->toArray()[$i-1])->getUraianKegiatan()->get())->first()->uraian;
+          $agenda->personal = "Personal";
+          $agenda->pelaksana = $request->input('nama.'.$i);
+          $agenda->action = 0;
+          $agenda->save();
+        }
+      }else{
+        $agenda = new Agenda();
+        $agenda->form_jln_id = $formJLN->id;
+        $agenda->perihal = $formJLN->perihal;
+        $agenda->personal = "Kolektif";
         $agenda->pelaksana = "--terlampir--";
-      } else {
-        $agenda->personal = "Personal";
-        $agenda->pelaksana = $userJLN->nama;
+        $agenda->action = 0;
+        $agenda->save();
       }
-      $agenda->action = 0;
-      $agenda->save();
+
+      /**
+       * input FormJLN_saya
+       */
+//      dd(Auth::id());
+        $myJLN = new MyJLN();
+        $myJLN->form_jln_id = $formJLN->id;
+        $myJLN->user_id     = Auth::id();
+        $myJLN->save();
+//      dd();
 
       return redirect('/buat-form-jln')->with('status','Data Berhasil Disimpan!');
     }
 
     public function showMyJLN(){
-      return view('form-jln-saya');
+      $myjlns = MyJLN::all();
+
+      return view('form-jln-saya',compact('myjlns'));
     }
 
     public function showPreviewJLN(){

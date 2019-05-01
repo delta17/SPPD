@@ -13,31 +13,31 @@ class FormJLN extends Model
     ];
 
     public function getSeksi(){
-      $this->hasOne('App\Seksi','id','seksi_id');
+      return $this->hasOne('App\Seksi','id','seksi_id');
     }
 
     public function getProgram(){
-      $this->hasOne('App\Program','id','program_id');
+      return $this->hasOne('App\Program','id','program_id');
     }
 
     public function getKegiatan(){
-      $this->hasOne('App\Kegiatan','id','kegiatan_id');
+      return $this->hasOne('App\Kegiatan','id','kegiatan_id');
     }
 
     public function getOutput(){
-      $this->hasOne('App\Output','id','output_id');
+      return $this->hasOne('App\Output','id','output_id');
     }
 
     public function getKomponen(){
-      $this->hasOne('App\Komponen','id','komponen_id');
+      return $this->hasOne('App\Komponen','id','komponen_id');
     }
 
     public function getSubkomponen(){
-      $this->hasOne('App\Subkomponen','id','subkomponen_id');
+      return $this->hasOne('App\Subkomponen','id','subkomponen_id');
     }
 
     public function getAkun(){
-      $this->hasOne('App\Akun','id','akun_id');
+      return $this->hasOne('App\Akun','id','akun_id');
     }
 
 }

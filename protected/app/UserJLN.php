@@ -17,7 +17,11 @@ class UserJLN extends Model
     }
 
     public function getUraianKegiatan(){
-      $this->hasOne('App\KegiatanUraian','id','uraian_id');
+      return $this->hasOne('App\KegiatanUraian','id','uraian_id');
+    }
+
+    public function getUraian($key){
+      return KegiatanUraian::where('uraian_id',$key)->get('uraian');
     }
 
     public function Kendaraan(){

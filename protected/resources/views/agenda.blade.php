@@ -23,6 +23,7 @@
             <thead>
             <tr>
               <th>No</th>
+              <th>Seksi</th>
               <th>Perihal</th>
               <th>Tanggal</th>
               <th>Personal/Grup</th>
@@ -34,7 +35,8 @@
             @foreach($agendas as $agenda)
               <tr>
                 <td>{{$loop->iteration}}</td>
-                <td>{{$agenda->getFormJLN->perihal}}</td>
+                <td>{{$agenda->getFormJLN->getSeksi->seksi}}</td>
+                <td>{{$agenda->perihal}}</td>
                 <td>{{$agenda->updated_at->format('d-m-Y')}}</td>
                 <td>{{$agenda->personal}}</td>
                 <td>{{$agenda->pelaksana}}</td>

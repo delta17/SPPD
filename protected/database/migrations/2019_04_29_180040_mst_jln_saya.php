@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MstAgenda extends Migration
+class MstJlnSaya extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class MstAgenda extends Migration
      */
     public function up()
     {
-      Schema::create('mst_agenda', function (Blueprint $table) {
+      Schema::create('mst_jln_saya', function (Blueprint $table) {
         $table->increments('id');
-        $table->string('perihal');
         $table->integer('form_jln_id',false,11);
         $table->foreign('form_jln_id')->references('id')->on('mst_form_jln');
-        $table->string('personal',50);
-        $table->string('pelaksana',100);
-        $table->integer('action',false,11);
+        $table->integer('user_id',false,11);
+        $table->foreign('user_id')->references('id')->on('users');
         $table->timestamps();
       });
     }
@@ -32,6 +30,6 @@ class MstAgenda extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mst_agenda');
+        Schema::dropIfExists('mst_jln_saya');
     }
 }
