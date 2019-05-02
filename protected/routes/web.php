@@ -30,7 +30,7 @@ Route::get('/buat-spd',                 'SPDController@showSPD')->middleware('au
 Route::get('/preview-spd',              'SPDController@showPreviewSPD')->middleware('auth');
 Route::get('/arsip-saya',               'ArsipController@showArsip')->middleware('auth');
 Route::get('/approval-form-jln',        'JLNController@showApprovalJLN')->middleware('auth');
-Route::get('/approve-form-jln/{id}',    'JLNController@showDetailJLN')->middleware('auth');
+Route::get('/form-jln/',                'JLNController@showDetailJLN')->middleware('auth');
 Route::post('/approval',                'JLNController@inputApprovalJLN')->middleware('auth');
 Route::get('/buat-laporan',             'LaporanController@showBuatLaporan');
 

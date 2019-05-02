@@ -136,8 +136,9 @@ class JLNController extends Controller
     }
 
     public function showDetailJLN(){
+      $myjlns = MyJLN::all();
 
-      return view('approve-form-jln',compact('myjlns'));
+      return view('form-jln',compact('myjlns'));
     }
 
     public function inputApprovalJLN(Request $request){

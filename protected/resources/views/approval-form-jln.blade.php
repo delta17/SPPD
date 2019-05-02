@@ -51,7 +51,7 @@
                 @if($myjln->getFormJLN->isApproved==0)
                   <td style="text-align: center"><span class="label label-default label-form">Pending</span></td>
                 @endif
-                <td style="text-align: center"><a href="{{url('approve-form-jln/$myjln->getFormJLN->id')}}">Detail</a></td>
+                <td style="text-align: center"><a href="{{url('form-jln/'.$myjln->getFormJLN->id)}}">Detail</a></td>
               </tr>
             @endforeach
             </tbody>

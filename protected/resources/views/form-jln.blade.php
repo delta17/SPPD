@@ -4,18 +4,6 @@
   Approve Form JLN
 @endsection
 
-@section('active')
-  active
-@endsection
-
-@section('active2')
-  active
-@endsection
-
-@section('active-grup')
-  class=active
-@endsection
-
 @section('content')
   <div class="row">
     <div class="col-md-12">
@@ -34,6 +22,12 @@
                   <div class="col-md-6 col-xs-12">
                       <p class="form-control-static">123/62081/4/2019</p>
                   </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label">Nomor Form JLN</label>
+                <div class="col-md-6 col-xs-12">
+                  <input type="text" class="form-control" readonly value="543" name="no_seksi" disabled/>
+                </div>
               </div>
 
               <div class="form-group">
@@ -141,5 +135,6 @@
   <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
   <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
 
+  <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
   <!-- END THIS PAGE PLUGINS-->
 @endsection

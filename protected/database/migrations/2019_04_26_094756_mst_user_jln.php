@@ -27,6 +27,8 @@ class MstUserJln extends Migration
         $table->foreign('kendaraan_id')->references('id')->on('mst_jln_kendaraan');
         $table->integer('jln_id',false,11);
         $table->foreign('jln_id')->references('id')->on('mst_form_jln');
+        $table->integer('wkt_standar_dinas',false,10)->nullable();
+        $table->integer('action',false,5)->nullable();
         $table->timestamps();
       });
     }

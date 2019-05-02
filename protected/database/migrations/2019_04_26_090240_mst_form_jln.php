@@ -33,10 +33,10 @@ class MstFormJln extends Migration
         $table->foreign('akun_id')->references('id')->on('mst_akun');
         $table->string('mak',50);
         $table->string('sisa_anggaran',50);
-        $table->text('keterangan')->nullable();
-        $table->text('catatan_kpa')->nullable();
         $table->integer('isApproved')->default(0);
         $table->boolean('isPersonal');
+        $table->text('keterangan')->nullable();
+        $table->text('catatan_kpa')->nullable();
         $table->timestamps();
       });
     }
