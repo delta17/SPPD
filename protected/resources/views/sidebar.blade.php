@@ -68,11 +68,6 @@
     <li {{Request::is('arsip-saya') ? 'class=active' : ''}}>
       <a href="{{url('arsip-saya')}}"><span class="fa fa-file-text-o"></span> <span class="xn-text">Arsip Saya</span></a>
     </li>
-
-    <li {{Request::is('approve-form-jln') ? 'class=active' : ''}}>
-      <a href="{{url('approve-form-jln')}}"><span class="fa fa-check-square-o"></span> <span class="xn-text">Approve Form JLN</span></a>
-    </li>
-
   </ul>
   <!-- END X-NAVIGATION -->
 </div>

@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/login',                    'Auth\LoginController@showLoginForm');
+Route::get('/login',                    'Auth\LoginController@showLoginForm')->middleware('guest');
 Route::get('/dashboard',                'DashboardController@showDashboard')->middleware('auth');
 Route::get('/agenda',                   'AgendaController@showAgenda')->middleware('auth');
 Route::get('/buat-form-jln',            'JLNController@showJLN')->middleware('auth');
@@ -30,6 +30,7 @@ Route::get('/buat-spd',                 'SPDController@showSPD')->middleware('au
 Route::get('/preview-spd',              'SPDController@showPreviewSPD')->middleware('auth');
 Route::get('/arsip-saya',               'ArsipController@showArsip')->middleware('auth');
 Route::get('/approval-form-jln',        'JLNController@showApprovalJLN')->middleware('auth');
+Route::get('/approve-form-jln/{id}',    'JLNController@showDetailJLN')->middleware('auth');
 Route::post('/approval',                'JLNController@inputApprovalJLN')->middleware('auth');
 Route::get('/buat-laporan',             'LaporanController@showBuatLaporan');
 

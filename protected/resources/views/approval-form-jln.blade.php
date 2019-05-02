@@ -22,8 +22,7 @@
       <!-- START DATATABLE EXPORT -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Daftar Form JLN Yang Belum Disetujui</h3>
-
+          <h3 class="panel-title">Daftar Form JLN Yang Diajukan</h3>
 
         </div>
         <div class="panel-body">
@@ -38,7 +37,6 @@
               <th>Sisa Anggaran</th>
               <th>Status</th>
               <th>Detail</th>
-              <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -53,20 +51,7 @@
                 @if($myjln->getFormJLN->isApproved==0)
                   <td style="text-align: center"><span class="label label-default label-form">Pending</span></td>
                 @endif
-                <td style="text-align: center"><a href="{{url('preview-form-jln')}}">Detail</a></td>
-                <form role="form" action="{{url('/approval')}}" method="post">
-                  <td style="text-align: center">
-                    <div class="btn btn-group">
-                      <button class="btn btn-default" name="action" value="1">
-                        Yes
-                      </button>
-                      <button class="btn btn-default" name="action" value="0">
-                        No
-                      </button>
-                    </div>
-                  </td>
-                  {{ csrf_field() }}
-                </form>
+                <td style="text-align: center"><a href="{{url('approve-form-jln/$myjln->getFormJLN->id')}}">Detail</a></td>
               </tr>
             @endforeach
             </tbody>

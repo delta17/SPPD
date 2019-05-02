@@ -135,6 +135,11 @@ class JLNController extends Controller
       return view('approval-form-jln',compact('myjlns'));
     }
 
+    public function showDetailJLN(){
+
+      return view('approve-form-jln',compact('myjlns'));
+    }
+
     public function inputApprovalJLN(Request $request){
       dd($request);
 
