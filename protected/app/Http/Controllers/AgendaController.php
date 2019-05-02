@@ -14,6 +14,7 @@ class AgendaController extends Controller
       $agendas = Agenda::all();
 
       return view('agenda',compact('agendas'));
+
     }
 
     public function insertAgenda(){

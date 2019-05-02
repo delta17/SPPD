@@ -38,9 +38,16 @@
                   <label class="col-md-3 col-xs-12 control-label">Nomor Buku Kepala</label>
                   <div class="col-md-6 col-xs-12">
                     <input type="text" class="form-control" readonly value="001"/>
-                    <span class="help-block">nomor sesuai database yang telah diinput</span>
                   </div>
                 </div>
+
+                  <div class="form-group">
+                      <label class="col-md-3 col-xs-12 control-label">Nomor Form JLN</label>
+                      <div class="col-md-6 col-xs-12">
+                          <input type="text" class="form-control" readonly value="001"/>
+                      </div>
+                  </div>
+
                 <div class="form-group">
                   <label class="col-md-3 col-xs-12 control-label"><strong>Identitas Pelaksana</strong></label>
                 </div>
@@ -71,10 +78,19 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="form-group">
                   <label class="col-md-3 col-xs-12 control-label"><strong>Lokasi Pelaksanaan</strong></label>
+                  <div class="col-md-6 col-xs-12">
+                    <label class="check col-md-3"><input type="radio" class="iradio" name="iradio" id="radioDalamKota"/> Dalam Kota</label>
+                    <label class="check col-md-3"><input type="radio" class="iradio" name="iradio" id="radioLuarKota"/> Luar Kota</label>
+                    <label class="check col-md-3"><input type="radio" class="iradio" name="iradio" id="radioPerusahaan"/> Perusahaan</label>
+                  </div>
                 </div>
-                <div class="form-group">
+
+
+                  <div id="ddDalamKota">
+                  <div class="form-group">
                   <label class="col-md-3 col-xs-12 control-label">Kecamatan</label>
                   <div class="col-md-6 col-xs-12">
                     <select class="form-control select">
@@ -108,6 +124,44 @@
                     </select>
                   </div>
                 </div>
+                  </div>
+
+                  <div class="form-group" id="ddLuarKota">
+                      <label class="col-md-3 col-xs-12 control-label">Tujuan Dinas</label>
+                      <div class="col-md-6 col-xs-12">
+                          <select class="form-control select">
+                              <option>[010] Seruyan Hilir</option>
+                              <option>[011] Seruyan Hilir Timur</option>
+                              <option>[020] Danau Sembuluh</option>
+                              <option>[021] Seruyan Raya</option>
+                              <option>[030] Hanau</option>
+                              <option>[031] Danau Seluluk</option>
+                              <option>[040] Seruyan Tengah</option>
+                              <option>[041] Batu Ampar</option>
+                              <option>[050] Seruyan Hulu</option>
+                              <option>[051] Suling Tambun</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group" id="ddPerusahaan">
+                      <label class="col-md-3 col-xs-12 control-label">Perusahaan</label>
+                      <div class="col-md-6 col-xs-12">
+                          <select class="form-control select">
+                              <option>[010] Seruyan Hilir</option>
+                              <option>[011] Seruyan Hilir Timur</option>
+                              <option>[020] Danau Sembuluh</option>
+                              <option>[021] Seruyan Raya</option>
+                              <option>[030] Hanau</option>
+                              <option>[031] Danau Seluluk</option>
+                              <option>[040] Seruyan Tengah</option>
+                              <option>[041] Batu Ampar</option>
+                              <option>[050] Seruyan Hulu</option>
+                              <option>[051] Suling Tambun</option>
+                          </select>
+                      </div>
+                  </div>
+
                 <div class="form-group">
                   <label class="col-md-3 col-xs-12 control-label"><strong>Waktu Pelaksanaan</strong></label>
                 </div>
@@ -246,6 +300,8 @@
 
     </div>
   </div>
+
+
 @endsection
 
 @section('page-scripts')
@@ -254,5 +310,31 @@
   <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
 
   <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script>
+      $(document).ready(function(){
+          $("#ddDalamKota").hide();
+          $("#ddLuarKota").hide();
+          $("#ddPerusahaan").hide();
+
+
+          $("#radioDalamKota").click(function(){
+              $("#ddDalamKota").show();
+              $("#ddLuarKota").hide();
+              $("#ddPerusahaan").hide();
+          });
+
+          $("#radioLuarKota").click(function(){
+              $("#ddDalamKota").hide();
+              $("#ddLuarKota").show();
+              $("#ddPerusahaan").hide();
+          });
+
+          $("#radioPerusahaan").click(function(){
+              $("#ddDalamKota").hide();
+              $("#ddLuarKota").hide();
+              $("#ddPerusahaan").show();
+          });
+      });
+  </script>
   <!-- END THIS PAGE PLUGINS-->
 @endsection

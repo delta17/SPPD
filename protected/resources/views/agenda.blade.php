@@ -22,6 +22,7 @@
           <table class="table datatable" id='idTabelDinamis'>
             <thead>
             <tr>
+
               <th>No</th>
               <th>Seksi</th>
               <th>Perihal</th>
@@ -57,7 +58,6 @@
                 </td>
               </tr>
             @endforeach
-
             </tbody>
           </table>
         </div>
@@ -72,7 +72,6 @@
   <!-- START THIS PAGE PLUGINS-->
   <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
   <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-
   <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
   <!-- END THIS PAGE PLUGINS-->
 @endsection

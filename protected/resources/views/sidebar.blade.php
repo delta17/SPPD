@@ -59,6 +59,7 @@
     <li {{ (Request::is('agenda') ? 'class=active' : '') }}>
       <a href="{{url('agenda')}}"><span class="fa fa-table"></span> <span class="xn-text">Agenda Surat Tugas</span></a>
     </li>
+
     @if(Auth::user()->level_id<7)
     <li {{Request::is('form-jln-saya') ? 'class=active' : ''}}>
       <a href="{{url('form-jln-saya')}}"><span class="fa fa-files-o"></span> <span class="xn-text">Form JLN Saya</span></a>
@@ -66,6 +67,10 @@
     @endif
     <li {{Request::is('arsip-saya') ? 'class=active' : ''}}>
       <a href="{{url('arsip-saya')}}"><span class="fa fa-file-text-o"></span> <span class="xn-text">Arsip Saya</span></a>
+    </li>
+
+    <li {{Request::is('approve-form-jln') ? 'class=active' : ''}}>
+      <a href="{{url('approve-form-jln')}}"><span class="fa fa-check-square-o"></span> <span class="xn-text">Approve Form JLN</span></a>
     </li>
 
   </ul>

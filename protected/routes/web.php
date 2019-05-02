@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/login',                    'Auth\LoginController@showLoginForm');
-//Route::get('/logout',                   'Auth\LoginController@showLoginForm');
 Route::get('/dashboard',                'DashboardController@showDashboard')->middleware('auth');
 Route::get('/agenda',                   'AgendaController@showAgenda')->middleware('auth');
 Route::get('/buat-form-jln',            'JLNController@showJLN')->middleware('auth');
@@ -32,6 +31,8 @@ Route::get('/preview-spd',              'SPDController@showPreviewSPD')->middlew
 Route::get('/arsip-saya',               'ArsipController@showArsip')->middleware('auth');
 Route::get('/approval-form-jln',        'JLNController@showApprovalJLN')->middleware('auth');
 Route::post('/approval',                'JLNController@inputApprovalJLN')->middleware('auth');
+Route::get('/buat-laporan',             'LaporanController@showBuatLaporan');
+
 
 //Route::get('/home', 'HomeController@index')->name('home');
 

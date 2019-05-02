@@ -54,6 +54,7 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Sub Bagian/Seksi</label>
               <div class="col-md-6 col-xs-12">
+
                 <select class="form-control select" name="seksi">
                   <option value="" disabled selected>Silahkan pilih seksi</option>
                   @foreach($seksis as $key => $seksi)
@@ -85,13 +86,15 @@
                   @foreach($kegiatans as $kegiatan)
                     <option value="{{$kegiatan->id}}">[{{$kegiatan->kode}}] {{$kegiatan->kegiatan}}</option>
                   @endforeach
+
                 </select>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label">Keluaran (output)</label>
+              <label class="col-md-3 col-xs-12 control-label">Output</label>
               <div class="col-md-6 col-xs-12">
+
                 <select class="form-control select" name="output">
                   <option value="" disabled selected>Silahkan pilih output</option>
                   @foreach($outputs as $output)
@@ -102,7 +105,7 @@
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label">Komponen</label>
+              <label class="col-md-3 col-xs-12 control-label">Akun</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select" name="komponen">
                   <option value="" disabled selected>Silahkan pilih komponen</option>
@@ -114,7 +117,7 @@
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label">Subkomponen</label>
+              <label class="col-md-3 col-xs-12 control-label">Sub Komponen</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select" name="subkomponen">
                   <option value="" disabled selected>Silahkan pilih subkomponen</option>
@@ -126,8 +129,9 @@
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label">Akun</label>
+              <label class="col-md-3 col-xs-12 control-label">Komponen</label>
               <div class="col-md-6 col-xs-12">
+
                 <select class="form-control select" name="akun">
                   <option value="" disabled selected>Silahkan pilih akun</option>
                   @foreach($akuns as $akun)
@@ -146,6 +150,7 @@
                 </div>
               </div>
             </div>
+
 
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Jumlah Sisa Anggaran di POK</label>
@@ -169,6 +174,7 @@
             </div>
 
             <div class="form-group">
+
               <label class="col-md-3 col-xs-12 control-label">Daftar Peserta yang Berangkat</label><br/>
               <div class="input-group">
                 <div class="col-xs-12">
@@ -247,11 +253,22 @@
               </div>
             </div>
 
-            <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label"></label>
-              <div class="col-md-6 col-xs-12">
-                <div class="input-group">
-                  <button class="btn btn-primary pull-right">Tambah Pelaksana</button>
+            <button class="btn btn-default" data-toggle="modal" data-target="#modal_large">Tambah Pelaksana</button>
+
+            <!-- MODALS -->
+            <div class="modal" id="modal_basic" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="defModalHead">Basic Modal</h4>
+                  </div>
+                  <div class="modal-body">
+                    Some content in modal example
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
                 </div>
               </div>
             </div>
