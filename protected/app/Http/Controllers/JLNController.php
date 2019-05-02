@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Auth;
 class JLNController extends Controller
 {
     public function showJLN(){
+
+
       return view('buat-form-jln');
     }
 
