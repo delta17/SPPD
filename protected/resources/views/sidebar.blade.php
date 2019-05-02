@@ -27,13 +27,9 @@
     <li {{ (Request::is('agenda') ? 'class=active' : '') }}>
       <a href="{{url('agenda')}}"><span class="fa fa-table"></span> <span class="xn-text">Agenda Surat Tugas</span></a>
     </li>
-    <li class="xn-openable @yield('active')">
-<<<<<<< HEAD
+    <li {{ (Request::is('buat-form-jln') ? 'class=active' : '') }}>
       <a href="{{url('buat-form-jln')}}"><span class="fa fa-pencil"></span> <span class="xn-text">Buat Form JLN</span></a>
       <!--
-=======
-      <a href="#"><span class="fa fa-pencil"></span> <span class="xn-text">Buat Surat</span></a>
->>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
       <ul>
         <li @yield('active-jln')>
           <a href="{{url('buat-form-jln')}}"><span class="fa fa-file-text-o"></span> Buat Form JLN</a></li>
@@ -45,11 +41,7 @@
           </ul>
         </li>
         <li @yield('active-spd')><a href="{{url('buat-spd')}}"><span class="fa fa-list-alt"></span> Buat SPD</a></li>
-<<<<<<< HEAD
       </ul>-->
-=======
-      </ul>
->>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
     </li>
     <li {{Request::is('form-jln-saya') ? 'class=active' : ''}}>
       <a href="{{url('form-jln-saya')}}"><span class="fa fa-files-o"></span> <span class="xn-text">Form JLN Saya</span></a>
@@ -57,6 +49,10 @@
 
     <li {{Request::is('arsip-saya') ? 'class=active' : ''}}>
       <a href="{{url('arsip-saya')}}"><span class="fa fa-file-text-o"></span> <span class="xn-text">Arsip Saya</span></a>
+    </li>
+
+    <li {{Request::is('approve-form-jln') ? 'class=active' : ''}}>
+      <a href="{{url('approve-form-jln')}}"><span class="fa fa-check-square-o"></span> <span class="xn-text">Approve Form JLN</span></a>
     </li>
 
   </ul>

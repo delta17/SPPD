@@ -33,7 +33,6 @@ class User extends Authenticatable
       $this->hasMany('name','id');
     }
 
-<<<<<<< HEAD
   public function level(){
     return $this->hasOne('App\Level_user','id','level_id');
   }
@@ -41,13 +40,4 @@ class User extends Authenticatable
   public function seksi(){
     return $this->hasOne('App\Seksi','id','seksi_id');
   }
-=======
-    public function level(){
-      return $this->hasOne('App\Level_user','id','level_id');
-    }
-
-    public function seksi(){
-      return $this->hasOne('App\Seksi','id','seksi_id');
-    }
->>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
 }

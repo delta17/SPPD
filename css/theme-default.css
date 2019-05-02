@@ -77,6 +77,8 @@ body {
   padding-right: 0px;
 }
 /* PAGE CONTAINER */
+
+
 .page-container {
   width: 100%;
   float: left;
@@ -3357,13 +3359,13 @@ td.dataTables_empty {
 }
 .widget.widget-default {
   background: #ffffff;
-   
-   
-   
-   
-   
-   
-   
+
+
+
+
+
+
+
 }
 .widget.widget-primary {
   background: #1b1e24;
@@ -3386,7 +3388,7 @@ td.dataTables_empty {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#95b75d, endColorstr=#89ad4d, GradientType=0);
 }
 .widget.widget-info {
-background: #1caf9a !important;  
+background: #1caf9a !important;
 }
 .widget.widget-warning {
   background: #1caf9a;
@@ -3880,11 +3882,7 @@ background: #1caf9a !important;
 .login-container .login-box {
   width: 400px;
   margin: 0px auto;
-<<<<<<< HEAD
   padding-top: 100px;
-=======
-  padding-top: 200px;
->>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
 }
 .login-container .login-box .login-logo {
   background: url("../img/logo.png") top center no-repeat;
@@ -3906,12 +3904,7 @@ background: #1caf9a !important;
   color: #FFF;
   font-size: 19px;
   font-weight: 300;
-<<<<<<< HEAD
   margin-bottom: 20px;
-=======
-  margin-bottom: 0;
-  text-align: center;
->>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
 }
 .login-container .login-box .login-body .form-control {
   border: 0px;
@@ -3962,11 +3955,6 @@ background: #1caf9a !important;
   padding: 5px 0px;
   font-size: 12px;
   color: #FFF;
-<<<<<<< HEAD
-=======
-  margin-bottom: 10px;
-  text-align: center;
->>>>>>> 1db41b70169be00a77d73d1c20336881500ebdf1
 }
 .login-container .login-box .login-body .login-subtitle a {
   color: #1caf9a;
@@ -7347,4 +7335,28 @@ li.ext_zip {
 }
 .x-navigation-minimized .xn-logo{
 display:none;
+}
+
+    /* Tambahan Approve Form JLN */
+#idSecKeterangan{
+    margin: 5%;
+}
+    /* End Tambahan Approve Form JLN */
+
+    /* Tambahan Buat Laporan */
+#idJudulLaporan{
+    text-align: center;
+    margin: 5% 0px 5% 0px;
+}
+
+#idIsiLaporan{
+    margin: 5%;
+}
+
+#idIsiLaporan .classIsiLaporan {
+    margin: 5px 5% 20px 5%;
+}
+
+#idIsiLaporan .classSubPoin{
+    margin-left: 2.5%;
 }

@@ -30,5 +30,7 @@ Route::get('/preview-surtug-grup',      'SurtugController@showPreviewSurtugGrup'
 Route::get('/buat-spd',                 'SPDController@showSPD');
 Route::get('/preview-spd',              'SPDController@showPreviewSPD');
 Route::get('/arsip-saya',               'ArsipController@showArsip');
+Route::get('/approve-form-jln',         'KPAController@showHalamanKPA');
+Route::get('/buat-laporan',             'LaporanController@showBuatLaporan');
 
 Route::get('/home', 'HomeController@index')->name('home');
