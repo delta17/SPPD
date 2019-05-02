@@ -34,7 +34,8 @@ class MstFormJln extends Migration
         $table->string('mak',50);
         $table->string('sisa_anggaran',50);
         $table->text('keterangan')->nullable();
-        $table->boolean('isApproved')->nullable()->default(null);
+        $table->text('catatan_kpa')->nullable();
+        $table->integer('isApproved')->default(0);
         $table->boolean('isPersonal');
         $table->timestamps();
       });

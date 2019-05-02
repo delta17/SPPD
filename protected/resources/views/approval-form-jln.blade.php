@@ -50,7 +50,7 @@
                 <td>{{$myjln->getFormJLN->perihal}}</td>
                 <td>{{$myjln->getFormJLN->mak}}</td>
                 <td>{{$myjln->getFormJLN->sisa_anggaran}}</td>
-                @if($myjln->getFormJLN->isApproved==null)
+                @if($myjln->getFormJLN->isApproved==0)
                   <td style="text-align: center"><span class="label label-default label-form">Pending</span></td>
                 @endif
                 <td style="text-align: center"><a href="{{url('preview-form-jln')}}">Detail</a></td>
