@@ -174,6 +174,13 @@
             </div>
 
             <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label">Keterangan</label>
+              <div class="col-md-6 col-xs-12">
+                <textarea class="form-control" rows="5" placeholder="Tambahkan keterangan" name="keterangan"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
 
               <label class="col-md-3 col-xs-12 control-label">Daftar Peserta yang Berangkat</label><br/>
               <div class="input-group">
@@ -270,13 +277,6 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label">Keterangan</label>
-              <div class="col-md-6 col-xs-12">
-                <textarea class="form-control" rows="5" placeholder="Tambahkan keterangan" name="keterangan"></textarea>
               </div>
             </div>
           </div>
