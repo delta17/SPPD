@@ -15,7 +15,7 @@ class MstFormJln extends Migration
     {
       Schema::create('mst_form_jln', function (Blueprint $table) {
         $table->increments('id');
-        $table->integer('no_seksi',false,11);
+        $table->integer('no_seksi',false,11)->unique();
         $table->string('perihal');
         $table->integer('seksi_id',false,11);
         $table->foreign('seksi_id')->references('id')->on('mst_seksi');

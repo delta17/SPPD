@@ -1,7 +1,7 @@
 @extends('default')
 
 @section('breadcrumb')
-  Form JLN Saya
+  Approval Form JLN
 @endsection
 
 @section('page-title')
@@ -11,11 +11,18 @@
 @section('content')
   <div class="row">
     <div class="col-md-12">
+      @if (session('status'))
+        <div class="alert alert-info">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <strong>Sukses!</strong>
+          {{ session('status') }}
+        </div>
+    @endif
 
       <!-- START DATATABLE EXPORT -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Daftar Form JLN Saya</h3>
+          <h3 class="panel-title">Daftar Form JLN Yang Belum Disetujui</h3>
 
 
         </div>
@@ -24,33 +31,43 @@
             <thead>
             <tr>
               <th>No</th>
-              <th>Perihal</th>
+              <th>Seksi</th>
+              <th>No Form JLN</th>
+              <th width="30%">Perihal</th>
               <th>MAK</th>
               <th>Sisa Anggaran</th>
-              <th>Keterangan</th>
               <th>Status</th>
-              <th>Preview</th>
+              <th>Detail</th>
+              <th>Action</th>
             </tr>
             </thead>
             <tbody>
             @foreach($myjlns as $myjln)
-              @if($myjln->getFormJLN->seksi_id == Auth::user()->seksi_id)
               <tr>
                 <td>{{$loop->iteration}}</td>
+                <td>{{$myjln->getFormJLN->getSeksi->seksi}}</td>
+                <td>{{$myjln->getFormJLN->no_seksi}}</td>
                 <td>{{$myjln->getFormJLN->perihal}}</td>
                 <td>{{$myjln->getFormJLN->mak}}</td>
                 <td>{{$myjln->getFormJLN->sisa_anggaran}}</td>
-                @if(isset($myjln->getFormJLN->keterangan))
-                  <td>{{$myjln->getFormJLN->keterangan}}</td>
-                @else
-                  <td>-</td>
-                @endif
                 @if($myjln->getFormJLN->isApproved==null)
-                  <td><span class="label label-default label-form">Pending</span></td>
+                  <td style="text-align: center"><span class="label label-default label-form">Pending</span></td>
                 @endif
-                <td><a href="{{url('preview-form-jln')}}">Preview</a></td>
+                <td style="text-align: center"><a href="{{url('preview-form-jln')}}">Detail</a></td>
+                <form role="form" action="{{url('/approval')}}" method="post">
+                  <td style="text-align: center">
+                    <div class="btn btn-group">
+                      <button class="btn btn-default" name="action" value="1">
+                        Yes
+                      </button>
+                      <button class="btn btn-default" name="action" value="0">
+                        No
+                      </button>
+                    </div>
+                  </td>
+                  {{ csrf_field() }}
+                </form>
               </tr>
-              @endif
             @endforeach
             </tbody>
           </table>
