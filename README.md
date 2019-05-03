@@ -5,3 +5,4 @@
 - Aplikasi ini dibangun menggunakan framework PHP Laravel 5.4, framework CSS Bootstrap, serta database PgAdmin III
 - Laravel telah diupdate ke larevel 5.5; php yang digunakan php versi 7
 - langkah2 menggunakan git
+- ini readme untuk branch retnocahya
