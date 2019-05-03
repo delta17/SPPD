@@ -18,37 +18,44 @@
 
           <div class="panel-body">
               <div class="form-group">
-                  <label class="col-md-3 col-xs-12 control-label">No Form JLN</label>
-                  <div class="col-md-6 col-xs-12">
+                  <label class="col-md-4 col-xs-12 control-label">No Form JLN</label>
+                  <div class="col-md-7 col-xs-12">
                       <p class="form-control-static">123/62081/4/2019</p>
                   </div>
               </div>
 
               <div class="form-group">
-                  <label class="col-md-3 col-xs-12 control-label">Perihal</label>
-                  <div class="col-md-6 col-xs-12">
+                  <label class="col-md-4 col-xs-12 control-label">Perihal</label>
+                  <div class="col-md-7 col-xs-12">
                       <p class="form-control-static">Pembinaan administrasi tahun 2019 BPS Provinsi ke kabupaten/kota</p>
                   </div>
               </div>
 
               <div class="form-group">
-                  <label class="col-md-3 col-xs-12 control-label">Pembebanan MAK</label>
-                  <div class="col-md-6 col-xs-12">
+                  <label class="col-md-4 col-xs-12 control-label">Pembebanan MAK</label>
+                  <div class="col-md-7 col-xs-12">
                       <p class="form-control-static">054.01.01.2886.970.053.524111</p>
                   </div>
               </div>
 
               <div class="form-group">
-                  <label class="col-md-3 col-xs-12 control-label">Sisa Anggaran</label>
-                  <div class="col-md-6 col-xs-12">
+                  <label class="col-md-4 col-xs-12 control-label">Sisa Anggaran</label>
+                  <div class="col-md-7 col-xs-12">
                       <p class="form-control-static">5.000.000</p>
                   </div>
               </div>
 
               <div class="form-group">
-                <label class="col-md-3 col-xs-12 control-label">Personal/Kolektif</label>
-                <div class="col-md-6 col-xs-12">
+                <label class="col-md-4 col-xs-12 control-label">Personal/Kolektif</label>
+                <div class="col-md-7 col-xs-12">
                   <p class="form-control-static">Personal</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 col-xs-12 control-label">Keterangan</label>
+                <div class="col-md-7 col-xs-12">
+                  <p>Untuk Henny Anggraeni terintegrasi dengan kegiatan lain, yaitu kegiatan HKD yang dilaksanakan di Desa Salunuk. Kegiatan HKD dilaksanakan setelah kegiatan ini selelsai.</p>
                 </div>
               </div>
           </div>
@@ -66,11 +73,12 @@
                               <th>Nama</th>
                               <th>Tanggal Mulai</th>
                               <th>Tanggal Selesai</th>
-                              <th>Lokasi Tujuan</th>
-                              <th>Lama Hari</th>
+                              <th>Tujuan</th>
                               <th>Jenis Kendaraan</th>
                               <th>Uraian Kegiatan</th>
-                              <th>Waktu Tempuh (jam)</th>
+                              <th>Satuan</th>
+                              <th>Lamanya (Hari)</th>
+                              <th>Waktu Standar (Hari)</th>
                           </tr>
                           </thead>
                           <tbody>
@@ -80,44 +88,39 @@
                               <td>01/01/2019</td>
                               <td>01/04/2019</td>
                               <td>Bangkal</td>
-                              <td>4</td>
-                              <td>Darat</td>
+                              <td>Dinas</td>
                               <td>Pengawasan Susenas Maret 2019</td>
-                              <td>30</td>
+                              <td>Rumah Tangga</td>
+                              <td>4</td>
+                              <td>3</td>
                           </tr>
                           <tr>
                               <td>2</td>
                               <td>Hendro Sukendro</td>
                               <td>01/01/2019</td>
                               <td>01/04/2019</td>
-                              <td>Tumbang Manjul</td>
-                              <td>4</td>
-                              <td>Darat</td>
+                              <td>Pembuang Hulu I</td>
+                              <td>Dinas</td>
                               <td>Pengawasan Susenas Maret 2019</td>
-                              <td>50</td>
+                              <td>Rumah Tangga</td>
+                              <td>4</td>
+                              <td>3</td>
                           </tr>
                           <tr>
                               <td>3</td>
-                              <td>Adiv Fahrur A</td>
+                              <td>Adiv Fahrur Anova</td>
                               <td>01/01/2019</td>
                               <td>01/04/2019</td>
                               <td>Sandul</td>
-                              <td>4</td>
                               <td>Dinas</td>
                               <td>Pengawasan Susenas Maret 2019</td>
-                              <td>40</td>
+                              <td>Rumah Tangga</td>
+                              <td>4</td>
+                              <td>3</td>
                           </tr>
                           </tbody>
                       </table>
                     </div>
-
-                      <div class="form-group" id="idSecKeterangan">
-                          <label class="control-label" id="idLabelKet"><strong>Keterangan:</strong></label>
-                          <p>Untuk Henny Anggraeni terintegrasi dengan kegiatan lain, yaitu kegiatan HKD yang dilaksanakan di Desa Salunuk. Kegiatan HKD dilaksanakan setelah kegiatan ini selelsai.
-                          </p>
-
-                      </div>
-
                   </div>
               </div>
 

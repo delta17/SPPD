@@ -195,6 +195,7 @@
                       <th>Sampai <br/> Tanggal</th>
                       <th>Tujuan</th>
                       <th>Perihal</th>
+                      <th>Satuan</th>
                       <th>Lama <br/>(hari)</th>
                       <th>Jenis <br/>Kendaraan</th>
                     </tr>
@@ -219,7 +220,10 @@
                         Jahitan </td>
                       <td>
                         <input type="hidden" name="uraian_id[1]" value="2">
-                        1</td>
+                        Pengawasan Susenas Maret 2019</td>
+                      <td>
+                        <input type="hidden" name="satuan[1]" value="2">
+                        rumah tangga</td>
                       <td>
                         <input type="hidden" name="lamanya[1]" value="4">
                         4</td>
@@ -246,7 +250,10 @@
                         Jahitan </td>
                       <td>
                         <input type="hidden" name="uraian_id[2]" value="1">
-                        1</td>
+                        Pengawasan Susenas Maret 2019</td>
+                      <td>
+                        <input type="hidden" name="satuan[1]" value="2">
+                        rumah tangga</td>
                       <td>
                         <input type="hidden" name="lamanya[2]" value="4">
                         4</td>
