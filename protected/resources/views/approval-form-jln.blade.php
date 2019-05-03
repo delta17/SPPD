@@ -17,7 +17,7 @@
           <strong>Sukses!</strong>
           {{ session('status') }}
         </div>
-    @endif
+      @endif
 
       <!-- START DATATABLE EXPORT -->
       <div class="panel panel-default">
@@ -35,7 +35,7 @@
               <th width="30%">Perihal</th>
               <th>MAK</th>
               <th>Sisa Anggaran</th>
-              <th>Status</th>
+              <th>Persetujuan KPA</th>
               <th>Detail</th>
             </tr>
             </thead>
@@ -49,7 +49,7 @@
                 <td>{{$myjln->getFormJLN->mak}}</td>
                 <td>{{$myjln->getFormJLN->sisa_anggaran}}</td>
                 @if($myjln->getFormJLN->isApproved==0)
-                  <td style="text-align: center"><span class="label label-default label-form">Pending</span></td>
+                  <td style="text-align: center"><span class="label label-default label-form">Belum Disetujui</span></td>
                 @endif
                 <td style="text-align: center"><a href="{{url('form-jln/'.$myjln->getFormJLN->id)}}">Detail</a></td>
               </tr>

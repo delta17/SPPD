@@ -12,6 +12,7 @@ class FormJLN extends Model
       'perihal'
     ];
 
+
     public function getSeksi(){
       return $this->hasOne('App\Seksi','id','seksi_id');
     }

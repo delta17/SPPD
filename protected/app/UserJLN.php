@@ -12,8 +12,8 @@ class UserJLN extends Model
       $this->hasMany('nama','id');
     }
 
-    public function FormJLN(){
-      $this->hasOne('App\FormJLN','id','jln_id');
+    public function getFormJLN(){
+      return $this->hasOne('App\FormJLN','id','jln_id');
     }
 
     public function getUraianKegiatan(){
@@ -24,7 +24,7 @@ class UserJLN extends Model
       return KegiatanUraian::where('uraian_id',$key)->get('uraian');
     }
 
-    public function Kendaraan(){
-      $this->hasOne('App\Kendaraan','id','kendaraan_id');
+    public function getKendaraan(){
+      return $this->hasOne('App\Kendaraan','id','kendaraan_id');
     }
 }

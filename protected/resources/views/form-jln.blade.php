@@ -4,6 +4,10 @@
   Approve Form JLN
 @endsection
 
+@section('page-title')
+
+@endsection
+
 @section('content')
   <div class="row">
     <div class="col-md-12">
@@ -15,50 +19,45 @@
               <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
             </ul>
           </div>
+          @foreach($myjlns as $myjln)
 
           <div class="panel-body">
               <div class="form-group">
                   <label class="col-md-4 col-xs-12 control-label">No Form JLN</label>
                   <div class="col-md-7 col-xs-12">
-                      <p class="form-control-static">123/62081/4/2019</p>
+                      <p class="form-control-static">{{$myjln->getFormJLN->no_seksi}}</p>
                   </div>
               </div>
 
               <div class="form-group">
                   <label class="col-md-4 col-xs-12 control-label">Perihal</label>
                   <div class="col-md-7 col-xs-12">
-                      <p class="form-control-static">Pembinaan administrasi tahun 2019 BPS Provinsi ke kabupaten/kota</p>
+                      <p class="form-control-static">{{$myjln->getFormJLN->perihal}}</p>
                   </div>
               </div>
 
               <div class="form-group">
                   <label class="col-md-4 col-xs-12 control-label">Pembebanan MAK</label>
                   <div class="col-md-7 col-xs-12">
-                      <p class="form-control-static">054.01.01.2886.970.053.524111</p>
+                      <p class="form-control-static">{{$myjln->getFormJLN->mak}}</p>
                   </div>
               </div>
 
               <div class="form-group">
                   <label class="col-md-4 col-xs-12 control-label">Sisa Anggaran</label>
                   <div class="col-md-7 col-xs-12">
-                      <p class="form-control-static">5.000.000</p>
+                      <p class="form-control-static">{{$myjln->getFormJLN->sisa_anggaran}}</p>
                   </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-md-4 col-xs-12 control-label">Personal/Kolektif</label>
-                <div class="col-md-7 col-xs-12">
-                  <p class="form-control-static">Personal</p>
-                </div>
               </div>
 
               <div class="form-group">
                 <label class="col-md-4 col-xs-12 control-label">Keterangan</label>
                 <div class="col-md-7 col-xs-12">
-                  <p>Untuk Henny Anggraeni terintegrasi dengan kegiatan lain, yaitu kegiatan HKD yang dilaksanakan di Desa Salunuk. Kegiatan HKD dilaksanakan setelah kegiatan ini selelsai.</p>
+                  <p class="form-control-static">{{$myjln->getFormJLN->keterangan}}</p>
                 </div>
               </div>
           </div>
+          @endforeach
 
           <div class="panel-body">
               <div>
@@ -79,45 +78,31 @@
                               <th>Satuan</th>
                               <th>Lamanya (Hari)</th>
                               <th>Waktu Standar (Hari)</th>
+                              <th>Persetujuan KPA</th>
                           </tr>
                           </thead>
                           <tbody>
+                          @foreach($userjlns as $userjln)
                           <tr>
-                              <td>1</td>
-                              <td>Henny Anggraini</td>
-                              <td>01/01/2019</td>
-                              <td>01/04/2019</td>
-                              <td>Bangkal</td>
-                              <td>Dinas</td>
-                              <td>Pengawasan Susenas Maret 2019</td>
-                              <td>Rumah Tangga</td>
-                              <td>4</td>
-                              <td>3</td>
+                              <td>{{$loop->iteration}}</td>
+                              <td>{{$userjln->nama}}</td>
+                              <td>{{$userjln->tgl_dari}}</td>
+                              <td>{{$userjln->tgl_sampai}}</td>
+                              <td>{{$userjln->tujuan}}</td>
+                              <td>{{$userjln->getKendaraan->jenis}}</td>
+                              <td>{{$userjln->getUraianKegiatan->uraian}}</td>
+                              <td>{{$userjln->getUraianKegiatan->satuan}}</td>
+                              <td>{{$userjln->lamanya}}</td>
+                              <td>{{$userjln->wkt_standar_dinas}}</td>
+                              <td><select class="form-control select" name="approval">
+                                  <option value="" disabled="" selected="">--------</option>
+                                  <option value="0">Menunggu Persetujuan</option>
+                                  <option value="1">Disetujui ST</option>
+                                  <option value="2">Disetujui SPD</option>
+                                  <option value="4">Ditolak</option>
+                                </select></td>
                           </tr>
-                          <tr>
-                              <td>2</td>
-                              <td>Hendro Sukendro</td>
-                              <td>01/01/2019</td>
-                              <td>01/04/2019</td>
-                              <td>Pembuang Hulu I</td>
-                              <td>Dinas</td>
-                              <td>Pengawasan Susenas Maret 2019</td>
-                              <td>Rumah Tangga</td>
-                              <td>4</td>
-                              <td>3</td>
-                          </tr>
-                          <tr>
-                              <td>3</td>
-                              <td>Adiv Fahrur Anova</td>
-                              <td>01/01/2019</td>
-                              <td>01/04/2019</td>
-                              <td>Sandul</td>
-                              <td>Dinas</td>
-                              <td>Pengawasan Susenas Maret 2019</td>
-                              <td>Rumah Tangga</td>
-                              <td>4</td>
-                              <td>3</td>
-                          </tr>
+                          @endforeach
                           </tbody>
                       </table>
                     </div>

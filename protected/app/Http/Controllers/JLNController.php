@@ -77,6 +77,7 @@ class JLNController extends Controller
         $userJLN->tujuan        = $request->input('tujuan.'.$i);
         $userJLN->lamanya       = $request->input('lamanya.'.$i);
         $userJLN->kendaraan_id  = $request->input('kendaraan_id.'.$i);
+        $userJLN->satuan        = $request->input('satuan.'.$i);
         $userJLN->jln_id        = $formJLN->id;
         $userJLN->save();
         $user->push($userJLN->id);
@@ -135,10 +136,11 @@ class JLNController extends Controller
       return view('approval-form-jln',compact('myjlns'));
     }
 
-    public function showDetailJLN(){
+    public function showDetailJLN($id){
       $myjlns = MyJLN::all();
-
-      return view('form-jln',compact('myjlns'));
+      $userjlns = UserJLN::where('jln_id','=',$id)->get();
+//      dd($userjlns);
+      return view('form-jln',compact('myjlns','userjlns'));
     }
 
     public function inputApprovalJLN(Request $request){

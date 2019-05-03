@@ -252,7 +252,7 @@
                         <input type="hidden" name="uraian_id[2]" value="1">
                         Pengawasan Susenas Maret 2019</td>
                       <td>
-                        <input type="hidden" name="satuan[1]" value="2">
+                        <input type="hidden" name="satuan[2]" value="2">
                         rumah tangga</td>
                       <td>
                         <input type="hidden" name="lamanya[2]" value="4">
