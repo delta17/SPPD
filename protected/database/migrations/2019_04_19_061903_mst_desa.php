@@ -16,6 +16,7 @@ class MstDesa extends Migration
       Schema::create('mst_desa', function (Blueprint $table) {
         $table->increments('id');
         $table->string('desa');
+        $table->integer('waktu_tempuh',11);
         $table->integer('kec_id',false,11);
         $table->foreign('kec_id')->references('id')->on('mst_kecamatan');
         $table->timestamps();
