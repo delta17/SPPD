@@ -17,6 +17,8 @@ class MstProgram extends Migration
         $table->increments('id');
         $table->string('kode',50);
         $table->string('program');
+        $table->integer('seksi_id');
+        $table->foreign('seksi_id')->references('id')->on('mst_seksi');
         $table->timestamps();
       });
     }
