@@ -92,7 +92,7 @@
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label">Output</label>
+              <label class="col-md-3 col-xs-12 control-label">Keluaran (Output)</label>
               <div class="col-md-6 col-xs-12">
 
                 <select class="form-control select" name="output">
@@ -105,7 +105,7 @@
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label">Akun</label>
+              <label class="col-md-3 col-xs-12 control-label">Komponen</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select" name="komponen">
                   <option value="" disabled selected>Silahkan pilih komponen</option>
@@ -117,7 +117,7 @@
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label">Sub Komponen</label>
+              <label class="col-md-3 col-xs-12 control-label">Subkomponen</label>
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select" name="subkomponen">
                   <option value="" disabled selected>Silahkan pilih subkomponen</option>
@@ -129,7 +129,7 @@
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label">Komponen</label>
+              <label class="col-md-3 col-xs-12 control-label">Akun</label>
               <div class="col-md-6 col-xs-12">
 
                 <select class="form-control select" name="akun">
