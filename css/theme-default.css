@@ -3882,14 +3882,15 @@ background: #1caf9a !important;
 .login-container .login-box {
   width: 400px;
   margin: 0px auto;
-  padding-top: 100px;
+  padding-top: 150px;
 }
 .login-container .login-box .login-logo {
   background: url("../img/logo.png") top center no-repeat;
   width: 100%;
   height: 50px;
   float: left;
-  margin-bottom: 10px;
+  margin-bottom: 0;
+  text-align: center;
 }
 .login-container .login-box .login-body {
   width: 100%;
@@ -3904,7 +3905,8 @@ background: #1caf9a !important;
   color: #FFF;
   font-size: 19px;
   font-weight: 300;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+  text-align: center;
 }
 .login-container .login-box .login-body .form-control {
   border: 0px;
@@ -3955,6 +3957,8 @@ background: #1caf9a !important;
   padding: 5px 0px;
   font-size: 12px;
   color: #FFF;
+  margin-bottom: 25px;
+  text-align: center;
 }
 .login-container .login-box .login-body .login-subtitle a {
   color: #1caf9a;
