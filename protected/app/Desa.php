@@ -11,4 +11,6 @@ class Desa extends Model
     public function relatedDesa(){
         $this->hasMany('desa','id');
     }
+
+
 }

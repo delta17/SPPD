@@ -16,7 +16,7 @@ class MstLaporan extends Migration
       Schema::create('mst_laporan', function (Blueprint $table) {
         $table->increments('id');
         $table->integer('user_id',false,11);
-        $table->foreign('user_id')->references('id')->on('mst_user');
+        $table->foreign('user_id')->references('id')->on('users');
         $table->integer('spd_id',false,11);
         $table->foreign('spd_id')->references('id')->on('mst_spd');
         $table->timestamps();

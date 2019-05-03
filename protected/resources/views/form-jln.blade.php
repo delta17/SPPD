@@ -23,12 +23,6 @@
                       <p class="form-control-static">123/62081/4/2019</p>
                   </div>
               </div>
-              <div class="form-group">
-                <label class="col-md-3 col-xs-12 control-label">Nomor Form JLN</label>
-                <div class="col-md-6 col-xs-12">
-                  <input type="text" class="form-control" readonly value="543" name="no_seksi" disabled/>
-                </div>
-              </div>
 
               <div class="form-group">
                   <label class="col-md-3 col-xs-12 control-label">Perihal</label>
@@ -49,6 +43,13 @@
                   <div class="col-md-6 col-xs-12">
                       <p class="form-control-static">5.000.000</p>
                   </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label">Personal/Kolektif</label>
+                <div class="col-md-6 col-xs-12">
+                  <p class="form-control-static">Personal</p>
+                </div>
               </div>
           </div>
 

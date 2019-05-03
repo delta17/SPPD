@@ -13,7 +13,7 @@ class MstArsipSaya extends Migration
      */
     public function up()
     {
-      Schema::create('mst_laporan', function (Blueprint $table) {
+      Schema::create('mst_arsip_saya', function (Blueprint $table) {
         $table->increments('id');
         $table->integer('laporan_id',false,11);
         $table->foreign('laporan_id')->references('id')->on('mst_laporan');
@@ -28,6 +28,6 @@ class MstArsipSaya extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mst_laporan');
+        Schema::dropIfExists('mst_arsip_saya');
     }
 }
