@@ -58,7 +58,8 @@
                   <strong><center>Identitas Pelaksana</center></strong>
                   <br/>
                   <div class="input-group">
-                      <table class="table datatable" id='idTabelLampiran'>
+                    <div class="col-xs-12">
+                      <table class="table table-hover" id='idTabelLampiran'>
                           <thead>
                           <tr>
                               <th>No</th>
@@ -108,6 +109,7 @@
                           </tr>
                           </tbody>
                       </table>
+                    </div>
 
                       <div class="form-group" id="idSecKeterangan">
                           <label class="control-label" id="idLabelKet"><strong>Keterangan:</strong></label>
