@@ -16,6 +16,7 @@ class MstKegiatanUraian extends Migration
       Schema::create('mst_kegiatan_uraian', function (Blueprint $table) {
         $table->increments('id');
         $table->string('uraian');
+        $table->string('satuan');
         $table->float('waktu_kegiatan',3,2);
         $table->integer('kegiatan_id',false,11);
         $table->foreign('kegiatan_id')->references('id')->on('mst_kegiatan_seksi');

@@ -180,6 +180,7 @@
 
               <label class="col-xs-12">Daftar Peserta yang Berangkat</label><br/>
               <div class="input-group">
+
                           <div class="col-xs-12">
                               <table class="table datatable" id='idTabelLampiran'>
                                   <thead>

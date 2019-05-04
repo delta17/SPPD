@@ -22,6 +22,7 @@ class MstUserJln extends Migration
         $table->integer('uraian_id',false,11);
         $table->foreign('uraian_id')->references('id')->on('mst_kegiatan_uraian');
         $table->string('tujuan',100);
+        $table->string('satuan');
         $table->integer('lamanya',false,10);
         $table->integer('kendaraan_id',false,11);
         $table->foreign('kendaraan_id')->references('id')->on('mst_jln_kendaraan');
