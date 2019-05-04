@@ -24,13 +24,8 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Buat Surat Tugas <strong>PERSONAL</strong></h3>
-            <ul class="panel-controls">
-              <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
-            </ul>
           </div>
-          <div class="panel-body">
-            <p></p>
-          </div>
+
           <div class="panel-body">
             <div class="row">
               <div class="col-md-12">
