@@ -20,7 +20,6 @@
             </ul>
           </div>
           @foreach($myjlns as $myjln)
-
           <div class="panel-body">
               <div class="form-group">
                   <label class="col-md-4 col-xs-12 control-label">No Form JLN</label>
@@ -70,8 +69,6 @@
                           <tr>
                               <th>No</th>
                               <th>Nama</th>
-                              <th>Tanggal Mulai</th>
-                              <th>Tanggal Selesai</th>
                               <th>Tujuan</th>
                               <th>Jenis Kendaraan</th>
                               <th>Uraian Kegiatan</th>
@@ -86,21 +83,24 @@
                           <tr>
                               <td>{{$loop->iteration}}</td>
                               <td>{{$userjln->nama}}</td>
-                              <td>{{$userjln->tgl_dari}}</td>
-                              <td>{{$userjln->tgl_sampai}}</td>
+{{--                              <td>{{$userjln->tgl_dari}}</td>--}}
+{{--                              <td>{{$userjln->tgl_sampai}}</td>--}}
                               <td>{{$userjln->tujuan}}</td>
                               <td>{{$userjln->getKendaraan->jenis}}</td>
                               <td>{{$userjln->getUraianKegiatan->uraian}}</td>
                               <td>{{$userjln->getUraianKegiatan->satuan}}</td>
                               <td>{{$userjln->lamanya}}</td>
                               <td>{{$userjln->wkt_standar_dinas}}</td>
-                              <td><select class="form-control select" name="approval">
-                                  <option value="" disabled="" selected="">--------</option>
-                                  <option value="0">Menunggu Persetujuan</option>
+                              <td>
+                                <div ></div>
+                                <select class="form-control select" data-style="btn-success" style="display: none" name="approval">
+                                  <option value="0" disabled selected>Menunggu Persetujuan</option>
                                   <option value="1">Disetujui ST</option>
                                   <option value="2">Disetujui SPD</option>
                                   <option value="4">Ditolak</option>
-                                </select></td>
+                                </select>
+
+                              </td>
                           </tr>
                           @endforeach
                           </tbody>

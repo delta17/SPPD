@@ -8,11 +8,11 @@
     </li>
     <li class="xn-profile">
       <a href="#" class="profile-mini">
-        <img src="logo-bps.jpg" alt="Logo BPS"/>
+        <img src="{{asset('logo-bps.jpg')}}" alt="Logo BPS"/>
       </a>
       <div class="profile">
         <div class="profile-image">
-          <img src="logo-bps.jpg" alt="Logo BPS"/>
+          <img src="{{asset('logo-bps.jpg')}}" alt="Logo BPS"/>
         </div>
         <div class="profile-data">
           <div class="profile-data-name">{{Auth::user()->name}}</div>

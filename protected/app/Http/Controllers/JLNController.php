@@ -138,9 +138,9 @@ class JLNController extends Controller
 
     public function showDetailJLN($id){
       $myjlns = MyJLN::all();
-      $userjlns = UserJLN::where('jln_id','=',$id)->get();
+      $userjlns = UserJLN::where('jln_id',$id)->get();
 //      dd($userjlns);
-      return view('form-jln',compact('myjlns','userjlns'));
+      return \View::make('form-jln',compact('myjlns','userjlns'))->render();
     }
 
     public function inputApprovalJLN(Request $request){
