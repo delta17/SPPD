@@ -34,6 +34,7 @@
             </thead>
             <tbody>
             @foreach($agendas as $agenda)
+              @if($agenda->getFormJLN->isApproved==1)
               <tr>
                 <td>{{$loop->iteration}}</td>
                 <td>{{$agenda->getFormJLN->getSeksi->seksi}}</td>
@@ -57,6 +58,7 @@
                   </button>
                 </td>
               </tr>
+              @endif
             @endforeach
             </tbody>
           </table>

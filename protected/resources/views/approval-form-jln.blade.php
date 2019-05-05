@@ -35,12 +35,13 @@
               <th width="30%">Perihal</th>
               <th>MAK</th>
               <th>Sisa Anggaran</th>
-              <th>Persetujuan KPA</th>
+              <th>Tanggapan KPA</th>
               <th>Detail</th>
             </tr>
             </thead>
             <tbody>
             @foreach($myjlns as $myjln)
+              @if($myjln->getFormJLN->isApproved==0)
               <tr>
                 <td>{{$loop->iteration}}</td>
                 <td>{{$myjln->getFormJLN->getSeksi->seksi}}</td>
@@ -49,10 +50,11 @@
                 <td>{{$myjln->getFormJLN->mak}}</td>
                 <td>{{$myjln->getFormJLN->sisa_anggaran}}</td>
                 @if($myjln->getFormJLN->isApproved==0)
-                  <td style="text-align: center"><span class="label label-default label-form">Belum Disetujui</span></td>
+                  <td><span class="label label-default label-form">Belum Ditanggapi</span></td>
                 @endif
                 <td style="text-align: center"><a href="{{url('form-jln/'.$myjln->getFormJLN->id)}}">Detail</a></td>
               </tr>
+              @endif
             @endforeach
             </tbody>
           </table>
