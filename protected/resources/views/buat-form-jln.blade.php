@@ -144,9 +144,8 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Pembebanan MAK</label>
               <div class="col-md-6 col-xs-12">
-                <div class="input-group">
-                  <span class="input-group-addon"><span class="fa fa-book"></span></span>
-                  <input type="text" class="form-control" value="" name="mak">
+                  <p class="col-md-3 col-xs-12 control-label">054.01.01.2886.014.051.A.524111</p>
+                <input type="hidden" name="mak" value="054.01.01.2886.014.051.A.524111">
                 </div>
               </div>
             </div>
@@ -180,124 +179,116 @@
               </div>
             </div>
 
-            <div class="form-group">
-
-              <label class="col-md-3 col-xs-12 control-label">Daftar Peserta yang Berangkat</label><br/>
+              <label class="col-xs-12">Daftar Peserta yang Berangkat</label><br/>
               <div class="input-group">
-                <div class="col-xs-12">
-                  <table class="table datatable" id='idTabelLampiran'>
-                    <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Nama</th>
-                      <th>NIP</th>
-                      <th>Dari <br/> Tanggal</th>
-                      <th>Sampai <br/> Tanggal</th>
-                      <th>Tujuan</th>
-                      <th>Perihal</th>
-                      <th>Satuan</th>
-                      <th>Lama <br/>(hari)</th>
-                      <th>Jenis <br/>Kendaraan</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>
-                        <input type="hidden" name="nama[1]" value="Henny Anggraini">
-                        Henny Anggraini</td>
-                      <td>
-                        <input type="hidden" name="nip[1]" value="12345678 123456 1 123">
-                        12345678 123456 1 123</td>
-                      <td>
-                        <input type="hidden" name="tgl_dari[1]" value="2019-02-1">
-                        2019-02-1</td>
-                      <td>
-                        <input type="hidden" name="tgl_sampai[1]" value="2019-02-4">
-                        2019-02-4</td>
-                      <td>
-                        <input type="hidden" name="tujuan[1]" value="10009">
-                        Jahitan </td>
-                      <td>
-                        <input type="hidden" name="uraian_id[1]" value="2">
-                        Pengawasan Susenas Maret 2019</td>
-                      <td>
-                        <input type="hidden" name="satuan[1]" value="2">
-                        rumah tangga</td>
-                      <td>
-                        <input type="hidden" name="lamanya[1]" value="4">
-                        4</td>
-                      <td>
-                        <input type="hidden" name="kendaraan_id[1]" value="2">
-                        Angkutan Umum</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>
-                        <input type="hidden" name="nama[2]" value="Andi Wahyu Prawoko">
-                        Andi Wahyu Prawoko</td>
-                      <td>
-                        <input type="hidden" name="nip[2]" value="12345678 123456 1 123">
-                        12345678 123456 1 123</td>
-                      <td>
-                        <input type="hidden" name="tgl_dari[2]" value="2019-02-1">
-                        2019-02-1</td>
-                      <td>
-                        <input type="hidden" name="tgl_sampai[2]" value="2019-02-4">
-                        2019-02-4</td>
-                      <td>
-                        <input type="hidden" name="tujuan[2]" value="10009">
-                        Jahitan </td>
-                      <td>
-                        <input type="hidden" name="uraian_id[2]" value="1">
-                        Pengawasan Susenas Maret 2019</td>
-                      <td>
-                        <input type="hidden" name="satuan[2]" value="2">
-                        rumah tangga</td>
-                      <td>
-                        <input type="hidden" name="lamanya[2]" value="4">
-                        4</td>
-                      <td>
-                        <input type="hidden" name="kendaraan_id[2]" value="2">
-                        Angkutan Umum</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
+                  <div class="col-xs-12">
+                      <table class="table datatable" id='idTabelLampiran'>
+                          <thead>
+                          <tr>
+                              <th>No</th>
+                              <th>Nama</th>
+                              <th>NIP</th>
+                              <th>Dari <br/> Tanggal</th>
+                              <th>Sampai <br/> Tanggal</th>
+                              <th>Tujuan</th>
+                              <th>Perihal</th>
+                              <th>Lama <br/>(hari)</th>
+                              <th>Jenis <br/>Kendaraan</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td>1</td>
+                              <td>
+                                  <input type="hidden" name="nama[1]" value="Henny Anggraini">
+                                  Henny Anggraini</td>
+                              <td>
+                                  <input type="hidden" name="nip[1]" value="12345678 123456 1 123">
+                                  12345678 123456 1 123</td>
+                              <td>
+                                  <input type="hidden" name="tgl_dari[1]" value="2019-02-1">
+                                  2019-02-1</td>
+                              <td>
+                                  <input type="hidden" name="tgl_sampai[1]" value="2019-02-4">
+                                  2019-02-4</td>
+                              <td>
+                                  <input type="hidden" name="tujuan[1]" value="10009">
+                                  Jahitan </td>
+                              <td>
+                                  <input type="hidden" name="uraian_id[1]" value="2">
+                                  1</td>
+                              <td>
+                                  <input type="hidden" name="lamanya[1]" value="4">
+                                  4</td>
+                              <td>
+                                  <input type="hidden" name="kendaraan_id[1]" value="2">
+                                  Angkutan Umum</td>
+                          </tr>
+                          <tr>
+                              <td>2</td>
+                              <td>
+                                  <input type="hidden" name="nama[2]" value="Andi Wahyu Prawoko">
+                                  Andi Wahyu Prawoko</td>
+                              <td>
+                                  <input type="hidden" name="nip[2]" value="12345678 123456 1 123">
+                                  12345678 123456 1 123</td>
+                              <td>
+                                  <input type="hidden" name="tgl_dari[2]" value="2019-02-1">
+                                  2019-02-1</td>
+                              <td>
+                                  <input type="hidden" name="tgl_sampai[2]" value="2019-02-4">
+                                  2019-02-4</td>
+                              <td>
+                                  <input type="hidden" name="tujuan[2]" value="10009">
+                                  Jahitan </td>
+                              <td>
+                                  <input type="hidden" name="uraian_id[2]" value="1">
+                                  1</td>
+                              <td>
+                                  <input type="hidden" name="lamanya[2]" value="4">
+                                  4</td>
+                              <td>
+                                  <input type="hidden" name="kendaraan_id[2]" value="2">
+                                  Angkutan Umum</td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
               </div>
+
+            <div class="panel-footer">
+                <button class="btn btn-default pull-left">Clear Form</button>
+                <button class="btn btn-info pull-right" type="submit" onclick="notif()">Submit</button>
             </div>
 
-            <button class="btn btn-default" data-toggle="modal" data-target="#modal_large">Tambah Pelaksana</button>
-
-            <!-- MODALS -->
-            <div class="modal" id="modal_basic" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="defModalHead">Basic Modal</h4>
-                  </div>
-                  <div class="modal-body">
-                    Some content in modal example
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel-footer">
-            <button class="btn btn-default pull-left">Clear Form</button>
-            <button class="btn btn-info pull-right" type="submit" onclick="notif()">Submit</button>
-          </div>
         </div>
       {{ csrf_field() }}
 
       </form>
     </div>
   </div>
+
+  <button class="btn btn-default" data-toggle="modal" data-target="#modal_large">Tambah Pelaksana</button>
+
+      <!-- MODALS -->
+  <div class="modal" id="modal_large" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title" id="largeModalHead">Large Modal</h4>
+              </div>
+              <div class="modal-body">
+                  Some content in modal example
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
 @endsection
 
 @section('page-scripts')

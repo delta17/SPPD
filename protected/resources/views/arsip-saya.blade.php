@@ -32,6 +32,7 @@
               <th>Tujuan</th>
               <th>Tanggal Mulai</th>
               <th>Tanggal Selesai</th>
+              <th>Status Dinas</th>
               <th>Preview</th>
             </tr>
             </thead>
@@ -42,6 +43,7 @@
               <td>Pembuang Hulu II</td>
               <td>2019/04/20</td>
               <td>2019/04/24</td>
+              <td>SPD</td>
               <td><a href="preview-formJLN.html">Preview</a></td>
             </tr>
             <tr>
@@ -50,6 +52,7 @@
               <td>Kuala Pembuang I</td>
               <td>2019/04/21</td>
               <td>2019/04/23</td>
+              <td>Surat Tugas</td>
               <td><a href="preview-formJLN.html">Preview</a></td>
             </tr>
             <tr>
@@ -58,6 +61,7 @@
               <td>Tabiku</td>
               <td>2019/04/26</td>
               <td>2019/04/28</td>
+              <td>SPD</td>
               <td><a href="preview-formJLN.html">Preview</a></td>
             </tr>
             <tr>
@@ -66,6 +70,7 @@
               <td>Pembuang Hulu I</td>
               <td>2019/04/28</td>
               <td>2019/04/30</td>
+              <td>SPD</td>
               <td><a href="preview-formJLN.html">Preview</a></td>
             </tr>
             <tr>
@@ -74,6 +79,7 @@
               <td>Tokyo</td>
               <td>2008/12/13</td>
               <td>2008/11/28</td>
+              <td>SPD</td>
               <td><a href="preview-formJLN.html">Preview</a></td>
             </tr>
             <tr>
@@ -82,6 +88,7 @@
               <td>New York</td>
               <td>2008/12/13</td>
               <td>2012/12/02</td>
+              <td>SPD</td>
               <td><a href="preview-formJLN.html">Preview</a></td>
             </tr>
             <tr>
@@ -90,6 +97,7 @@
               <td>San Francisco</td>
               <td>2008/12/13</td>
               <td>2012/08/06</td>
+              <td>SPD</td>
               <td><a href="preview-formJLN.html">Preview</a></td>
             </tr>
             <tr>
@@ -98,6 +106,7 @@
               <td>Tokyo</td>
               <td>2008/12/13</td>
               <td>2010/10/14</td>
+              <td>SPD</td>
               <td><a href="preview-formJLN.html">Preview</a></td>
             </tr>
             <tr>
@@ -106,6 +115,7 @@
               <td>San Francisco</td>
               <td>2008/12/13</td>
               <td>2009/09/15</td>
+              <td>SPD</td>
               <td><a href="preview-formJLN.html">Preview</a></td>
             </tr>
             <tr>
@@ -114,6 +124,7 @@
               <td>Edinburgh</td>
               <td>2008/12/13</td>
               <td>2008/12/13</td>
+              <td>SPD</td>
               <td><a href="preview-formJLN.html">Preview</a></td>
             </tr>
 

@@ -21,7 +21,6 @@
     <div class="col-md-12">
 
       <form class="form-horizontal">
-        <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Buat <strong>Laporan Perjalanan Dinas</strong></h3>
             <ul class="panel-controls">
@@ -29,7 +28,17 @@
             </ul>
           </div>
 
-          <div class="panel-body">
+            <div class="panel panel-default tabs">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Laporan</a></li>
+                    <li><a href="#tab-second" role="tab" data-toggle="tab">Upload Foto</a></li>
+
+                </ul>
+
+                <div class="panel-body tab-content">
+                    <div class="tab-pane active" id="tab-first">
+
+                <div class="panel-body">
             <h4 id="idJudulLaporan">LAPORAN<br/> PERJALANAN DINAS</h4>
               <div id="idIsiLaporan">
                   <h5>A. Pendahuluan</h5>
@@ -62,20 +71,27 @@
                   <h5>E.	Penutup</h5>
                   <textarea class="form-control" rows="5"></textarea>
 
-
               </div>
-          </div>
-
-
-
-
-          <div class="panel-footer" id="idTombolEksport">
-            <!--<button class="btn btn-default">Simpan Surat Tugas</button>-->
-            <button class="btn btn-primary pull-right" id="BuatSurtug">Simpan</button>
-            <button class="btn btn-primary pull-right" id="BuatSurtug" onclick="exportHTML()">Submit</button>
-          </div>
-        </div>
       </form>
+    </div>
+  </div>
+
+  <div class="tab-pane active" id="tab-second">
+      <h5>Upload Foto</h5>
+      <div class="block push-up-10">
+          <form role="form" action="upload.php" class="dropzone dropzone-mini"></form>
+      </div>
+  </div>
+
+
+
+
+  <div class="panel-footer" id="idTombolEksport">
+      <!--<button class="btn btn-default">Simpan Surat Tugas</button>-->
+      <button class="btn btn-primary pull-right" id="BuatSurtug">Simpan</button>
+      <button class="btn btn-primary pull-right" id="BuatSurtug" onclick="exportHTML()">Submit</button>
+  </div>
+  </div>
 
     </div>
   </div>
@@ -87,7 +103,7 @@
   <!-- START THIS PAGE PLUGINS-->
   <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
   <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-
+  <script type="text/javascript" src="js/plugins/dropzone/dropzone.min.js"></script>
   <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
 
   <!-- END THIS PAGE PLUGINS-->
