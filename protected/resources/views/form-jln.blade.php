@@ -11,7 +11,7 @@
 @section('content')
   <div class="row">
     <div class="col-md-12">
-      <form class="form-horizontal">
+      <form class="form-horizontal" action="{{url('/approval')}}" method="post">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Approve <strong>Form JLN</strong></h3>
@@ -25,6 +25,7 @@
                   <label class="col-md-4 col-xs-12 control-label">No Form JLN</label>
                   <div class="col-md-7 col-xs-12">
                       <p class="form-control-static">{{$myjln->getFormJLN->no_seksi}}</p>
+
                   </div>
               </div>
 
@@ -82,7 +83,9 @@
                           @foreach($userjlns as $userjln)
                           <tr>
                               <td>{{$loop->iteration}}</td>
-                              <td>{{$userjln->nama}}</td>
+                              <td>
+                                <input type="hidden" name="id[{{$loop->iteration}}]" value="{{$userjln->id}}">
+                                {{$userjln->nama}}</td>
 {{--                              <td>{{$userjln->tgl_dari}}</td>--}}
 {{--                              <td>{{$userjln->tgl_sampai}}</td>--}}
                               <td>{{$userjln->tujuan}}</td>
@@ -92,14 +95,12 @@
                               <td>{{$userjln->lamanya}}</td>
                               <td>{{$userjln->wkt_standar_dinas}}</td>
                               <td>
-                                <div ></div>
-                                <select class="form-control select" data-style="btn-success" style="display: none" name="approval">
+                                <select class="form-control select" name="action[{{$loop->iteration}}]">
                                   <option value="0" disabled selected>Menunggu Persetujuan</option>
                                   <option value="1">Disetujui ST</option>
                                   <option value="2">Disetujui SPD</option>
-                                  <option value="4">Ditolak</option>
+                                  <option value="3">Ditolak</option>
                                 </select>
-
                               </td>
                           </tr>
                           @endforeach
@@ -108,13 +109,22 @@
                     </div>
                   </div>
               </div>
+          </div>
 
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label">Catatan KPA</label>
+              <div class="col-md-6 col-xs-12">
+                <textarea class="form-control" rows="5" placeholder="Tambahkan catatan jika perlu" name="catatan_kpa"></textarea>
+              </div>
+            </div>
           </div>
-          <div class="panel-footer">
-            <button class="btn btn-default">Clear Form</button>
-            <button class="btn btn-primary pull-right"><a href="{{url('preview-surtug-grup')}}">Submit</a></button>
-          </div>
+        <div class="panel-footer">
+          <button class="btn btn-default">Clear Form</button>
+          <button class="btn btn-primary pull-right"><a href="{{url('approval')}}">Submit</a></button>
         </div>
+      </div>
+        {{csrf_field()}}
       </form>
 
     </div>

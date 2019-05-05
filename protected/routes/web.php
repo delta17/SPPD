@@ -29,10 +29,10 @@ Route::get('/preview-surtug-grup',      'SurtugController@showPreviewSurtugGrup'
 Route::get('/buat-spd',                 'SPDController@showSPD')->middleware('auth');
 Route::get('/preview-spd',              'SPDController@showPreviewSPD')->middleware('auth');
 Route::get('/arsip-saya',               'ArsipController@showArsip')->middleware('auth');
-Route::get('/approval-form-jln',        'JLNController@showApprovalJLN')->middleware('auth');
-Route::get('/form-jln/{id}',            'JLNController@showDetailJLN')->middleware('auth');
-Route::post('/approval',                'JLNController@inputApprovalJLN')->middleware('auth');
-Route::get('/buat-laporan',             'LaporanController@showBuatLaporan');
+Route::get('/approval-form-jln',        'KPAController@showApprovalJLN')->middleware('auth');
+Route::get('/form-jln/{id}',            'KPAController@showDetailJLN')->middleware('auth');
+Route::post('/approval',                'KPAController@inputApprovalJLN')->middleware('auth');
+Route::get('/buat-laporan',             'LaporanController@showBuatLaporan')->middleware('auth');
 
 
 //Route::get('/home', 'HomeController@index')->name('home');

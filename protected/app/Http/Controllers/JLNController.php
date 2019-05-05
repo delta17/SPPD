@@ -129,23 +129,4 @@ class JLNController extends Controller
     public function showPreviewJLN(){
       return view('preview-form-jln');
     }
-
-    public function showApprovalJLN(){
-      $myjlns = MyJLN::all();
-
-      return view('approval-form-jln',compact('myjlns'));
-    }
-
-    public function showDetailJLN($id){
-      $myjlns = MyJLN::all();
-      $userjlns = UserJLN::where('jln_id',$id)->get();
-//      dd($userjlns);
-      return \View::make('form-jln',compact('myjlns','userjlns'))->render();
-    }
-
-    public function inputApprovalJLN(Request $request){
-      dd($request);
-
-      return redirect('/approval-form-jln')->with('status','Action Berhasil Disimpan!');
-    }
 }
