@@ -6,12 +6,16 @@ use App\Agenda;
 use App\FormJLN;
 use App\Kegiatan;
 use App\Akun;
+use App\KegiatanSeksi;
+use App\KegiatanUraian;
+use App\Kendaraan;
 use App\Komponen;
 use App\MyJLN;
 use App\Output;
 use App\Program;
 use App\Seksi;
 use App\Subkomponen;
+use App\User;
 use App\UserJLN;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -27,8 +31,12 @@ class JLNController extends Controller
       $komponens    = Komponen::all();
       $subkomponens = Subkomponen::all();
       $akuns        = Akun::all();
+      $users        = User::all();
+      $kendaraans   = Kendaraan::all();
+      $uraians      = KegiatanUraian::all();
+      $kegSeksis    = KegiatanSeksi::all();
       return view('buat-form-jln',compact('seksis','programs','kegiatans',
-        'outputs','komponens','subkomponens','akuns'));
+        'outputs','komponens','subkomponens','akuns','users','kendaraans','uraians','kegSeksis'));
     }
 
     /**
