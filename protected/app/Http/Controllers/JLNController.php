@@ -6,12 +6,16 @@ use App\Agenda;
 use App\FormJLN;
 use App\Kegiatan;
 use App\Akun;
+use App\KegiatanSeksi;
+use App\KegiatanUraian;
+use App\Kendaraan;
 use App\Komponen;
 use App\MyJLN;
 use App\Output;
 use App\Program;
 use App\Seksi;
 use App\Subkomponen;
+use App\User;
 use App\UserJLN;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -27,8 +31,12 @@ class JLNController extends Controller
       $komponens    = Komponen::all();
       $subkomponens = Subkomponen::all();
       $akuns        = Akun::all();
+      $users        = User::all();
+      $kendaraans   = Kendaraan::all();
+      $uraians      = KegiatanUraian::all();
+      $kegSeksis    = KegiatanSeksi::all();
       return view('buat-form-jln',compact('seksis','programs','kegiatans',
-        'outputs','komponens','subkomponens','akuns'));
+        'outputs','komponens','subkomponens','akuns','users','kendaraans','uraians','kegSeksis'));
     }
 
     /**
@@ -39,9 +47,7 @@ class JLNController extends Controller
      */
     public function inputJLN(Request $request){
 
-
       $formJLN = new FormJLN();
-//      dd($request);
       /**
        * fungsi input ke formJLN
        */
@@ -89,27 +95,30 @@ class JLNController extends Controller
 //        $formJLN->isPersonal = false;
 //      }
       $formJLN->save();
-
+//      dd($formJLN);
       /**
        * fungsi input UserJLN
        */
       $user = collect([]);
       for($i=1; $i<=count($request->input('nama.*'));$i++) {
         $userJLN = new UserJLN();
-        $x = $request->input('uraian_id.'.$i);
+//        $x = $request->input('uraian_id.'.$i);
         $userJLN->nama                = $request->input('nama.'.$i);
-        $userJLN->nip                 = $request->input('nip.'.$i);
+//        $userJLN->nip                 = $request->input('nip.'.$i);
         $userJLN->tgl_dari            = $request->input('tgl_dari.'.$i);
         $userJLN->tgl_sampai          = $request->input('tgl_sampai.'.$i);
-        $userJLN->uraian_id           = $x;
+//        $userJLN->uraian_id           = $x;
+        $userJLN->uraian_id           = 1;
 
-        $userJLN->tujuan_dlm          = $request->input('tujuan_dlm.'.$i);
+        $userJLN->tujuan_dlm          = $request->input('tujuan.'.$i);
         $userJLN->lamanya             = $request->input('lamanya.'.$i);
-        $userJLN->kendaraan_id        = $request->input('kendaraan_id.'.$i);
+//        $userJLN->kendaraan_id        = $request->input('kendaraan_id.'.$i);
+        $userJLN->kendaraan_id        = 1;
         $userJLN->satuan              = $request->input('satuan.'.$i);
         $userJLN->kuantitas           = $request->input('kuantitas.'.$i);
         $userJLN->jln_id              = $formJLN->id;
         $userJLN->wkt_standar_dinas   = (int)ceil(($userJLN->getTujuanDlm()->first()->waktu_tempuh*2+$userJLN->getUraianKegiatan()->first()->waktu_kegiatan*$userJLN->kuantitas)/8);
+//        dd($userJLN);
         $userJLN->save();
         $user->push($userJLN->id);
       }

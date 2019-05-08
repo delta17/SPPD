@@ -25,6 +25,7 @@
           @else
             <div class="profile-data-title">Seksi {{Auth::user()->getSeksi->seksi}}</div>
           @endif
+
         </div>
       </div>
     </li>

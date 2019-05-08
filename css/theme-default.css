@@ -2525,6 +2525,7 @@ label.valid {
 }
 .modal-body {
   padding: 15px;
+    margin-bottom: 35px;
 }
 .modal-footer {
   background: #F5F5F5;
@@ -7369,4 +7370,24 @@ display:none;
 
 #idIsiLaporan .classSubPoin{
     margin-left: 2.5%;
+}
+
+.cTabelKecil{
+    border: 0;
+    width: 20px;
+}
+
+.cTabelStandar{
+    border: 0;
+    width: 65px;
+}
+
+.cTabelBesar{
+    border: 0;
+    width: 100px;
+}
+
+#idTabelDaftarPeserta{
+    width: 80%;
+    margin: auto;
 }
