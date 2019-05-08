@@ -12,7 +12,7 @@ class AgendaController extends Controller
     public function showAgenda()
     {
       $agendas = Agenda::all();
-
+//      dd($agendas);
       return view('agenda',compact('agendas'));
 
     }

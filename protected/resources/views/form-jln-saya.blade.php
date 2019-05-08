@@ -47,10 +47,11 @@
                 @endif
                 @if($myjln->getFormJLN->isApproved==0)
                   <td><span class="label label-default label-form">Belum Ditanggapi</span></td>
+                  <td><a class="btn btn-info disabled" aria-disabled="true" role="button" href="{{url('preview-form-jln')}}">Preview</a></td>
                 @else
                   <td><span class="label label-success label-form">Sudah Ditanggapi</span></td>
+                  <td><a class="btn btn-info" role="button" href="{{url('preview-form-jln')}}">Preview</a></td>
                 @endif
-                <td><a href="{{url('preview-form-jln')}}">Preview</a></td>
               </tr>
               @endif
             @endforeach

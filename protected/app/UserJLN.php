@@ -9,7 +9,7 @@ class UserJLN extends Model
     protected $table = 'mst_user_jln';
 
     public function relatedUserJLN(){
-      $this->hasMany('nama','id');
+      return $this->hasMany('nama','id');
     }
 
     public function getFormJLN(){
@@ -26,5 +26,21 @@ class UserJLN extends Model
 
     public function getKendaraan(){
       return $this->hasOne('App\Kendaraan','id','kendaraan_id');
+    }
+
+    public function getTujuanDlm(){
+      return $this->hasOne('App\Desa','id','tujuan_dlm');
+    }
+
+    public function getTujuanLuar(){
+      return $this->hasOne('App\LuarKota','id','tujuan_luar');
+    }
+
+    public function getTujuanPerusahaan(){
+      return $this->hasOne('App\Perusahaan','id','tujuan_perusahaan');
+    }
+
+    public function getUser(){
+      return $this->hasOne('App\User','id','user_id');
     }
 }

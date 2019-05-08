@@ -31,7 +31,7 @@
             <tr>
               <th>No</th>
               <th>Seksi</th>
-              <th>No Form JLN</th>
+              <th width="15%">No Form JLN</th>
               <th width="30%">Perihal</th>
               <th>MAK</th>
               <th>Sisa Anggaran</th>

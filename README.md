@@ -6,7 +6,7 @@
 - Laravel telah diupdate ke larevel 5.5; php yang digunakan php versi 7
 - Daftar yang belum dikerjakan:
 1. menambahkan perhitungan waktu_standar_dinas pada JLNController
-2. menambahkan kolom tujuan_dlm, tujuan_luar, tujuan_perusahaan pada tabel user_jln dg default null
+2. menambahkan kolom tujuan_dlm, tujuan_luar, tujuan_perusahaan pada tabel user_jln dg default null (fix)
 3. menampilkan data tujuan ke form-jln-saya dan approval-form-jln
 4. membuat fungsi print surtug personal/spd dari halaman agenda
 5. membuat fungsi print Form JLN dari halaman form-jln-saya

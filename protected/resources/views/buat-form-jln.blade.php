@@ -69,10 +69,10 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Program</label>
               <div class="col-md-6 col-xs-12">
-                <select class="form-control select" name="program">
+                <select class="form-control select" name="program" v-model="mak1">
                   <option value="" disabled selected>Silahkan pilih program</option>
                   @foreach($programs as $program)
-                    <option value="{{$program->id}}">[{{$program->kode}}] {{$program->program}}</option>
+                    <option value="{{$program->kode}}">[{{$program->kode}}] {{$program->program}}</option>
                   @endforeach
                 </select>
               </div>
@@ -81,10 +81,10 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Kegiatan</label>
               <div class="col-md-6 col-xs-12">
-                <select class="form-control select" name="kegiatan">
+                <select class="form-control select" name="kegiatan" v-model="mak2">
                   <option value="" disabled selected>Silahkan pilih kegiatan</option>
                   @foreach($kegiatans as $kegiatan)
-                    <option value="{{$kegiatan->id}}">[{{$kegiatan->kode}}] {{$kegiatan->kegiatan}}</option>
+                    <option value=".{{$kegiatan->kode}}">[{{$kegiatan->kode}}] {{$kegiatan->kegiatan}}</option>
                   @endforeach
 
                 </select>
@@ -95,10 +95,10 @@
               <label class="col-md-3 col-xs-12 control-label">Keluaran (Output)</label>
               <div class="col-md-6 col-xs-12">
 
-                <select class="form-control select" name="output">
+                <select class="form-control select" name="output" v-model="mak3">
                   <option value="" disabled selected>Silahkan pilih output</option>
                   @foreach($outputs as $output)
-                    <option value="{{$output->id}}">[{{$output->kode}}] {{$output->output}}</option>
+                    <option value=".{{$output->kode}}">[{{$output->kode}}] {{$output->output}}</option>
                   @endforeach
                 </select>
               </div>
@@ -107,10 +107,10 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Komponen</label>
               <div class="col-md-6 col-xs-12">
-                <select class="form-control select" name="komponen">
+                <select class="form-control select" name="komponen" v-model="mak4">
                   <option value="" disabled selected>Silahkan pilih komponen</option>
                   @foreach($komponens as $komponen)
-                    <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen}}</option>
+                    <option value=".{{$komponen->kode}}">[{{$komponen->kode}}] {{$komponen->komponen}}</option>
                   @endforeach
                 </select>
               </div>
@@ -119,10 +119,10 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Subkomponen</label>
               <div class="col-md-6 col-xs-12">
-                <select class="form-control select" name="subkomponen">
+                <select class="form-control select" name="subkomponen" v-model="mak5">
                   <option value="" disabled selected>Silahkan pilih subkomponen</option>
                   @foreach($subkomponens as $subkomponen)
-                    <option value="{{$subkomponen->id}}">[{{$subkomponen->kode}}] {{$subkomponen->subkomponen}}</option>
+                    <option value=".{{$subkomponen->kode}}">[{{$subkomponen->kode}}] {{$subkomponen->subkomponen}}</option>
                   @endforeach
                 </select>
               </div>
@@ -132,10 +132,10 @@
               <label class="col-md-3 col-xs-12 control-label">Akun</label>
               <div class="col-md-6 col-xs-12">
 
-                <select class="form-control select" name="akun">
+                <select class="form-control select" name="akun" v-model="mak6">
                   <option value="" disabled selected>Silahkan pilih akun</option>
                   @foreach($akuns as $akun)
-                    <option value="{{$akun->id}}">[{{$akun->kode}}] {{$akun->akun}}</option>
+                    <option value=".{{$akun->kode}}">[{{$akun->kode}}] {{$akun->akun}}</option>
                   @endforeach
                 </select>
               </div>
@@ -144,8 +144,7 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Pembebanan MAK</label>
               <div class="col-md-6 col-xs-12">
-                  <p class="col-md-3 col-xs-12 control-label">054.01.01.2886.014.051.A.524111</p>
-                <input type="hidden" name="mak" value="054.01.01.2886.014.051.A.524111">
+                <p class="form-control-static" id="mak">@{{mak1}}@{{mak2}}@{{mak3}}@{{mak4}}@{{mak5}}@{{mak6}}</p>
                 </div>
               </div>
             </div>
@@ -161,16 +160,16 @@
               </div>
             </div>
 
-            <div class="form-group">
-              <label class="col-md-3 col-xs-12 control-label">Personal/Kolektif</label>
-              <div class="col-md-6 col-xs-12">
-                <select class="form-control select" name="isPersonal">
-                  <option value="" disabled selected>Silahkan pilih</option>
-                  <option value="1">Personal</option>
-                  <option value="0">Kolektif</option>
-                </select>
-              </div>
-            </div>
+{{--            <div class="form-group">--}}
+{{--              <label class="col-md-3 col-xs-12 control-label">Personal/Kolektif</label>--}}
+{{--              <div class="col-md-6 col-xs-12">--}}
+{{--                <select class="form-control select" name="isPersonal">--}}
+{{--                  <option value="" disabled selected>Silahkan pilih</option>--}}
+{{--                  <option value="1">Personal</option>--}}
+{{--                  <option value="0">Kolektif</option>--}}
+{{--                </select>--}}
+{{--              </div>--}}
+{{--            </div>--}}
 
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Keterangan</label>
@@ -178,7 +177,7 @@
                 <textarea class="form-control" rows="5" placeholder="Tambahkan keterangan" name="keterangan"></textarea>
               </div>
             </div>
-
+            <div class="panel-body">
               <label class="col-xs-12">Daftar Peserta yang Berangkat</label><br/>
               <div class="input-group">
                   <div class="col-xs-12">
@@ -192,70 +191,44 @@
                               <th>Sampai <br/> Tanggal</th>
                               <th>Tujuan</th>
                               <th>Perihal</th>
-                              <th>Lama <br/>(hari)</th>
+                              <th>Kuantitas</th>
+                              <th>Satuan</th>
+                              <th>Lamanya <br/>(hari)</th>
                               <th>Jenis <br/>Kendaraan</th>
                           </tr>
                           </thead>
                           <tbody>
                           <tr>
                               <td>1</td>
-                              <td>
-                                  <input type="hidden" name="nama[1]" value="Henny Anggraini">
-                                  Henny Anggraini</td>
-                              <td>
-                                  <input type="hidden" name="nip[1]" value="12345678 123456 1 123">
-                                  12345678 123456 1 123</td>
-                              <td>
-                                  <input type="hidden" name="tgl_dari[1]" value="2019-02-1">
-                                  2019-02-1</td>
-                              <td>
-                                  <input type="hidden" name="tgl_sampai[1]" value="2019-02-4">
-                                  2019-02-4</td>
-                              <td>
-                                  <input type="hidden" name="tujuan[1]" value="10009">
-                                  Jahitan </td>
-                              <td>
-                                  <input type="hidden" name="uraian_id[1]" value="2">
-                                  1</td>
-                              <td>
-                                  <input type="hidden" name="lamanya[1]" value="4">
-                                  4</td>
-                              <td>
-                                  <input type="hidden" name="kendaraan_id[1]" value="2">
-                                  Angkutan Umum</td>
+                              <td><input type="hidden" name="nama[1]" value="Henny Anggraini">Henny Anggraini</td>
+                              <td><input type="hidden" name="nip[1]" value="12345678 123456 1 123">12345678 123456 1 123</td>
+                              <td><input type="hidden" name="tgl_dari[1]" value="01-02-2019">01-02-2019</td>
+                              <td><input type="hidden" name="tgl_sampai[1]" value="04-02-2019">04-02-2019</td>
+                              <td><input type="hidden" name="tujuan_dlm[1]" value="10009">Jahitan </td>
+                              <td><input type="hidden" name="uraian_id[1]" value="38">Pengumpulan data Survei IBS Tahunan</td>
+                              <td><input type="hidden" name="kuantitas[1]" value="3">3</td>
+                              <td><input type="hidden" name="satuan[1]" value="Perusahaan">Perusahaan</td>
+                              <td><input type="hidden" name="lamanya[1]" value="4">4</td>
+                              <td><input type="hidden" name="kendaraan_id[1]" value="2">Angkutan Umum</td>
                           </tr>
                           <tr>
                               <td>2</td>
-                              <td>
-                                  <input type="hidden" name="nama[2]" value="Andi Wahyu Prawoko">
-                                  Andi Wahyu Prawoko</td>
-                              <td>
-                                  <input type="hidden" name="nip[2]" value="12345678 123456 1 123">
-                                  12345678 123456 1 123</td>
-                              <td>
-                                  <input type="hidden" name="tgl_dari[2]" value="2019-02-1">
-                                  2019-02-1</td>
-                              <td>
-                                  <input type="hidden" name="tgl_sampai[2]" value="2019-02-4">
-                                  2019-02-4</td>
-                              <td>
-                                  <input type="hidden" name="tujuan[2]" value="10009">
-                                  Jahitan </td>
-                              <td>
-                                  <input type="hidden" name="uraian_id[2]" value="1">
-                                  1</td>
-                              <td>
-                                  <input type="hidden" name="lamanya[2]" value="4">
-                                  4</td>
-                              <td>
-                                  <input type="hidden" name="kendaraan_id[2]" value="2">
-                                  Angkutan Umum</td>
+                              <td><input type="hidden" name="nama[2]" value="Andi Wahyu Prawoko">Andi Wahyu Prawoko</td>
+                              <td><input type="hidden" name="nip[2]" value="12345678 123456 1 123">12345678 123456 1 123</td>
+                              <td><input type="hidden" name="tgl_dari[2]" value="01-02-2019">01-02-2019</td>
+                              <td><input type="hidden" name="tgl_sampai[2]" value="04-02-2019">04-02-2019</td>
+                              <td><input type="hidden" name="tujuan_dlm[2]" value="10009">Jahitan </td>
+                              <td><input type="hidden" name="uraian_id[2]" value="39">pengawasan Pengumpulan data Survei IBS Tahunan</td>
+                              <td><input type="hidden" name="kuantitas[2]" value="2">2</td>
+                              <td><input type="hidden" name="satuan[2]" value="Perusahaan">Perusahaan</td>
+                              <td><input type="hidden" name="lamanya[2]" value="4">4</td>
+                              <td><input type="hidden" name="kendaraan_id[2]" value="2">Angkutan Umum</td>
                           </tr>
                           </tbody>
                       </table>
                   </div>
               </div>
-
+            </div>
             <div class="panel-footer">
                 <button class="btn btn-default pull-left">Clear Form</button>
                 <button class="btn btn-info pull-right" type="submit" onclick="notif()">Submit</button>
@@ -293,14 +266,15 @@
 
 @section('page-scripts')
   <!-- START THIS PAGE PLUGINS-->
-  <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
-  <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+  <script type='text/javascript' src="{{asset('js/plugins/icheck/icheck.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')}}"></script>
 
-  <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="js/plugins/validationengine/languages/jquery.validationEngine-en.js"></script>
-  <script type="text/javascript" src="js/plugins/validationengine/jquery.validationEngine.js"></script>
-  <script type="text/javascript" src="js/plugins/jquery-validation/jquery.validate.js"></script>
-  <script type="text/javascript" src="js/plugins/maskedinput/jquery.maskedinput.min.js"></script>
+  <script type="text/javascript" src="{{asset('js/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/plugins/validationengine/languages/jquery.validationEngine-en.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/plugins/validationengine/jquery.validationEngine.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/plugins/jquery-validation/jquery.validate.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/plugins/maskedinput/jquery.maskedinput.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/vue.js')}}"></script>
   <!-- END THIS PAGE PLUGINS-->
 
   <script type="text/javascript">
@@ -313,7 +287,8 @@
           rules: {
               no_seksi: {
                   required: true,
-                  number: true
+                  number: true,
+                  length: 3
               },
               perihal: {
                   required: true
@@ -347,6 +322,19 @@
                   minlength: 0,
                   number:true
               }
+          }
+      });
+
+      var app = new Vue({
+          el : '#jvalidate',
+          data : {
+              mak1: '',
+              mak2: '',
+              mak3: '',
+              mak4: '',
+              mak5: '',
+              mak6: '',
+              mak: ''
           }
       });
   </script>

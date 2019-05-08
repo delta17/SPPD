@@ -31,7 +31,8 @@ Route::get('/preview-spd',              'SPDController@showPreviewSPD')->middlew
 Route::get('/arsip-saya',               'ArsipController@showArsip')->middleware('auth');
 Route::get('/approval-form-jln',        'KPAController@showApprovalJLN')->middleware('auth');
 Route::get('/form-jln/{id}',            'KPAController@showDetailJLN')->middleware('auth');
-Route::post('/approval',                'KPAController@inputApprovalJLN')->middleware('auth');
+//'KPAController@showDetailJLN')->middleware('auth');
+Route::patch('/form-jln/{id}/approval', 'KPAController@inputApprovalJLN')->name('approval')->middleware('auth');
 Route::get('/buat-laporan',             'LaporanController@showBuatLaporan')->middleware('auth');
 
 
