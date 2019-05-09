@@ -71,9 +71,12 @@
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select" name="program" id="idPilihProgram">
                   <option value="" disabled selected >Silakan pilih program</option>
+                @if(Auth::user()->seksi_id==1)
                   @foreach($programs as $program)
-                    <option value="{{$program->id}}">[{{$program->kode}}] {{$program->program}}</option>
+                        <option value="{{$program->id}}">[{{$program->kode}}] {{$program->program}}</option>
                   @endforeach
+                    @else <option value="{{$programs->id}}">[{{$programs->kode}}] {{$programs->program}}</option>
+                    @endif
                 </select>
               </div>
             </div>
@@ -83,10 +86,12 @@
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select" name="kegiatan" id="idPilihKegiatan">
                   <option value="" disabled selected>Silakan pilih kegiatan</option>
-                  @foreach($kegiatans as $kegiatan)
-                    <option value="{{$kegiatan->id}}">[{{$kegiatan->kode}}] {{$kegiatan->kegiatan}}</option>
-                  @endforeach
-
+                    @if(Auth::user()->seksi_id==1)
+                        @foreach($kegiatans as $kegiatan)
+                        <option value="{{$kegiatan->id}}">[{{$kegiatan->kode}}] {{$kegiatan->kegiatan}}</option>
+                        @endforeach
+                    @else <option value="{{$kegiatans->id}}">[{{$kegiatans->kode}}] {{$kegiatans->kegiatan}}</option>
+                    @endif
                 </select>
               </div>
             </div>
@@ -94,12 +99,15 @@
             <div class="form-group">
               <label class="col-md-3 col-xs-12 control-label">Keluaran (Output)</label>
               <div class="col-md-6 col-xs-12">
-
                 <select class="form-control select" name="output" id="idPilihOutput">
                   <option value="" disabled selected >Silakan pilih output</option>
-                  @foreach($outputs as $output)
-                    <option value="{{$output->id}}">[{{$output->kode}}] {{$output->output}}</option>
-                  @endforeach
+                    @if(Auth::user()->seksi_id==1)
+                        @foreach($outputs as $output)
+                            <option value="{{$output->id}}">[{{$output->kode}}] {{$output->output}}</option>
+                        @endforeach
+                    @endif
+
+
                 </select>
               </div>
             </div>
@@ -263,11 +271,81 @@
                   <div class="form-group">
                       <label class="col-md-3 col-xs-12 control-label">Tujuan</label>
                       <div class="col-md-6 col-xs-12">
-                          <input type="text" class="form-control select" id="idPesertaTujuan" placeholder="Silakan isikan tujuan dinas">
-                          </input>
+                          <input type="radio" name="pesertaTujuan" id="idRadioDalamKota" style="margin-left: 20px">Dalam Kota</input>
+                          <input type="radio" name="pesertaTujuan" id="idRadioLuarKota" style="margin-left: 20px">Luar Kota</input>
+                          <input type="radio" name="pesertaTujuan" id="idRadioPerusahaan" style="margin-left: 20px">Perusahaan</input>
+                          <input type="radio" name="pesertaTujuan" id="idRadioLainnya">Lainnya</input>
                       </div>
                   </div>
                   <br/>
+
+                  <div class="form-group" id="idKecamatan">
+                      <label class="col-md-3 col-xs-12" >Kecamatan</label>
+                      <div class="col-md-6 col-xs-12">
+                          <select class="form-control select" id="idPesertaKecamatan">
+                              <option value="" disabled selected>Silakan pilih kecamatan tujuan</option>
+                              @foreach($kecamatans as $kecamatan)
+                                      <option value="{{$kecamatan->id}}"> {{$kecamatan->kecamatan}}</option>
+                              @endforeach
+                          </select>
+                      </div>
+                  </div><br/>
+
+
+                  <div class="form-group" id="idDesa">
+                      <label class="col-md-3 col-xs-12">Desa</label>
+                      <div class="col-md-6 col-xs-12">
+                          <select class="form-control select" id="idPesertaDesa">
+                              <option value="" disabled selected>Silakan pilih desa tujuan</option>
+                              @foreach($desas as $desa)
+                                      <option value="{{$desa->id}}"> {{$desa->desa}}</option>
+                              @endforeach
+                          </select>
+
+                      </div>
+                  </div>
+                  <br/>
+
+                  <div class="form-group" id="idLuarKota">
+                      <div class="col-md-3 col-xs-12">Lokasi Dinas Luar Kota</div>
+                      <div class="col-md-6 col-xs-12">
+                          <select class="form-control select" id="idPesertaLuarKota">
+                              <option value="" disabled selected>Silakan pilih lokasi dinas</option>
+                              @foreach($luarKotas as $luarKota)
+                                      <option value="{{$luarKota->id}}"> {{$luarKota->tujuan}}</option>
+                              @endforeach
+                          </select>
+
+                      </div>
+                  </div>
+                  <br/>
+
+
+                  <div class="form-group" id="idPerusahaan">
+                      <div class="col-md-3 col-xs-12">Perusahaan</div>
+                      <div class="col-md-6 col-xs-12">
+                          <select class="form-control select" id="idPesertaPerusahaan">
+                              <option value="" disabled selected>Silakan pilih nama perusahaan</option>
+                              @foreach($perusahaans as $perusahaan)
+                                      <option value="{{$perusahaan->id}}"> {{$perusahaan->perusahaan}}</option>
+                              @endforeach
+                          </select>
+
+                      </div>
+                  </div>
+                  <br/>
+
+
+                  <div class="form-group" id="idLainnya">
+                      <label class="col-md-3 col-xs-12 control-label">Tuliskan Lokasi Tujuan Dinas</label>
+                      <div class="col-md-6 col-xs-12">
+                          <input type="text" class="form-control select" placeholder="Silakan tulis tujuan dinas" id="idPesertaLainnya">
+                          </input>
+
+                      </div>
+                  </div>
+                  <br/>
+
 
                   <div class="form-group">
                       <label class="col-md-3 col-xs-12 control-label">Kegiatan Seksi</label>
@@ -372,12 +450,49 @@
   <!-- END THIS PAGE PLUGINS-->
 
   <script type="text/javascript">
-
-
       $(document).ready(function() {
+          $("#idKecamatan").hide();
+          $("#idDesa").hide();
+          $("#idLuarKota").hide();
+          $("#idPerusahaan").hide();
+          $("#idLainnya").hide();
+
+          $("#idRadioDalamKota").prop("checked"); {
+              $("#idKecamatan").show();
+              $("#idDesa").show();
+              $("#idLuarKota").hide();
+              $("#idPerusahaan").hide();
+              $("#idLainnya").hide();
+          };
+
+          $("#idRadioLuarKota").click(function() {
+              $("#idKecamatan").hide();
+              $("#idDesa").hide();
+              $("#idLuarKota").show();
+              $("#idPerusahaan").hide();
+              $("#idLainnya").hide();
+          };
+
+          $("#idRadioPerusahaan").click(function() {
+              $("#idKecamatan").hide();
+              $("#idDesa").hide();
+              $("#idLuarKota").hide();
+              $("#idPerusahaan").show();
+              $("#idLainnya").hide();
+          };
+
+          $("#idRadioLainnya").click(function() {
+              $("#idKecamatan").hide();
+              $("#idDesa").hide();
+              $("#idLuarKota").hide();
+              $("#idPerusahaan").hide();
+              $("#idLainnya").show();
+          };
+
+
           $("#idBtnTambahPeserta").click(function() {
-              var valNo = $('input[id="idPesertaNo"]').val();
-              var valNama = $('input[id="idPesertaNama"]').val();
+
+              var valNama = $("#idPesertaNama").val();
               var valTanggalDari = $('input[id="idPesertaTanggalDari"]').val();
               var valTanggalSampai = $('input[id="idPesertaTanggalSampai"]').val();
               var valTujuan = $('input[id="idPesertaTujuan"]').val();

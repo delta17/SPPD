@@ -3,15 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Agenda;
+use App\Desa;
 use App\FormJLN;
+use App\Kecamatan;
 use App\Kegiatan;
 use App\Akun;
 use App\KegiatanSeksi;
 use App\KegiatanUraian;
 use App\Kendaraan;
 use App\Komponen;
+use App\LuarKota;
 use App\MyJLN;
 use App\Output;
+use App\Perusahaan;
 use App\Program;
 use App\Seksi;
 use App\Subkomponen;
@@ -24,8 +28,8 @@ use Illuminate\Support\Facades\Auth;
 class JLNController extends Controller
 {
     public function showJLN(){
+
       $seksis       = Seksi::all();
-      $programs     = Program::all();
       $kegiatans    = Kegiatan::all();
       $outputs      = Output::all();
       $komponens    = Komponen::all();
@@ -35,8 +39,25 @@ class JLNController extends Controller
       $kendaraans   = Kendaraan::all();
       $uraians      = KegiatanUraian::all();
       $kegSeksis    = KegiatanSeksi::all();
+      $kecamatans    = Kecamatan::all();
+      $desas         = Desa::all();
+      $luarKotas     = LuarKota::all();
+      $perusahaans   = Perusahaan::all();
+
+        if(Auth::user()->seksi_id==1){
+            $programs     = Program::all();
+        } else{
+            $programs     = Program::find(3);
+        };
+
+        if(Auth::user()->seksi_id==1){
+
+        }
+
+
+
       return view('buat-form-jln',compact('seksis','programs','kegiatans',
-        'outputs','komponens','subkomponens','akuns','users','kendaraans','uraians','kegSeksis'));
+        'outputs','komponens','subkomponens','akuns','users','kendaraans','uraians','kegSeksis','kecamatans','desas','luarKotas','perusahaans'));
     }
 
     /**
