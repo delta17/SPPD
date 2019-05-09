@@ -34,6 +34,7 @@
             </thead>
             <tbody>
             @foreach($agendas as $agenda)
+              @if($agenda->getFormJLN->isApproved==1)
               <tr>
                 <td>{{$loop->iteration}}</td>
                 <td>{{$agenda->getFormJLN->getSeksi->seksi}}</td>
@@ -42,21 +43,24 @@
                 <td>{{$agenda->personal}}</td>
                 <td>{{$agenda->pelaksana}}</td>
                 <td>
-                  <button class="btn btn-primary">
                 @switch($agenda->action)
-                  @case(0)
-                      <a href="{{url('buat-surtug-personal')}}"/>Buat Surat Tugas
-                  @break
-                  @case(1)
-                      <a href="{{url('buat-surtug-grup')}}"/>Buat Surat Tugas
-                  @break
-                  @case(2)
-                      <a href="{{url('buat-spd')}}"/>Buat SPD dan Surat Tugas
-                  @break
+                  @case (0)
+                      <p>Belum disetujui</p>
+                    @break
+                  @case (1)
+                      <a class="btn btn-info" href="{{url('preview-surtug-personal')}}"/>Cetak Surat Tugas
+                    @break
+                  @case (2)
+                      <a class="btn btn-success" role="button" href="{{url('preview-spd')}}"/>Cetak SPD dan Surat Tugas
+                    @break
+                  @case (3)
+                      <a href="#"/>Ditolak
+                    @break
+                  @default
                 @endswitch
-                  </button>
                 </td>
               </tr>
+              @endif
             @endforeach
             </tbody>
           </table>

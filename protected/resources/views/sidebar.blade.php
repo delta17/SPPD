@@ -8,11 +8,11 @@
     </li>
     <li class="xn-profile">
       <a href="#" class="profile-mini">
-        <img src="logo-bps.jpg" alt="Logo BPS"/>
+        <img src="{{asset('logo-bps.jpg')}}" alt="Logo BPS"/>
       </a>
       <div class="profile">
         <div class="profile-image">
-          <img src="logo-bps.jpg" alt="Logo BPS"/>
+          <img src="{{asset('logo-bps.jpg')}}" alt="Logo BPS"/>
         </div>
         <div class="profile-data">
           <div class="profile-data-name">{{Auth::user()->name}}</div>
@@ -37,9 +37,11 @@
       <!--
       <a href="#"><span class="fa fa-pencil"></span> <span class="xn-text">Buat Surat</span></a>
       -->
-    @if(Auth::user()->level_id<7)
+    @if(Auth::user()->level_id>0 & Auth::user()->level_id<3)
       <li {{ (Request::is('approval-form-jln') ? 'class=active' : '') }}>
         <a href="{{url('approval-form-jln')}}"><span class="fa fa-check-square-o"></span>Approval Form JLN</a></li>
+    @endif
+    @if(Auth::user()->level_id<7 & Auth::user()->level_id>2 or Auth::user()->level_id==1)
     <li {{ (Request::is('buat-form-jln') ? 'class=active' : '') }}>
       <a href="{{url('buat-form-jln')}}"><span class="fa fa-pencil"></span>Buat Form JLN</a></li>
     @endif

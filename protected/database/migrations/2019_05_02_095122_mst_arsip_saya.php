@@ -15,8 +15,16 @@ class MstArsipSaya extends Migration
     {
       Schema::create('mst_arsip_saya', function (Blueprint $table) {
         $table->increments('id');
-        $table->integer('laporan_id',false,11);
+        $table->integer('user_jln_id',false,11)->nullable();
+        $table->foreign('user_jln_id')->references('id')->on('mst_user_jln');
+        $table->integer('laporan_id',false,11)->nullable();
         $table->foreign('laporan_id')->references('id')->on('mst_laporan');
+        $table->integer('surtug_personal_id',false,11)->nullable();
+        $table->foreign('surtug_personal_id')->references('id')->on('mst_surtug_personal');
+        $table->integer('surtug_grup_id',false,11)->nullable();
+        $table->foreign('surtug_grup_id')->references('id')->on('mst_surtug_grup');
+        $table->integer('spd_id',false,11)->nullable();
+        $table->foreign('spd_id')->references('id')->on('mst_spd');
         $table->timestamps();
       });
     }

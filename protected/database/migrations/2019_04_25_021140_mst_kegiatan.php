@@ -17,6 +17,8 @@ class MstKegiatan extends Migration
         $table->increments('id');
         $table->string('kode',50);
         $table->string('kegiatan');
+        $table->integer('seksi_id');
+        $table->foreign('seksi_id')->references('id')->on('mst_seksi');
         $table->timestamps();
       });
     }

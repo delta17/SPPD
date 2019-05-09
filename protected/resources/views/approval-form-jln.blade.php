@@ -17,7 +17,7 @@
           <strong>Sukses!</strong>
           {{ session('status') }}
         </div>
-    @endif
+      @endif
 
       <!-- START DATATABLE EXPORT -->
       <div class="panel panel-default">
@@ -31,16 +31,17 @@
             <tr>
               <th>No</th>
               <th>Seksi</th>
-              <th>No Form JLN</th>
+              <th width="15%">No Form JLN</th>
               <th width="30%">Perihal</th>
               <th>MAK</th>
               <th>Sisa Anggaran</th>
-              <th>Status</th>
+              <th>Tanggapan KPA</th>
               <th>Detail</th>
             </tr>
             </thead>
             <tbody>
             @foreach($myjlns as $myjln)
+              @if($myjln->getFormJLN->isApproved==0)
               <tr>
                 <td>{{$loop->iteration}}</td>
                 <td>{{$myjln->getFormJLN->getSeksi->seksi}}</td>
@@ -49,10 +50,11 @@
                 <td>{{$myjln->getFormJLN->mak}}</td>
                 <td>{{$myjln->getFormJLN->sisa_anggaran}}</td>
                 @if($myjln->getFormJLN->isApproved==0)
-                  <td style="text-align: center"><span class="label label-default label-form">Pending</span></td>
+                  <td><span class="label label-default label-form">Belum Ditanggapi</span></td>
                 @endif
                 <td style="text-align: center"><a href="{{url('form-jln/'.$myjln->getFormJLN->id)}}">Detail</a></td>
               </tr>
+              @endif
             @endforeach
             </tbody>
           </table>

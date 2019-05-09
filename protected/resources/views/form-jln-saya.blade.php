@@ -28,7 +28,7 @@
               <th>MAK</th>
               <th>Sisa Anggaran</th>
               <th>Keterangan</th>
-              <th>Status</th>
+              <th>Tanggapan KPA</th>
               <th>Preview</th>
             </tr>
             </thead>
@@ -45,10 +45,13 @@
                 @else
                   <td>-</td>
                 @endif
-                @if($myjln->getFormJLN->isApproved==null)
-                  <td><span class="label label-default label-form">Pending</span></td>
+                @if($myjln->getFormJLN->isApproved==0)
+                  <td><span class="label label-default label-form">Belum Ditanggapi</span></td>
+                  <td><a class="btn btn-info disabled" aria-disabled="true" role="button" href="{{url('preview-form-jln')}}">Preview</a></td>
+                @else
+                  <td><span class="label label-success label-form">Sudah Ditanggapi</span></td>
+                  <td><a class="btn btn-info" role="button" href="{{url('preview-form-jln')}}">Preview</a></td>
                 @endif
-                <td><a href="{{url('preview-form-jln')}}">Preview</a></td>
               </tr>
               @endif
             @endforeach

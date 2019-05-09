@@ -20,7 +20,7 @@ class MstAgenda extends Migration
         $table->foreign('form_jln_id')->references('id')->on('mst_form_jln');
         $table->string('personal',50);
         $table->string('pelaksana',100);
-        $table->integer('action',false,11);
+        $table->integer('action',false,11)->nullable();
         $table->timestamps();
       });
     }
