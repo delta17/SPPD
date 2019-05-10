@@ -25,26 +25,30 @@ use Illuminate\Support\Facades\Auth;
 class JLNController extends Controller
 {
     public function showJLN(){
-      $seksis       = Seksi::all();
+        $seksis       = Seksi::all();
+        //$kegiatans    = Kegiatan::all();
+        $subkomponens = Subkomponen::all();
+        $akuns        = Akun::all();
+        $users        = User::all();
+        $kendaraans   = Kendaraan::all();
+        $uraians      = KegiatanUraian::all();
+        $kegSeksis    = KegiatanSeksi::all();
 
-      $kegiatans    = Kegiatan::all();
-      $outputs      = Output::all();
-      $komponens    = Komponen::all();
-      $subkomponens = Subkomponen::all();
-      $akuns        = Akun::all();
-      $users        = User::all();
-      $kendaraans   = Kendaraan::all();
-      $uraians      = KegiatanUraian::all();
-      $kegSeksis    = KegiatanSeksi::all();
+        $seksi_user = Auth::user()->seksi_id;
+        if($seksi_user==1){
+            $programs     = Program::all();
+            $kegiatans    = Kegiatan::all();
+            $outputs      = Output::where('seksi_id', 1 )->get();
+            $komponens    = Komponen::where('seksi_id', 1 )->get();
+        } else{
+            $programs     = Program::find(3);
+            $kegiatans    = Kegiatan::find(3);
+            $outputs      = Output::where('seksi_id', $seksi_user)->get();
+            $komponens    = Komponen::where('seksi_id', $seksi_user)->get();
+        };
 
-      if(Auth::user()->seksi_id==1 ){
-        $programs     = Program::all();
-      } else {
-        $programs     = Program::find(3);
-      }
-
-      return view('buat-form-jln',compact('seksis','programs','kegiatans',
-        'outputs','komponens','subkomponens','akuns','users','kendaraans','uraians','kegSeksis'));
+        return view('buat-form-jln',compact('seksis','programs','kegiatans',
+            'outputs','komponens','subkomponens','akuns','users','kendaraans','uraians','kegSeksis'));
     }
 
     /**
@@ -54,56 +58,56 @@ class JLNController extends Controller
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function inputJLN(Request $request){
-//      dd($request);
-      $formJLN = new FormJLN();
-      /**
-       * fungsi input ke formJLN
-       */
-      $formJLN->perihal         = $request->perihal;
-      $formJLN->seksi_id        = $request->seksi;
-      $no = $request->no_seksi;
-      switch ($formJLN->seksi_id){
-        case 1:
-          $formJLN->no_seksi = "B-".$no."/62081/05/2019";
-          break;
-        case 2:
-          $formJLN->no_seksi = "B-".$no."/62082/05/2019";
-          break;
-        case 3:
-          $formJLN->no_seksi = "B-".$no."/62083/05/2019";
-          break;
-        case 4:
-          $formJLN->no_seksi = "B-".$no."/62084/05/2019";
-          break;
-        case 5:
-          $formJLN->no_seksi = "B-".$no."/62085/05/2019";
-          break;
-        case 6:
-          $formJLN->no_seksi = "B-".$no."/62086/05/2019";
-          break;
-        default:
-          break;
-      }
+        $formJLN = new FormJLN();
+        /**
+         * fungsi input ke formJLN
+         */
+        $formJLN->perihal         = $request->perihal;
+        $formJLN->seksi_id        = $request->seksi;
+        $no = $request->no_seksi;
+        switch ($formJLN->seksi_id){
+            case 1:
+                $formJLN->no_seksi = "B-".$no."/62081/05/2019";
+                break;
+            case 2:
+                $formJLN->no_seksi = "B-".$no."/62082/05/2019";
+                break;
+            case 3:
+                $formJLN->no_seksi = "B-".$no."/62083/05/2019";
+                break;
+            case 4:
+                $formJLN->no_seksi = "B-".$no."/62084/05/2019";
+                break;
+            case 5:
+                $formJLN->no_seksi = "B-".$no."/62085/05/2019";
+                break;
+            case 6:
+                $formJLN->no_seksi = "B-".$no."/62086/05/2019";
+                break;
+            default:
+                break;
+        }
 
-      $formJLN->program_kode      = $request->program;
-      $formJLN->kegiatan_kode     = $request->kegiatan;
-      $formJLN->output_kode       = $request->output;
-      $formJLN->komponen_kode     = $request->komponen;
-      $formJLN->subkomponen_kode  = $request->subkomponen;
-      $formJLN->akun_kode         = $request->akun;
-      $formJLN->mak               =
-        $formJLN->program_kode.$formJLN->kegiatan_kode.$formJLN->output_kode.$formJLN->komponen_kode.$formJLN->subkomponen_kode.$formJLN->akun_kode;
-      $formJLN->sisa_anggaran     = $request->sisa_anggaran;
-      $formJLN->keterangan        = $request->keterangan;
-      $formJLN->isPersonal        = true;
+        $formJLN->program_kode      = $request->program;
+        $formJLN->kegiatan_kode     = $request->kegiatan;
+        $formJLN->output_kode       = $request->output;
+        $formJLN->komponen_kode     = $request->komponen;
+        $formJLN->subkomponen_kode  = $request->subkomponen;
+        $formJLN->akun_kode         = $request->akun;
+        $formJLN->mak               =
+            $formJLN->program_kode.$formJLN->kegiatan_kode.$formJLN->output_kode.$formJLN->komponen_kode.$formJLN->subkomponen_kode.$formJLN->akun_kode;
+        $formJLN->sisa_anggaran     = $request->sisa_anggaran;
+        $formJLN->keterangan        = $request->keterangan;
+        $formJLN->isPersonal        = true;
 
 //      if($request->isPersonal == 1){
 //        $formJLN->isPersonal = true;
 //      }else{
 //        $formJLN->isPersonal = false;
 //      }
-      $formJLN->save();
+        $formJLN->save();
 //      dd($formJLN);
+
       /**
        * fungsi input UserJLN
        */
@@ -115,20 +119,21 @@ class JLNController extends Controller
         $userJLN->user_id              = 6;
 //        $userJLN->nama                = $request->input('nama.'.$i);
 //        $userJLN->nip                 = $request->input('nip.'.$i);
-        $userJLN->tgl_dari            = $request->input('tgl_dari.'.$i);
-        $userJLN->tgl_sampai          = $request->input('tgl_sampai.'.$i);
+            $userJLN->tgl_dari            = $request->input('tgl_dari.'.$i);
+            $userJLN->tgl_sampai          = $request->input('tgl_sampai.'.$i);
 //        $userJLN->uraian_id           = $x;
-        $userJLN->uraian_id           = 1;
+            $userJLN->uraian_id           = 1;
 
-        $userJLN->tujuan_dlm          = $request->input('tujuan.'.$i);
-        $userJLN->lamanya             = $request->input('lamanya.'.$i);
+            $userJLN->tujuan_dlm          = $request->input('tujuan.'.$i);
+            $userJLN->lamanya             = $request->input('lamanya.'.$i);
 //        $userJLN->kendaraan_id        = $request->input('kendaraan_id.'.$i);
-        $userJLN->kendaraan_id        = 1;
-        $userJLN->satuan              = $request->input('satuan.'.$i);
-        $userJLN->kuantitas           = $request->input('kuantitas.'.$i);
-        $userJLN->jln_id              = $formJLN->id;
-        $userJLN->wkt_standar_dinas   = (int)ceil(($userJLN->getTujuanDlm()->first()->waktu_tempuh*2+$userJLN->getUraianKegiatan()->first()->waktu_kegiatan*$userJLN->kuantitas)/8);
+            $userJLN->kendaraan_id        = 1;
+            $userJLN->satuan              = $request->input('satuan.'.$i);
+            $userJLN->kuantitas           = $request->input('kuantitas.'.$i);
+            $userJLN->jln_id              = $formJLN->id;
+            $userJLN->wkt_standar_dinas   = (int)ceil(($userJLN->getTujuanDlm()->first()->waktu_tempuh*2+$userJLN->getUraianKegiatan()->first()->waktu_kegiatan*$userJLN->kuantitas)/8);
 //        dd($userJLN);
+
         $userJLN->save();
         $user->push($userJLN->id);
 
@@ -168,7 +173,7 @@ class JLNController extends Controller
         $myJLN->user_id     = Auth::id();
         $myJLN->save();
 
-      return redirect('/buat-form-jln')->with('status','Data Berhasil Disimpan!');
+        return redirect('/buat-form-jln')->with('status','Data Berhasil Disimpan!');
     }
 
     public function showMyJLN(){

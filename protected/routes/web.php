@@ -36,6 +36,7 @@ Route::patch('/form-jln/{id}/approval', 'KPAController@inputApprovalJLN')->name(
 Route::get('/buat-laporan',             'LaporanController@showBuatLaporan')->middleware('auth');
 
 
+
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
