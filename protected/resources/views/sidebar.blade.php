@@ -59,11 +59,11 @@
       {{--</ul>--}}
 
     </li>
-    <li {{ (Request::is('agenda') ? 'class=active' : '') }}>
-      <a href="{{url('agenda')}}"><span class="fa fa-table"></span> <span class="xn-text">Agenda Surat Tugas</span></a>
-    </li>
 
     @if(Auth::user()->level_id<7)
+        <li {{ (Request::is('agenda') ? 'class=active' : '') }}>
+          <a href="{{url('agenda')}}"><span class="fa fa-table"></span> <span class="xn-text">Agenda Surat Tugas</span></a>
+        </li>
     <li {{Request::is('form-jln-saya') ? 'class=active' : ''}}>
       <a href="{{url('form-jln-saya')}}"><span class="fa fa-files-o"></span> <span class="xn-text">Form JLN Saya</span></a>
     </li>

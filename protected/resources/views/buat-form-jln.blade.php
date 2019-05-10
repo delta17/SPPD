@@ -71,9 +71,13 @@
               <div class="col-md-6 col-xs-12">
                 <select class="form-control select" name="program" id="idPilihProgram">
                   <option value="" disabled selected >Silahkan pilih program</option>
-                  @foreach($programs as $program)
-                    <option value="{{$program->kode}}">[{{$program->kode}}] {{$program->program}}</option>
-                  @endforeach
+                  @if(Auth::user()->seksi_id == 1)
+                    @foreach($programs as $program)
+                      <option value="{{$program->kode}}">[{{$program->kode}}] {{$program->program}}</option>
+                    @endforeach
+                  @else
+                    <option value="{{$programs->kode}}">[{{$programs->kode}}] {{$programs->program}}</option>
+                  @endif
                 </select>
               </div>
             </div>
@@ -376,7 +380,7 @@
 
               var newElement = '<tr>' +
                   '<td><input class="cTabelKecil" type="text" value=' + i + ' name="no[' + i + ']" readonly data-toggle="tooltip" data-placement="top" title=' + valNo + ' /></td>' +
-                  '<td><input class="cTabelStandar" type="text" value=' + valNama + ' name="nama[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valNama + ' /></td>' +
+                  '<td><input class="cTabelStandar" type="text" value=' + valNama + ' name="user_id[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valNama + ' /></td>' +
                   '<td><input class="cTabelStandar" type="text" value=' + valTanggalDari + ' name="tgl_dari[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTanggalDari + ' /></td>' +
                   '<td><input class="cTabelStandar" type="text" value=' + valTanggalSampai + ' name="tgl_sampai[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTanggalSampai + ' /></td>' +
                   '<td><input class="cTabelStandar" type="text" value=' + valTujuan + ' name="tujuan[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTujuan + ' /></td>' +

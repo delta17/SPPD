@@ -29,15 +29,35 @@ class KPAController extends Controller
     $agenda = Agenda::where('form_jln_id',$id)->get();
 
     $action_sum = collect([]);
-    for($i=1;$i<=count($request->input('id.*'));$i++ ){
-      $UserJLN = UserJLN::where('id',$request->id[$i])->first();
-      $UserJLN->action = $request->input('action.'.$i);
-      $agenda[$i-1]->action = $request->input('action.'.$i);
-      $action_sum->push($request->input('action.'.$i));
+    $count = count($request->input('id.*'));
+    if($count>1){
+      for($i=1;$i<=$count;$i++ ){
+        $UserJLN = UserJLN::where('id',$request->id[$i])->first();
+        $UserJLN->action = $request->input('action.'.$i);
+        $agenda[$i-1]->action = $request->input('action.'.$i);
+        $action_sum->push($request->input('action.'.$i));
+        $arsip = new MyArsip();
+        $arsip->user_jln_id = $UserJLN->id;
+        if($UserJLN->action == 1){
+          $arsip->user_jln_id = $UserJLN->id;
+        }
+        $UserJLN->update();
+        $agenda[$i-1]->update();
+      }
+    } else{
+      $UserJLN = UserJLN::where('id',$request->id[1])->first();
+      $UserJLN->action = $request->input('action.1');
+      $agenda[0]->action = $request->input('action.1');
+      $action_sum->push($request->input('action.1'));
+      $arsip = new MyArsip();
+      $arsip->user_jln_id = $UserJLN->id;
+      if($UserJLN->action == 1){
+        $arsip->user_jln_id = $UserJLN->id;
+      }
       $UserJLN->update();
-//      dd($agenda[$i-1]);
-      $agenda[$i-1]->update();
+      $agenda[0]->update();
     }
+
 
     if(isset($request->catatan_kpa)){
       $FormJLN->catatan_kpa = $request->catatan_kpa;

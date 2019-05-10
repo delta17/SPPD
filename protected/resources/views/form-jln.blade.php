@@ -89,7 +89,7 @@
                               <td>{{$loop->iteration}}</td>
                               <td>
                                 <input type="hidden" name="id[{{$loop->iteration}}]" value="{{$userjln->id}}">
-                                {{$userjln->nama}}</td>
+                                {{$userjln->getUser->name}}</td>
 {{--                              <td>{{$userjln->tgl_dari}}</td>--}}
 {{--                              <td>{{$userjln->tgl_sampai}}</td>--}}
                             @if(isset($userjln->tujuan_dlm))

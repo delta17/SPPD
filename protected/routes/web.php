@@ -20,7 +20,7 @@ Route::get('/dashboard',                'DashboardController@showDashboard')->mi
 Route::get('/agenda',                   'AgendaController@showAgenda')->middleware('auth');
 Route::get('/buat-form-jln',            'JLNController@showJLN')->middleware('auth');
 Route::post('/upload-form-jln',         'JLNController@inputJLN')->middleware('auth');
-Route::get('/preview-form-jln',         'JLNController@showPreviewJLN')->middleware('auth');
+Route::get('/preview-form-jln',     'JLNController@showPreviewJLN')->middleware('auth');
 Route::get('/form-jln-saya',            'JLNController@showMyJLN')->middleware('auth');
 Route::get('/buat-surtug-personal',     'SurtugController@showSurtugPersonal')->middleware('auth');
 Route::get('/preview-surtug-personal',  'SurtugController@showPreviewSurtugPersonal')->middleware('auth');

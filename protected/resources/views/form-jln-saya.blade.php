@@ -24,6 +24,7 @@
             <thead>
             <tr>
               <th>No</th>
+              <th>No Form JLN</th>
               <th>Perihal</th>
               <th>MAK</th>
               <th>Sisa Anggaran</th>
@@ -33,27 +34,26 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($myjlns as $myjln)
-              @if($myjln->getFormJLN->seksi_id == Auth::user()->seksi_id)
+            @foreach($formjlns as $formjln)
               <tr>
                 <td>{{$loop->iteration}}</td>
-                <td>{{$myjln->getFormJLN->perihal}}</td>
-                <td>{{$myjln->getFormJLN->mak}}</td>
-                <td>{{$myjln->getFormJLN->sisa_anggaran}}</td>
-                @if(isset($myjln->getFormJLN->keterangan))
-                  <td>{{$myjln->getFormJLN->keterangan}}</td>
+                <td>{{$formjln->no_seksi}}</td>
+                <td>{{$formjln->perihal}}</td>
+                <td>{{$formjln->mak}}</td>
+                <td>{{$formjln->sisa_anggaran}}</td>
+                @if(isset($formjln->keterangan))
+                  <td>{{$formjln->keterangan}}</td>
                 @else
                   <td>-</td>
                 @endif
-                @if($myjln->getFormJLN->isApproved==0)
+                @if($formjln->isApproved==0)
                   <td><span class="label label-default label-form">Belum Ditanggapi</span></td>
-                  <td><a class="btn btn-info disabled" aria-disabled="true" role="button" href="{{url('preview-form-jln')}}">Preview</a></td>
+                  <td><a href="#" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="print form jln"><i class="fa fa-print"></i></a></td>
                 @else
                   <td><span class="label label-success label-form">Sudah Ditanggapi</span></td>
-                  <td><a class="btn btn-info" role="button" href="{{url('preview-form-jln')}}">Preview</a></td>
+                  <td><a href="{{url('preview-form-jln')}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="preview form jln"><i class="fa fa-print"></i></a></td>
                 @endif
               </tr>
-              @endif
             @endforeach
             </tbody>
           </table>

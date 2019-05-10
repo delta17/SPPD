@@ -26,7 +26,7 @@
             <p style="text-align: center;">FORM JLN</p>
             <p style="text-align: center;">FORMULIR PERMINTAAN</p>
             <p style="text-align: center;">BELANJA PERJALANAN DINAS BIASA (DN)</p>
-            <p style="text-align: center;">NOMOR : B-003/BPS/62081/01/2019</p>
+            <p style="text-align: center;">NOMOR : {{$userjlns->getFormJLN->no_seksi}}</p>
             <p>&nbsp;</p>
             <p>Kepada Yang Terhormat :</p>
             <p>Kuasa Pengguna Anggaran</p>

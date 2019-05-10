@@ -15,7 +15,7 @@ class MstUserJln extends Migration
     {
       Schema::create('mst_user_jln', function (Blueprint $table) {
         $table->increments('id');
-        $table->string('nama',100);
+        $table->string('nama',100)->nullable();
         $table->string('nip',50)->nullable();
         $table->date('tgl_dari');
         $table->date('tgl_sampai');
