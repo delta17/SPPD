@@ -156,6 +156,88 @@
                           </select>
                       </div>
                   </div>
+<div class="form-group">
+                  <label class="col-md-3 col-xs-12 control-label"><strong>Lokasi Pelaksanaan</strong></label>
+                  <div class="col-md-6 col-xs-12">
+                    <label class="check col-md-3"><input type="radio" class="iradio" name="iradio" id="radioDalamKota"/> Dalam Kota</label>
+                    <label class="check col-md-3"><input type="radio" class="iradio" name="iradio" id="radioLuarKota"/> Luar Kota</label>
+                    <label class="check col-md-3"><input type="radio" class="iradio" name="iradio" id="radioPerusahaan"/> Perusahaan</label>
+                  </div>
+                </div>
+
+
+                  <div id="ddDalamKota">
+                  <div class="form-group">
+                  <label class="col-md-3 col-xs-12 control-label">Kecamatan</label>
+                  <div class="col-md-6 col-xs-12">
+                    <select class="form-control select">
+                      <option>[010] Seruyan Hilir</option>
+                      <option>[011] Seruyan Hilir Timur</option>
+                      <option>[020] Danau Sembuluh</option>
+                      <option>[021] Seruyan Raya</option>
+                      <option>[030] Hanau</option>
+                      <option>[031] Danau Seluluk</option>
+                      <option>[040] Seruyan Tengah</option>
+                      <option>[041] Batu Ampar</option>
+                      <option>[050] Seruyan Hulu</option>
+                      <option>[051] Suling Tambun</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 col-xs-12 control-label">Desa</label>
+                  <div class="col-md-6 col-xs-12">
+                    <select class="form-control select">
+                      <option>[010] Seruyan Hilir</option>
+                      <option>[011] Seruyan Hilir Timur</option>
+                      <option>[020] Danau Sembuluh</option>
+                      <option>[021] Seruyan Raya</option>
+                      <option>[030] Hanau</option>
+                      <option>[031] Danau Seluluk</option>
+                      <option>[040] Seruyan Tengah</option>
+                      <option>[041] Batu Ampar</option>
+                      <option>[050] Seruyan Hulu</option>
+                      <option>[051] Suling Tambun</option>
+                    </select>
+                  </div>
+                </div>
+                  </div>
+
+                  <div class="form-group" id="ddLuarKota">
+                      <label class="col-md-3 col-xs-12 control-label">Tujuan Dinas</label>
+                      <div class="col-md-6 col-xs-12">
+                          <select class="form-control select">
+                              <option>[010] Seruyan Hilir</option>
+                              <option>[011] Seruyan Hilir Timur</option>
+                              <option>[020] Danau Sembuluh</option>
+                              <option>[021] Seruyan Raya</option>
+                              <option>[030] Hanau</option>
+                              <option>[031] Danau Seluluk</option>
+                              <option>[040] Seruyan Tengah</option>
+                              <option>[041] Batu Ampar</option>
+                              <option>[050] Seruyan Hulu</option>
+                              <option>[051] Suling Tambun</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group" id="ddPerusahaan">
+                      <label class="col-md-3 col-xs-12 control-label">Perusahaan</label>
+                      <div class="col-md-6 col-xs-12">
+                          <select class="form-control select">
+                              <option>[010] Seruyan Hilir</option>
+                              <option>[011] Seruyan Hilir Timur</option>
+                              <option>[020] Danau Sembuluh</option>
+                              <option>[021] Seruyan Raya</option>
+                              <option>[030] Hanau</option>
+                              <option>[031] Danau Seluluk</option>
+                              <option>[040] Seruyan Tengah</option>
+                              <option>[041] Batu Ampar</option>
+                              <option>[050] Seruyan Hulu</option>
+                              <option>[051] Suling Tambun</option>
+                          </select>
+                      </div>
+                  </div>
 
                 <div class="form-group">
                   <label class="col-md-3 col-xs-12 control-label"><strong>Waktu Pelaksanaan</strong></label>
