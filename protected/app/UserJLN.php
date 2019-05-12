@@ -47,4 +47,8 @@ class UserJLN extends Model
     public function getArsip(){
       return $this->belongsTo('App\MyArsip','id','user_jln_id');
     }
+
+    public function getLaporan(){
+      return $this->hasOne('App\Laporan','id','laporan_id');
+    }
 }

@@ -80,6 +80,7 @@
       <path value="$PROJECT_DIR$/protected/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/protected/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/protected/vendor/laravel-frontend-presets/bulma" />
+      <path value="$PROJECT_DIR$/protected/vendor/jenssegers/date" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7" />

@@ -38,6 +38,7 @@ class MstUserJln extends Migration
         $table->integer('kuantitas',false,10);
         $table->integer('user_id',false,11)->nullable();
         $table->foreign('user_id')->references('id')->on('users');
+        $table->string('no_surat')->nullable();
         $table->timestamps();
       });
     }

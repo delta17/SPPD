@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->integer('level_id',false,5);
             $table->foreign('level_id')->references('id')->on('mst_level_user');
             $table->string('jabatan',50);
+            $table->string('pangkat',50)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

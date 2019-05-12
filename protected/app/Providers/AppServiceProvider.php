@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Carbon;
+use Jenssegers\Date\Date;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+      config(['app.locale' => 'id']);
+      Date::setLocale('id');
     }
 
     /**

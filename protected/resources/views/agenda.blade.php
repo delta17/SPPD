@@ -39,7 +39,7 @@
                 <td>{{$loop->iteration}}</td>
                 <td>{{$agenda->getFormJLN->getSeksi->seksi}}</td>
                 <td>{{$agenda->perihal}}</td>
-                <td>{{$agenda->updated_at->format('d-m-Y')}}</td>
+                <td>{{Date::parse($agenda->updated_at)->format('d/m/Y')}}</td>
                 <td>{{$agenda->personal}}</td>
                 <td>{{$agenda->pelaksana}}</td>
                 <td>
@@ -48,13 +48,13 @@
                       <p>Belum disetujui</p>
                     @break
                   @case (1)
-                      <a class="btn btn-info" href="{{url('preview-surtug-personal')}}"/>Cetak Surat Tugas
+                    <a class="btn btn-info" target="_blank" href="{{url('preview-surtug-personal/'.$loop->iteration)}}">Cetak Surat Tugas</a>
                     @break
                   @case (2)
-                      <a class="btn btn-success" role="button" href="{{url('preview-spd')}}"/>Cetak SPD dan Surat Tugas
+                    <a class="btn btn-success" target="_blank" href="{{url('preview-spd/'.$loop->iteration)}}">Cetak SPD dan Surat Tugas</a>
                     @break
                   @case (3)
-                      <a href="#"/>Ditolak
+                    <a href="#">Ditolak</a>
                     @break
                   @default
                 @endswitch

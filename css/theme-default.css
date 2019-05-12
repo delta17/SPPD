@@ -1436,7 +1436,7 @@ a.list-group-item:focus {
 }
 .panel.panel-default {
   border-top-color: #F5F5F5;
-  border-top-width: 1px;
+  border-top-width: 0;
 }
 
 .panel.panel-default#arsip{
@@ -2953,13 +2953,14 @@ blockquote.pull-right {
   float: left;
   width: 100%;
   position: relative;
-  margin-top: 40px;
+  margin-top: 0;
+  margin-bottom: 0 !important;
 }
 .nav-tabs,
 .nav-tabs.nav-justified {
   border-bottom: 0px;
   margin-bottom: 0px;
-  margin-top: -40px;
+  margin-top: 0;
   padding: 0;
 }
 .block-head .nav-tabs {

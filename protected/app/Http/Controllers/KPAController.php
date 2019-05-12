@@ -8,6 +8,7 @@ use App\FormJLN;
 use App\MyJLN;
 use App\UserJLN;
 use App\Agenda;
+use Jenssegers\Date\Date;
 
 class KPAController extends Controller
 {
@@ -41,8 +42,18 @@ class KPAController extends Controller
         if($UserJLN->action == 1){
           $arsip->user_jln_id = $UserJLN->id;
         }
-        $UserJLN->update();
+
         $agenda[$i-1]->update();
+
+        $no = strlen((string)$agenda[$i-1]->id);
+        $date = $UserJLN->updated_at->format('m/Y');
+        if($no<3){
+          $UserJLN->no_surat = str_pad((string)$agenda[$i-1]->id,3,"0",STR_PAD_LEFT)."/62080/".$date;
+        } else{
+          $UserJLN->no_surat = $agenda[$i-1]->id."/62080/".$date;
+        }
+
+        $UserJLN->update();
       }
     } else{
       $UserJLN = UserJLN::where('id',$request->id[1])->first();
@@ -54,8 +65,16 @@ class KPAController extends Controller
       if($UserJLN->action == 1){
         $arsip->user_jln_id = $UserJLN->id;
       }
-      $UserJLN->update();
       $agenda[0]->update();
+      $no = strlen((string)$agenda[0]->id);
+      $date = $UserJLN->updated_at->format('m/Y');
+      if($no<3){
+        $UserJLN->no_surat = str_pad((string)$agenda[0]->id,3,"0",STR_PAD_LEFT)."/62080/".$date;
+      } else{
+        $UserJLN->no_surat = (string)$agenda[0]->id."/62080/".$date;
+      }
+
+      $UserJLN->update();
     }
 
 
@@ -68,9 +87,6 @@ class KPAController extends Controller
       $FormJLN->isApproved = 1;
     }
     $FormJLN->update();
-
-
-
 
     return redirect('/approval-form-jln')->with('status','Action Berhasil Disimpan!');
   }

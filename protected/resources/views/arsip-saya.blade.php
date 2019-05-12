@@ -32,41 +32,42 @@
             </tr>
             </thead>
             <tbody>
-            @isset($userjlns)
               @foreach($userjlns as $userjln)
-              <tr>
-                <td>{{$loop->iteration}}</td>
-                @if(isset($userjln->nama))
-                  <td>{{$userjln->nama}}</td>
-                @else
-                  <td>{{$userjln->getUser->name}}</td>
+                @if($userjln->action > 0 & $userjln->action < 3)
+                  <tr>
+                    <td>{{$loop->iteration}}</td>
+                    @if(isset($userjln->nama))
+                      <td>{{$userjln->nama}}</td>
+                    @else
+                      <td>{{$userjln->getUser->name}}</td>
+                    @endif
+                    <td>{{$userjln->getUraianKegiatan->uraian}}</td>
+                    <td>{{$userjln->getTujuanDlm->desa}}</td>
+                    <td>{{Date::parse($userjln->tgl_dari)->format('d/m/Y')}}</td>
+                    <td>{{Date::parse($userjln->tgl_sampai)->format('d/m/Y')}}</td>
+                    @if($userjln->action == 1)
+                      <td>Surat Tugas</td>
+                      <td>
+                        <div class="btn-group">
+                          <a href="{{url('preview-surtug-personal/'.$userjln->id)}}" target="_blank" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="print surat tugas"><i class="fa fa-print"></i></a>
+                          <a href="{{url('buat-laporan/'.$userjln->id)}}" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="buat laporan"><i class="fa fa-edit"></i></a>
+
+                          <a href="{{url('preview-laporan/'.$userjln->id)}}" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="preview laporan"><i class="fa fa-file-text-o"></i></a>
+                        </div>
+                      </td>
+                    @else
+                      <td>SPD</td>
+                      <td>
+                        <div class="btn-group">
+                          <a href="{{url('preview-spd/'.$userjln->id)}}" target="_blank" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="print spd"><i class="fa fa-print"></i></a>
+                          <a href="{{url('buat-laporan')}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="buat laporan"><i class="fa fa-edit"></i></a>
+                          <a href="{{url('preview-laporan')}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="preview laporan"><i class="fa fa-file-text-o"></i></a>
+                        </div>
+                      </td>
+                    @endif
+                  </tr>
                 @endif
-                <td>{{$userjln->getUraianKegiatan->uraian}}</td>
-                <td>{{$userjln->getTujuanDlm->desa}}</td>
-                <td>{{$userjln->tgl_dari}}</td>
-                <td>{{$userjln->tgl_sampai}}</td>
-                @if($userjln->action == 1)
-                  <td>Surat Tugas</td>
-                  <td>
-                    <div class="btn-group">
-                      <a href="{{url('preview-surtug-personal')}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="print surat tugas"><i class="fa fa-print"></i></a>
-                      <a href="{{url('buat-laporan')}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="buat laporan"><i class="fa fa-edit"></i></a>
-                      <a href="{{url('preview-laporan')}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="preview laporan"><i class="fa fa-file-text-o"></i></a>
-                    </div>
-                  </td>
-                @else
-                  <td>SPD</td>
-                  <td>
-                    <div class="btn-group">
-                      <a href="{{url('preview-spd')}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="print spd"><i class="fa fa-print"></i></a>
-                      <a href="{{url('buat-laporan')}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="buat laporan"><i class="fa fa-edit"></i></a>
-                      <a href="{{url('preview-laporan')}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="preview laporan"><i class="fa fa-file-text-o"></i></a>
-                    </div>
-                  </td>
-                @endif
-              </tr>
               @endforeach
-            @endisset
             </tbody>
           </table>
 

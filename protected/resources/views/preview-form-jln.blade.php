@@ -40,23 +40,23 @@
                       <div id="source-html" >
                       <p style="text-align: center;">FORM JLN
                       <br/>FORMULIR PERMINTAAN<br/>BELANJA PERJALANAN DINAS BIASA (DN)<br/>
-                      NOMOR : B-003/BPS/62081/01/2019</p>
+                      NOMOR : {{$formjln->no_seksi}}</p>
 
                       <p>Kepada Yang Terhormat :
                         <br/>Kuasa Pengguna Anggaran
                         <br/>Badan Pusat Statistik
                         <br/>Kabupaten Seruyan
-                        <br/>di -</p>
-                      <p style="padding-left: 30px;">Kuala Pembuang</p>
+                        <br/>di -
+                        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kuala Pembuang</p>
 
-                      <p>Bersama ini disampaikan rencana perjalanan dinas dalam rangka pembinaan administrasi tahun 2019 BPS Provinsi ke kabupaten/kota:</p>
+                      <p>Bersama ini disampaikan rencana perjalanan dinas dalam rangka {{$formjln->perihal}}:</p>
                       <ol>
-                        <li>Sub Bagian/Seksi : Tata Usaha</li>
-                        <li>Program : Dukungan manajemen dan pelaksanaan tugas teknis lainnya BPS Provinsi</li>
-                        <li>Keluaran (output) : Layanan Perkantoran</li>
-                        <li>Komponen : 002.E &nbsp;(Penyelenggaraan perkantoran lainnya)</li>
-                        <li>Pembebanan MAK : 054.01.06.2886.994.002.E.524111</li>
-                        <li>Jumlah Sisa anggaran di POK : Rp. 5.000.000</li>
+                        <li>Sub Bagian/Seksi : {{$formjln->getSeksi->seksi}}</li>
+                        <li>Program : {{$formjln->program_kode}}</li>
+                        <li>Keluaran (output) : {{$formjln->output_kode}}</li>
+                        <li>Komponen : {{$formjln->komponen_kode}}</li>
+                        <li>Pembebanan MAK : {{$formjln->mak}}</li>
+                        <li>Jumlah Sisa anggaran di POK : Rp. {{$formjln->sisa_anggaran}}</li>
                       </ol>
                       <p>Daftar peserta yang berangkat sebagai berikut :</p>
                       <table border="1" width="650">
@@ -85,47 +85,34 @@
                           </td>
 
                         </tr>
-                        <tr style="height: 21px;">
-                          <td width="38">1.</td>
-                          <td width="134">Henny Anggraini</td>
-                          <td width="159">12345678 123456 1 123</td>
-                          <td width="61">2019-02-1</td>
-                          <td style="height: 21px; width: 60px">2019-02-4</td>
-                          <td width="102">Bangkal</td>
-                          <td width="78">4</td>
-                        </tr>
-                        <tr style="height: 21px;">
-                          <td width="38">2.</td>
-                          <td width="134">Hendro Sukendro</td>
-                          <td width="159">12345678 123456 1 123</td>
-                          <td width="61">2019-02-1</td>
-                          <td style="height: 21px; width: 60px">2019-02-6</td>
-                          <td width="102">Tumbang Manjul</td>
-                          <td width="78">6</td>
-                        </tr>
-                        <tr style="height: 21px;">
-                          <td width="38">3.</td>
-                          <td width="134">Adiv Fahrur A</td>
-                          <td width="159">12345678 123456 1 123</td>
-                          <td width="61">2019-02-1</td>
-                          <td style="height: 21px; width: 60px">2019-02-5</td>
-                          <td width="102">Asam Baru</td>
-                          <td width="78">5</td>
-                        </tr>
+                        @foreach($userjlns as $userjln)
+                          @php(\Jenssegers\Date\Date::setLocale('id'))
+                          <tr style="height: 21px;">
+                            <td width="38">{{$loop->iteration}}.</td>
+                            <td width="134">{{$userjln->getUser->name}}</td>
+                            <td width="159">{{$userjln->getUser->nip}}</td>
+                            <td width="61">{{Date::parse($userjln->tgl_dari)->format('d F Y')}}</td>
+                            <td style="height: 21px; width: 60px">{{Date::parse($userjln->tgl_sampai)->format('d F Y')}}</td>
+                            <td width="102">{{$userjln->getTujuanDlm->desa}}</td>
+                            <td width="78">{{$userjln->lamanya}}</td>
+                          </tr>
+                        @endforeach
                         </tbody>
                       </table>
                       <br/>
                       Keterangan :
-                      <li>Untuk no.1 menggunakan kendaraan darat</li>
-                      <li>Untuk no.2 menggunakan kendaraan campuran</li>
-                      <li>Untuk no.3 menggunakan kendaraan dinas</li>
-
+                        @foreach($userjlns as $userjln)
+                      <li>Untuk no.{{$loop->iteration}} menggunakan {{$userjln->getKendaraan->jenis}}</li>
+                        @endforeach
                       <table style="height: 213px;" width="644">
                         <tbody>
                         <tr>
                           <td style="width: 320px;">&nbsp;</td>
                           <td style="width: 323px; text-align: center;">
-                            <p>Kuala Pembuang, 29 Januari 2017
+                            @foreach($userjlns as $userjln)
+                              @php(\Jenssegers\Date\Date::setLocale('id'))
+                            <p>Kuala Pembuang, {{Date::parse($userjln->updated_at)->format('d F Y')}}
+                              @endforeach
                             <br/>Kepala Sub Bagian Tata Usaha
                             <br/>BPS Kabupaten Seruyan
                             <br/>&nbsp;<br/>&nbsp;<br/>&nbsp;
@@ -141,7 +128,7 @@
                         <tr>
                           <td width="641">
                             <p>Catatan Kuasa Pengguna Anggaran:</p>
-                            <p>&nbsp;</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{$formjln->catatan_kpa}}</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
                           </td>

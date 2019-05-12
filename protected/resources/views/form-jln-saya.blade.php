@@ -51,7 +51,7 @@
                   <td><a href="#" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="print form jln"><i class="fa fa-print"></i></a></td>
                 @else
                   <td><span class="label label-success label-form">Sudah Ditanggapi</span></td>
-                  <td><a href="{{url('preview-form-jln')}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="preview form jln"><i class="fa fa-print"></i></a></td>
+                  <td><a href="{{url('preview-form-jln/'.$formjln->id)}}" target="_blank" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="preview form jln"><i class="fa fa-print"></i></a></td>
                 @endif
               </tr>
             @endforeach

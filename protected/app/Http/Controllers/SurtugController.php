@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use App\UserJLN;
 
 class SurtugController extends Controller
 {
@@ -10,8 +12,10 @@ class SurtugController extends Controller
       return view('buat-surtug-personal');
     }
 
-    public function showPreviewSurtugPersonal(){
-      return view('preview-surtug-personal');
+    public function showPreviewSurtugPersonal($id){
+      $userjln = UserJLN::find($id);
+
+      return \View::make('preview-surtug-personal',compact('userjln'));
     }
 
     public function showSurtugGrup(){

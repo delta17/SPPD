@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\UserJLN;
 use Illuminate\Http\Request;
 
 class SPDController extends Controller
@@ -10,7 +11,9 @@ class SPDController extends Controller
       return view('buat-spd');
     }
 
-    public function showPreviewSPD(){
-      return view('preview-spd');
+    public function showPreviewSPD($id){
+      $userjln = UserJLN::find($id);
+//      dd($userjln);
+      return \View::make('preview-spd',compact('userjln'));
     }
 }

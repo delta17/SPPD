@@ -6,7 +6,9 @@ use App\FormJLN;
 use App\MyArsip;
 use App\UserJLN;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use App;
 
 class ArsipController extends Controller
 {
@@ -29,7 +31,7 @@ class ArsipController extends Controller
       else{
         $userjlns = UserJLN::all()->groupBy('user_id')->get($user);
       }
-//      dd($arsips->first());
+
       return view('arsip-saya', compact('userjlns'));
     }
 }

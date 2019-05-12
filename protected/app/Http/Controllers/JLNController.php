@@ -19,14 +19,15 @@ use App\Subkomponen;
 use App\User;
 use App\UserJLN;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
+use Jenssegers\Date\Date;
 
 class JLNController extends Controller
 {
     public function showJLN(){
         $seksis       = Seksi::all();
-        //$kegiatans    = Kegiatan::all();
         $subkomponens = Subkomponen::all();
         $akuns        = Akun::all();
         $users        = User::all();
@@ -65,24 +66,25 @@ class JLNController extends Controller
         $formJLN->perihal         = $request->perihal;
         $formJLN->seksi_id        = $request->seksi;
         $no = $request->no_seksi;
+        $date = Date::now()->format('m/Y');
         switch ($formJLN->seksi_id){
             case 1:
-                $formJLN->no_seksi = "B-".$no."/62081/05/2019";
+                $formJLN->no_seksi = "B-".$no."/62081/".$date;
                 break;
             case 2:
-                $formJLN->no_seksi = "B-".$no."/62082/05/2019";
+                $formJLN->no_seksi = "B-".$no."/62082/".$date;
                 break;
             case 3:
-                $formJLN->no_seksi = "B-".$no."/62083/05/2019";
+                $formJLN->no_seksi = "B-".$no."/62083/".$date;
                 break;
             case 4:
-                $formJLN->no_seksi = "B-".$no."/62084/05/2019";
+                $formJLN->no_seksi = "B-".$no."/62084/".$date;
                 break;
             case 5:
-                $formJLN->no_seksi = "B-".$no."/62085/05/2019";
+                $formJLN->no_seksi = "B-".$no."/62085/".$date;
                 break;
             case 6:
-                $formJLN->no_seksi = "B-".$no."/62086/05/2019";
+                $formJLN->no_seksi = "B-".$no."/62086/".$date;
                 break;
             default:
                 break;
@@ -180,8 +182,7 @@ class JLNController extends Controller
       $seksi = Auth::user()->seksi_id;
       $level = Auth::user()->level_id;
       $formjln = FormJLN::all()->groupBy('seksi_id')->get($seksi);
-//      $myjlns = MyJLN::getFormJLN();
-//      dd($formjln);
+
       if($level<5)
         $formjlns = FormJLN::all();
       elseif ($level==6){
@@ -191,11 +192,10 @@ class JLNController extends Controller
       return view('form-jln-saya',compact('formjlns'));
     }
 
-    public function showPreviewJLN(){
-      $seksi = Auth::user()->seksi;
-      $formjlns = FormJLN::where('seksi_id',6)->get();
-//      $userjlns = UserJLN::where();
-//      dd($formjlns);
-      return view('preview-form-jln',compact('formjlns'));
+    public function showPreviewJLN($id){
+      $formjln  = FormJLN::find($id);
+      $userjlns = UserJLN::where('jln_id',$id)->get();
+
+      return view('preview-form-jln',compact('formjln','userjlns'));
     }
 }
