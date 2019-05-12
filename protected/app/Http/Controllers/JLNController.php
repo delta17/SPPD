@@ -20,17 +20,17 @@ use App\UserJLN;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class JLNController extends Controller
 {
     public function showJLN(){
         $seksis       = Seksi::all();
-        //$kegiatans    = Kegiatan::all();
-        $subkomponens = Subkomponen::all();
+        //$subkomponens = Subkomponen::all();
         $akuns        = Akun::all();
         $users        = User::all();
         $kendaraans   = Kendaraan::all();
-        $uraians      = KegiatanUraian::all();
+        //$uraians      = KegiatanUraian::all();
         $kegSeksis    = KegiatanSeksi::all();
 
         if(Auth::user()->seksi_id==1){
@@ -41,6 +41,7 @@ class JLNController extends Controller
             $kegiatans     = Kegiatan::find(3);
         };
 //        dd($kegiatans     = Kegiatan::find(3));
+
         if(Auth::user()->seksi_id==1){
             $outputs = Output::where('seksi_id', '=',1 )->get();
             $komponens = Komponen::where('seksi_id', '=',1 )->get();
@@ -62,8 +63,29 @@ class JLNController extends Controller
         };
 
         return view('buat-form-jln',compact('seksis','programs','kegiatans',
-            'outputs','komponens','subkomponens','akuns','users','kendaraans','uraians','kegSeksis'));
+            'outputs','komponens','akuns','users','kendaraans','kegSeksis'));
+
     }
+/*
+    public function showSubKomponen($id)
+    {
+        $states = Subkomponen::where('komponen_id','=', $id)->get();
+        return json_encode($states);
+    }
+*/
+
+    public function showSubKomponen(){
+        $komponens_id = Input::get('komponen_id');
+        $subKomponen = Subkomponen::where('komponen_id','=', $komponens_id)->get();
+        return response()->json($subKomponen);
+    }
+
+    public function showPerihalKeg(){
+        $kegSeksi_id = Input::get('kegiatan_id');
+        $perihalKeg = KegiatanUraian::where('kegiatan_id','=', $kegSeksi_id)->get();
+        return response()->json($perihalKeg);
+    }
+
 
     /**
      * Fungsi Input FormJLN dan UserJLN

@@ -111,10 +111,10 @@
                         <div class="form-group">
                             <label class="col-md-3 col-xs-12 control-label">Komponen</label>
                             <div class="col-md-6 col-xs-12">
-                                <select class="form-control select" name="komponen" id="idPilihKomponen">
+                                <select class="form-control  select" name="komponen" id="idPilihKomponen">
                                     <option value="" disabled selected>Silahkan pilih komponen</option>
                                     @foreach($komponens as $komponen)
-                                        <option value="{{$komponen->kode}}">[{{$komponen->kode}}] {{$komponen->komponen }}</option>
+                                        <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -125,9 +125,7 @@
                             <div class="col-md-6 col-xs-12">
                                 <select class="form-control select" name="subkomponen" id="idPilihSubkomponen">
                                     <option value="" disabled selected>Silahkan pilih subkomponen</option>
-                                    @foreach($subkomponens as $subkomponen)
-                                        <option value=".{{$subkomponen->kode}}">[{{$subkomponen->kode}}] {{$subkomponen->subkomponen}}</option>
-                                    @endforeach
+
                                 </select>
                             </div>
                         </div>
@@ -266,19 +264,21 @@
                     </div>
                     <br/>
 
-                    {{--                  <div class="form-group">--}}
-                    {{--                      <label class="col-md-3 col-xs-12 control-label">Kegiatan Seksi</label>--}}
-                    {{--                      <div class="col-md-6 col-xs-12" >--}}
-                    {{--                          <select class="form-control select" id="idPesertaKegSeksi">--}}
-                    {{--                              <option value="" disabled selected>Silahkan pilih jenis kegiatan seksi</option>--}}
-                    {{--                              @foreach($kegSeksis as $kegSeksi )--}}
-                    {{--                                  @if($kegSeksi->seksi_id == Auth::user()->seksi_id)--}}
-                    {{--                                  <option value="{{$kegSeksi->id}}">{{$kegSeksi->kegiatan_seksi}}</option>--}}
-                    {{--                                  @endif--}}
-                    {{--                              @endforeach--}}
-                    {{--                          </select>--}}
-                    {{--                      </div>--}}
-                    {{--                  </div>--}}
+
+
+                                      <div class="form-group">
+                                          <label class="col-md-3 col-xs-12 control-label">Kegiatan Seksi</label>
+                                          <div class="col-md-6 col-xs-12" >
+                                              <select class="form-control select" id="idPesertaKegSeksi">
+                                                  <option value="" disabled selected>Silahkan pilih jenis kegiatan seksi</option>
+                                                  @foreach($kegSeksis as $kegSeksi )
+                                                      @if($kegSeksi->seksi_id == Auth::user()->seksi_id)
+                                                      <option value="{{$kegSeksi->id}}">{{$kegSeksi->kegiatan_seksi}}</option>
+                                                      @endif
+                                                  @endforeach
+                                              </select>
+                                          </div>
+                                      </div>
                     <br/>
 
                     <div class="form-group">
@@ -286,9 +286,7 @@
                         <div class="col-md-6 col-xs-12">
                             <select class="form-control select" id="idPesertaPerihal">
                                 <option value="" disabled selected>Silahkan pilih Perihal Kegiatan</option>
-                                @foreach($uraians as $uraian)
-                                    <option value="{{$uraian->id}}">{{$uraian->uraian}}</option>
-                                @endforeach
+
                             </select>
                         </div>
                     </div>
@@ -364,15 +362,27 @@
             $("#idBtnTambahPeserta").click(function() {
                 var valNo = $('input[id="idPesertaNo"]').val();
                 var valNama = $("#idPesertaNama").find(":selected").text();
-                var valTanggalDari = $('input[id="idPesertaTanggalDari"]').val();
-                var valTanggalSampai = $('input[id="idPesertaTanggalSampai"]').val();
-                var valTujuan = $('input[id="idPesertaTujuan"]').val();
+                var idValNama = $("#idPesertaNama").val();
+
+                var valTanggalDari = $("#idPesertaTanggalDari").val();
+                var valTanggalSampai = $("#idPesertaTanggalSampai").val();
+
+                var valTujuan = $("#idPesertaTujuan").val();
                 // var valKegSeksi = $('input[id="idPesertaKegSeksi"]').val();
-                var valPerihal = $('input[id="idPesertaPerihal"]').val();
-                var valKuantitas = $('input[id="idPesertaKuantitas"]').val();
-                var valSatuan = $('input[id="idPesertaSatuan"]').val();
-                var valLama = $('input[id="idPesertaLama"]').val();
-                var valKendaraan = $('input[id="idPesertaKendaraan"]').val();
+
+                var valPerihal = $("#idPesertaPerihal").find(":selected").text();
+                var idValPerihal = $("#idPesertaPerihal").val();
+
+                var valKuantitas = $("#idPesertaKuantitas").val();
+
+                var valSatuan = $("#idPesertaSatuan").find(":selected").text();
+                var idValSatuan = $("#idPesertaSatuan").val();
+
+                var valLama = $("#idPesertaLama").val();
+
+                var valKendaraan = $("#idPesertaKendaraan").find(":selected").text();
+                var idValKendaraan = $("#idPesertaKendaraan").val();
+
                 var table = document.getElementById('idTabelDaftarPeserta');
                 var rowLength = table.rows.length;
 
@@ -382,20 +392,20 @@
 
                 var newElement = '<tr>' +
                     '<td><input class="cTabelKecil" type="text" value=' + i + ' name="no[' + i + ']" readonly data-toggle="tooltip" data-placement="top" title=' + valNo + ' /></td>' +
-                    '<td><input class="cTabelStandar" type="text" value='+valNama+' name="nama['+i+']" readonly  data-toggle="tooltip" data-placement="top" title='+ valNama+' /></td>' +
+                    '<td class="cTabelStandar"><input type="hidden" value='+idValNama+' name="nama['+i+']" readonly  data-toggle="tooltip" data-placement="top" title='+ valNama+' >'+valNama+'</input></td>' +
                     '<td><input class="cTabelStandar" type="text" value=' + valTanggalDari + ' name="tgl_dari[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTanggalDari + ' /></td>' +
                     '<td><input class="cTabelStandar" type="text" value=' + valTanggalSampai + ' name="tgl_sampai[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTanggalSampai + ' /></td>' +
                     '<td><input class="cTabelStandar" type="text" value=' + valTujuan + ' name="tujuan[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTujuan + ' /></td>' +
                     // '<td><input class="cTabelStandar" type="text" value=' + valKegSeksi + ' name="kegSeksi[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valKegSeksi + ' /></td>' +
-                    '<td><input class="cTabelBesar" type="text" value=' + valPerihal + ' name="uraian_id[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valPerihal + ' /></td>' +
+                    '<td class="cTabelBesar"><input type="hidden" value=' + idValPerihal + ' name="uraian_id[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valPerihal + '>'+valPerihal+'</input></td>' +
                     '<td><input class="cTabelStandar" type="number" value=' + valKuantitas + ' name="kuantitas[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valKuantitas + ' /></td>' +
-                    '<td><input class="cTabelStandar" type="text" value=' + valSatuan + ' name="satuan[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valSatuan + ' /></td>' +
+                    '<td class="cTabelStandar"><input type="hidden" value=' + idValSatuan + ' name="satuan[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valSatuan + '>'+valSatuan+'</input></td>' +
                     '<td><input class="cTabelStandar" type="text" value=' + valLama + ' name="lamanya[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valLama + ' /></td>' +
-                    '<td><input class="cTabelStandar" type="text" value=' + valKendaraan + ' name="kendaraan_id[' + i + ']" readonly data-toggle="tooltip" data-placement="top" title=' + valKendaraan + ' /></td>';
+                    '<td class="cTabelStandar"><input type="hidden" value=' + idValKendaraan + ' name="kendaraan_id[' + i + ']" readonly data-toggle="tooltip" data-placement="top" title=' + valKendaraan + '>'+valKendaraan+'</input></td>';
 
 
                 $("#idTabelDaftarPeserta").append($(newElement));
-                alert(valNama);
+
                 i=i+1;
             });
 
@@ -432,7 +442,16 @@
                 });
             });
 
-            $("#idPilihKomponen").change(function(){
+            $("#idPilihKomponen").on('change', function (e) {
+                    var komponen_id = e.target.value;
+                    $.get("/SPPD/json-subKomponen?komponen_id=" + komponen_id, function (data) {
+                        $('#idPilihSubkomponen').empty();
+                        $('#idPilihSubkomponen').append('<option value="">Silahkan pilih subkomponen</option>');
+                        $.each(data, function (index, subKomponenObj) {
+                            $('#idPilihSubkomponen').append('<option value="'+subKomponenObj.id+'">['+subKomponenObj.kode+'] '+subKomponenObj.subkomponen+'</option>');
+                        })
+                    });
+
                 $("#idPilihKomponen option:selected").each(function () {
                     var $this = $(this);
                     if ($this.length) {
@@ -533,6 +552,52 @@
                 mak: ''
             }
         });
+/*
+            jQuery(document).ready(function ()
+            {
+                jQuery('#idPilihKomponen').on('change',function(){
+                    var countryID = jQuery(this).val();
+                    if(countryID)
+                    {
+                        jQuery.ajax({
+                            url : 'buat-form-JLN/' +countryID,
+                            type : "GET",
+                            dataType : "json",
+                            success:function(data)
+                            {
+                                console.log(data);
+                                jQuery('#idPilihSubkomponen').empty();
+                                jQuery.each(data, function(key,value){
+                                    $('#idPilihSubkomponen').append('<option value="'+ key +'">'+ value +'</option>');
+                                });
+                            }
+                        });
+                    }
+                    else
+                    {
+                        $('#idPilihSubkomponen').empty();
+                    }
+                });
+            });
+
+*/
+
+
+        $("#idPesertaKegSeksi").on('change', function (e) {
+            var kegiatan_id = e.target.value;
+            $.get("/SPPD/json-perihalKeg?kegiatan_id=" + kegiatan_id, function (data) {
+
+
+                $('#idPesertaPerihal').empty();
+                $('#idPesertaPerihal').append('<option value="">Silahkan pilih perihal kegiatan</option>');
+                $.each(data, function (index, perihalKegObj) {
+                    $('#idPesertaPerihal').append('<option value="'+perihalKegObj.id+'">'+perihalKegObj.uraian+'</option>');
+                            $('#idPesertaSatuan').append('<option value="'+perihalKegObj.id+'">'+perihalKegObj.satuan+'</option>');
+                });
+            });
+        });
+
+        
     </script>
 
 
