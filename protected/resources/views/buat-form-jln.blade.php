@@ -407,6 +407,7 @@
                 $("#idTabelDaftarPeserta").append($(newElement));
 
                 i=i+1;
+                $('.modal :input').val('');
             });
 
 
@@ -582,7 +583,6 @@
 
 */
 
-
         $("#idPesertaKegSeksi").on('change', function (e) {
             var kegiatan_id = e.target.value;
             $.get("/SPPD/json-perihalKeg?kegiatan_id=" + kegiatan_id, function (data) {
@@ -597,7 +597,8 @@
             });
         });
 
-        
+
+
     </script>
 
 
