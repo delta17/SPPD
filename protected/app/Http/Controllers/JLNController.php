@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Agenda;
+use App\Desa;
 use App\FormJLN;
+use App\Kecamatan;
 use App\Kegiatan;
 use App\Akun;
 use App\KegiatanSeksi;
@@ -35,6 +37,7 @@ class JLNController extends Controller
         $kendaraans   = Kendaraan::all();
         //$uraians      = KegiatanUraian::all();
         $kegSeksis    = KegiatanSeksi::all();
+        $kecamatans     = Kecamatan::all();
 
         $seksi_user = Auth::user()->seksi_id;
         if($seksi_user==1){
@@ -50,7 +53,7 @@ class JLNController extends Controller
         };
 
         return view('buat-form-jln',compact('seksis','programs','kegiatans',
-            'outputs','komponens','akuns','users','kendaraans','kegSeksis'));
+            'outputs','komponens','akuns','users','kendaraans','kegSeksis','kecamatans'));
 
     }
 /*
@@ -71,6 +74,12 @@ class JLNController extends Controller
         $kegSeksi_id = Input::get('kegiatan_id');
         $perihalKeg = KegiatanUraian::where('kegiatan_id','=', $kegSeksi_id)->get();
         return response()->json($perihalKeg);
+    }
+
+    public function showDesa(){
+        $kecamatan_id = Input::get('kec_id');
+        $desa = Desa::where('kec_id','=', $kecamatan_id)->get();
+        return response()->json($desa);
     }
 
 

@@ -14,4 +14,8 @@ class LaporanController extends Controller
 
         return \View::make('buat-laporan-spd',compact('userjln'))->render();
     }
+
+    public function showPreviewLaporan(){
+        return view('preview-laporan');
+    }
 }

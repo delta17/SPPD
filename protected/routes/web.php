@@ -36,6 +36,8 @@ Route::get('/buat-laporan/{id}',              'LaporanController@showBuatLaporan
 //Route::get('buat-form-jln/{id}',        'JLNController@showSubKomponen')->middleware('auth');
 Route::get('/json-subKomponen',               'JLNController@showSubKomponen')->middleware('auth');
 Route::get('/json-perihalKeg',                'JLNController@showPerihalKeg')->middleware('auth');
+Route::get('/json-desa',                      'JLNController@showDesa')->middleware('auth');
+Route::get('/preview-laporan',                'LaporanController@showPreviewLaporan')->middleware('auth');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 

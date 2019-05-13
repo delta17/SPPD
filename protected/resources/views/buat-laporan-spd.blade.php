@@ -142,13 +142,21 @@
                   </div>
               </div>
               <div class="tab-pane" id="tab-second">
-                <h5>Upload Foto</h5>
+                <h5>Pilih Foto yang akan Di-upload</h5>
+                  <div class="form-group">
+                      <div class="col-md-12">
+
+                          <input type="file" multiple id="file-simple"/>
+                      </div>
+                  </div>
               </div>
             </div>
           </div>
         </div>
         <div class="panel panel-footer">
+            <button type="submit" class="btn btn-info pull-right">Save</button>
             <button type="submit" class="btn btn-info pull-right">Submit</button>
+
         </div>
       </form>
     </div>
