@@ -112,14 +112,21 @@ class JLNController extends Controller
                 break;
         }
 
-        $formJLN->program_kode      = $request->program;
-        $formJLN->kegiatan_kode     = $request->kegiatan;
-        $formJLN->output_kode       = $request->output;
-        $formJLN->komponen_kode     = $request->komponen;
-        $formJLN->subkomponen_kode  = $request->subkomponen;
-        $formJLN->akun_kode         = $request->akun;
-        $formJLN->mak               =
-            $formJLN->program_kode.$formJLN->kegiatan_kode.$formJLN->output_kode.$formJLN->komponen_kode.$formJLN->subkomponen_kode.$formJLN->akun_kode;
+        $formJLN->program_id      = $request->program;
+        $formJLN->kegiatan_id     = $request->kegiatan;
+        $formJLN->output_id       = $request->output;
+        $formJLN->komponen_id     = $request->komponen;
+        $formJLN->subkomponen_id  = $request->subkomponen;
+        $formJLN->akun_id         = $request->akun;
+
+        if(isset($formJLN->subkomponen_id)){
+          $formJLN->mak               = (string)
+            $formJLN->getProgram->kode.".".$formJLN->getKegiatan->kode.".".$formJLN->getOutput->kode .".".$formJLN->getKomponen->kode.".".$formJLN->getSubkomponen->kode.".".$formJLN->getAkun->kode;
+        } else{
+          $formJLN->mak               = (string)
+            $formJLN->getProgram->kode.".".$formJLN->getKegiatan->kode.".".$formJLN->getOutput->kode .".".$formJLN->getKomponen->kode.".".$formJLN->getAkun->kode;
+        }
+
         $formJLN->sisa_anggaran     = $request->sisa_anggaran;
         $formJLN->keterangan        = $request->keterangan;
         $formJLN->isPersonal        = true;
@@ -129,8 +136,8 @@ class JLNController extends Controller
 //      }else{
 //        $formJLN->isPersonal = false;
 //      }
+
         $formJLN->save();
-//      dd($formJLN);
 
       /**
        * fungsi input UserJLN
@@ -139,24 +146,23 @@ class JLNController extends Controller
       $count = count($request->input('tujuan.*'));
       for($i=1; $i<=$count;$i++) {
         $userJLN = new UserJLN();
-//        $x = $request->input('uraian_id.'.$i);
-        $userJLN->user_id              = 6;
+        $x = $request->input('uraian_id.'.$i);
 //        $userJLN->nama                = $request->input('nama.'.$i);
 //        $userJLN->nip                 = $request->input('nip.'.$i);
-            $userJLN->tgl_dari            = $request->input('tgl_dari.'.$i);
-            $userJLN->tgl_sampai          = $request->input('tgl_sampai.'.$i);
-//        $userJLN->uraian_id           = $x;
-            $userJLN->uraian_id           = 1;
+        $userJLN->tgl_dari            = $request->input('tgl_dari.'.$i);
+        $userJLN->tgl_sampai          = $request->input('tgl_sampai.'.$i);
+        $userJLN->uraian_id           = $x;
+//            $userJLN->uraian_id           = 1;
 
-            $userJLN->tujuan_dlm          = $request->input('tujuan.'.$i);
-            $userJLN->lamanya             = $request->input('lamanya.'.$i);
-//        $userJLN->kendaraan_id        = $request->input('kendaraan_id.'.$i);
-            $userJLN->kendaraan_id        = 1;
-            $userJLN->satuan              = $request->input('satuan.'.$i);
-            $userJLN->kuantitas           = $request->input('kuantitas.'.$i);
-            $userJLN->jln_id              = $formJLN->id;
-            $userJLN->wkt_standar_dinas   = (int)ceil(($userJLN->getTujuanDlm()->first()->waktu_tempuh*2+$userJLN->getUraianKegiatan()->first()->waktu_kegiatan*$userJLN->kuantitas)/8);
-//        dd($userJLN);
+        $userJLN->tujuan_dlm          = $request->input('tujuan.'.$i);
+        $userJLN->lamanya             = $request->input('lamanya.'.$i);
+        $userJLN->kendaraan_id        = $request->input('kendaraan_id.'.$i);
+//            $userJLN->kendaraan_id        = 1;
+//            $userJLN->satuan              = $request->input('satuan.'.$i);
+        $userJLN->kuantitas           = $request->input('kuantitas.'.$i);
+        $userJLN->user_id             = $request->input('user_id.'.$i);
+        $userJLN->jln_id              = $formJLN->id;
+        $userJLN->wkt_standar_dinas   = (int)ceil(($userJLN->getTujuanDlm()->first()->waktu_tempuh*2+$userJLN->getUraianKegiatan()->first()->waktu_kegiatan*$userJLN->kuantitas)/8);
 
         $userJLN->save();
         $user->push($userJLN->id);
@@ -176,7 +182,7 @@ class JLNController extends Controller
           $agenda->form_jln_id = $formJLN->id;
           $agenda->perihal = collect($userJLN->find($user->toArray()[$i-1])->getUraianKegiatan()->get())->first()->uraian;
           $agenda->personal = "Personal";
-          $agenda->pelaksana = collect($userJLN->find($user->toArray()[$i-1])->getUser()->get())->first()->name;
+          $agenda->pelaksana = User::find($request->user_id)->first()->name;
 //          $agenda->pelaksana = $request->input('user_id.'.$i);
           $agenda->save();
         }

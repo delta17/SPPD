@@ -136,7 +136,7 @@
                                 <select class="form-control select" name="akun" id="idPilihAkun">
                                     <option value="" disabled selected>Silahkan pilih akun</option>
                                     @foreach($akuns as $akun)
-                                        <option value=".{{$akun->kode}}">[{{$akun->kode}}] {{$akun->akun}}</option>
+                                        <option value="{{$akun->id}}">[{{$akun->kode}}] {{$akun->akun}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -203,7 +203,7 @@
                     </div>
 
                     <div class="panel-footer">
-                        <button class="btn btn-default pull-left">Clear Form</button>
+                        <a href="#modal_large" type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_large">Tambah Pelaksana</a>
                         <button class="btn btn-info pull-right" type="submit" onclick="notif()">Submit</button>
                     </div>
 
@@ -214,10 +214,10 @@
         </div>
     </div>
 
-    <button class="btn btn-default" data-toggle="modal" data-target="#modal_large">Tambah Pelaksana</button>
+{{--    <button class="btn btn-default" data-toggle="modal" data-target="#modal_large">Tambah Pelaksana</button>--}}
 
     <!-- MODALS -->
-    <div class="modal" id="modal_large" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
+    <div class="modal fade" id="modal_large" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -263,22 +263,19 @@
                         </div>
                     </div>
                     <br/>
-
-
-
-                                      <div class="form-group">
-                                          <label class="col-md-3 col-xs-12 control-label">Kegiatan Seksi</label>
-                                          <div class="col-md-6 col-xs-12" >
-                                              <select class="form-control select" id="idPesertaKegSeksi">
-                                                  <option value="" disabled selected>Silahkan pilih jenis kegiatan seksi</option>
-                                                  @foreach($kegSeksis as $kegSeksi )
-                                                      @if($kegSeksi->seksi_id == Auth::user()->seksi_id)
-                                                      <option value="{{$kegSeksi->id}}">{{$kegSeksi->kegiatan_seksi}}</option>
-                                                      @endif
-                                                  @endforeach
-                                              </select>
-                                          </div>
-                                      </div>
+                    <div class="form-group">
+                      <label class="col-md-3 col-xs-12 control-label">Kegiatan Seksi</label>
+                      <div class="col-md-6 col-xs-12" >
+                          <select class="form-control select" id="idPesertaKegSeksi">
+                              <option value="" disabled selected>Silahkan pilih jenis kegiatan seksi</option>
+                              @foreach($kegSeksis as $kegSeksi )
+                                  @if($kegSeksi->seksi_id == Auth::user()->seksi_id)
+                                  <option value="{{$kegSeksi->id}}">{{$kegSeksi->kegiatan_seksi}}</option>
+                                  @endif
+                              @endforeach
+                          </select>
+                      </div>
+                  </div>
                     <br/>
 
                     <div class="form-group">
@@ -392,7 +389,7 @@
 
                 var newElement = '<tr>' +
                     '<td><input class="cTabelKecil" type="text" value=' + i + ' name="no[' + i + ']" readonly data-toggle="tooltip" data-placement="top" title=' + valNo + ' /></td>' +
-                    '<td class="cTabelStandar"><input type="hidden" value='+idValNama+' name="nama['+i+']" readonly  data-toggle="tooltip" data-placement="top" title='+ valNama+' >'+valNama+'</input></td>' +
+                    '<td class="cTabelStandar"><input type="hidden" value='+idValNama+' name="user_id['+i+']" readonly  data-toggle="tooltip" data-placement="top" title='+ valNama+' >'+valNama+'</input></td>' +
                     '<td><input class="cTabelStandar" type="text" value=' + valTanggalDari + ' name="tgl_dari[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTanggalDari + ' /></td>' +
                     '<td><input class="cTabelStandar" type="text" value=' + valTanggalSampai + ' name="tgl_sampai[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTanggalSampai + ' /></td>' +
                     '<td><input class="cTabelStandar" type="text" value=' + valTujuan + ' name="tujuan[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTujuan + ' /></td>' +
@@ -491,8 +488,6 @@
 
              */
         });
-
-
 
         function notif() {
             confirm("Apakah Anda yakin?")

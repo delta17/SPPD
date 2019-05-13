@@ -28,7 +28,7 @@
 
     </div>
     <!-- END PAGE CONTENT -->
-    @include('footer')
+{{--    @include('footer')--}}
 </div>
 
 @yield('remove')

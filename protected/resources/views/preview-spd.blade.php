@@ -26,7 +26,7 @@
                  <li><a href="#tab-third" role="tab" data-toggle="tab">Halaman 3 (Visum)</a></li>
              </ul>
              <div class="panel panel-default tabs">
-                 <div class="cHalamanSurtug" >
+                 <div class="cHalamanSurtug">
                      <div id="idKonversi" class="panel-body tab-content">
                          <style>
                               .cTengah{
@@ -416,8 +416,7 @@
                                   </table>
                               </div>
                           </div>
-
-                          <div class="tab-pane" id="tab-third">
+                         <div class="tab-pane" id="tab-third">
                               <div id="source-html">
                                   <p>LAMPIRAN SPD</p>
                                   <table border="1">
@@ -545,7 +544,7 @@
                  </div>
              </div>
              <div class="panel panel-footer">
-                 <button class="btn btn-primary pull-right"><a class="btn jquery-word-export" href="javascript:void(0)"> Download File </a></button>
+                 <a type="button" class="btn btn-info pull-right jquery-word-export" href="javascript:void(0)"> Download File </a>
              </div>
          </form>
       </div>
@@ -554,10 +553,10 @@
 
 @section('page-scripts')
   <!-- START THIS PAGE PLUGINS-->
-  <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
-  <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-  <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="js/plugins/FileSaver.js"></script>
+  <script type='text/javascript' src="{{asset('js/plugins/icheck/icheck.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/plugins/FileSaver.js')}}"></script>
   <!-- END THIS PAGE PLUGINS-->
 
   <!-- codingan export to word -->

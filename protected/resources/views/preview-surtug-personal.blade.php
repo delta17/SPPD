@@ -189,7 +189,7 @@
                   </div>
               </div>
               <div class="panel panel-footer">
-                  <button class="btn btn-primary pull-right"><a class="btn jquery-word-export" href="javascript:void(0)"> Download File </a></button>
+                  <a type="button" class="btn btn-info pull-right jquery-word-export" href="javascript:void(0)"> Download File </a>
               </div>
           </form>
       </div>

@@ -27,7 +27,7 @@ class MstUserJln extends Migration
         $table->foreign('tujuan_luar')->references('id')->on('mst_luar_kota');
         $table->integer('tujuan_perusahaan',false,11)->nullable();
         $table->foreign('tujuan_perusahaan')->references('id')->on('mst_perusahaan');
-        $table->string('satuan');
+        $table->string('satuan')->nullable();
         $table->integer('lamanya',false,10);
         $table->integer('kendaraan_id',false,11);
         $table->foreign('kendaraan_id')->references('id')->on('mst_jln_kendaraan');
