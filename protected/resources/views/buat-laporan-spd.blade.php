@@ -155,7 +155,7 @@
                   </div>
               </div>
               <div class="tab-pane" id="tab-second">
-                <h5>Upload Foto Dokumentasi kegiatan</h5>
+                <h5>Pilih Foto yang akan Di-upload</h5>
                 <div class="col-md-12">
                   <input type="file" name="foto[]" multiple class="file" data-preview-file-type="any"/>
                 </div>
@@ -164,7 +164,7 @@
           </div>
         </div>
         <div class="panel panel-footer">
-            <button type="submit" class="btn btn-info pull-right">Submit</button>
+            <button type="submit" class="btn btn-info pull-right">Save</button>
         </div>
       </form>
     </div>

@@ -265,12 +265,28 @@
                     <br/>
 
                     <div class="form-group">
-                        <label class="col-md-3 col-xs-12 control-label">Tujuan</label>
+                        <label class="col-md-3 col-xs-12 control-label">Kecamatan</label>
                         <div class="col-md-6 col-xs-12">
-                            <input type="text" class="form-control select" id="idPesertaTujuan" placeholder="Silahkan isikan tujuan dinas">
+                            <select class="form-control select" id="idPesertaKec">
+                                <option value="" disabled selected>Silahkan pilih kecamatan tujuan</option>
+                                @foreach($kecamatans as $kecamatan )
+                                        <option value="{{$kecamatan->id}}">{{$kecamatan->kecamatan}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <br/>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Desa/Kelurahan</label>
+                        <div class="col-md-6 col-xs-12">
+                            <select class="form-control select" id="idPesertaDesa">
+                                <option value="" disabled selected>Silahkan pilih desa tujuan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br/>
+
                     <div class="form-group">
                       <label class="col-md-3 col-xs-12 control-label">Kegiatan Seksi</label>
                       <div class="col-md-6 col-xs-12" >
@@ -372,7 +388,10 @@
                 var valTanggalDari = $("#idPesertaTanggalDari").val();
                 var valTanggalSampai = $("#idPesertaTanggalSampai").val();
 
-                var valTujuan = $("#idPesertaTujuan").val();
+                var valTujuanDesa = $("#idPesertaDesa").find(":selected").text();
+                var idValTujuanDesa = $("#idPesertaDesa").val();
+
+                //var valTujuan = $("#idPesertaTujuan").val();
                 // var valKegSeksi = $('input[id="idPesertaKegSeksi"]').val();
 
                 var valPerihal = $("#idPesertaPerihal").find(":selected").text();
@@ -400,7 +419,7 @@
                     '<td class="cTabelStandar"><input type="hidden" value='+idValNama+' name="user_id['+i+']" readonly  data-toggle="tooltip" data-placement="top" title='+ valNama+' >'+valNama+'</input></td>' +
                     '<td><input class="cTabelStandar" type="text" value=' + valTanggalDari + ' name="tgl_dari[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTanggalDari + ' /></td>' +
                     '<td><input class="cTabelStandar" type="text" value=' + valTanggalSampai + ' name="tgl_sampai[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTanggalSampai + ' /></td>' +
-                    '<td><input class="cTabelStandar" type="text" value=' + valTujuan + ' name="tujuan[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTujuan + ' /></td>' +
+                    '<td class="cTabelStandar"><input type="hidden" value=' + idValTujuanDesa + ' name="tujuan[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTujuanDesa + '>'+valTujuanDesa+'</input></td>' +
                     // '<td><input class="cTabelStandar" type="text" value=' + valKegSeksi + ' name="kegSeksi[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valKegSeksi + ' /></td>' +
                     '<td class="cTabelBesar"><input type="hidden" value=' + idValPerihal + ' name="uraian_id[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valPerihal + '>'+valPerihal+'</input></td>' +
                     '<td><input class="cTabelStandar" type="number" value=' + valKuantitas + ' name="kuantitas[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valKuantitas + ' /></td>' +
@@ -589,13 +608,22 @@
         $("#idPesertaKegSeksi").on('change', function (e) {
             var kegiatan_id = e.target.value;
             $.get("/SPPD/json-perihalKeg?kegiatan_id=" + kegiatan_id, function (data) {
-
-
                 $('#idPesertaPerihal').empty();
                 $('#idPesertaPerihal').append('<option value="">Silahkan pilih perihal kegiatan</option>');
                 $.each(data, function (index, perihalKegObj) {
                     $('#idPesertaPerihal').append('<option value="'+perihalKegObj.id+'">'+perihalKegObj.uraian+'</option>');
                             $('#idPesertaSatuan').append('<option value="'+perihalKegObj.id+'">'+perihalKegObj.satuan+'</option>');
+                });
+            });
+        });
+
+        $("#idPesertaKec").on('change', function (e) {
+            var kec_id = e.target.value;
+            $.get("/SPPD/json-desa?kec_id=" + kec_id, function (data) {
+                $('#idPesertaDesa').empty();
+                $('#idPesertaDesa').append('<option value="">Silahkan pilih desa tujuan</option>');
+                $.each(data, function (index, desaObj) {
+                    $('#idPesertaDesa').append('<option value="'+desaObj.id+'">'+desaObj.desa+'</option>');
                 });
             });
         });

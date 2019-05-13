@@ -72,4 +72,5 @@ class LaporanController extends Controller
 
       return \View::make('preview-laporan',compact('userjln'))->render();
     }
+
 }

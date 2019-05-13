@@ -88,7 +88,20 @@
                                               <p>:</p>
                                           </td>
                                           <td style="height: 30.8672px;" colspan="2" width="503">
-                                              <p>{{$userjln->getUraianKegiatan->uraian}} ke {{$userjln->getTujuanDlm->desa}}</p>
+                                              <p>{{$userjln->getUraianKegiatan->uraian}} ke
+                                              @if(isset($userjln->tujuan_dlm))
+                                                  @if($userjln->tujuan_dlm==10002 or $userjln->tujuan_dlm==10005 or $userjln->tujuan_dlm==40026)
+                                                      Kelurahan
+                                                  @else
+                                                      Desa
+                                                  @endif
+                                                  {{$userjln->getTujuanDlm->desa}} Kecamatan {{$userjln->getTujuanDlm->getKecamatan->kecamatan}}.
+                                              @elseif(isset($userjln->tujuan_luar))
+                                                  {{$userjln->getTujuanLuar->tujuan}}.
+                                              @else
+                                                  {{$userjln->getTujuanPerusahaan->perusahaan}}.
+                                              @endif
+                                              </p>
                                           </td>
                                       </tr>
                                       <tr style="height: 30px;">

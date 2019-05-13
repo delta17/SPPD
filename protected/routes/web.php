@@ -37,7 +37,7 @@ Route::patch('/buat-laporan/{id}/update',     'LaporanController@update')->name(
 Route::get('/json-subKomponen',               'JLNController@showSubKomponen')->middleware('auth');
 Route::get('/json-perihalKeg',                'JLNController@showPerihalKeg')->middleware('auth');
 Route::get('/preview-laporan/{id}',           'LaporanController@showPreviewLaporan')->middleware('auth');
-
+Route::get('/json-desa',                      'JLNController@showDesa')->middleware('auth');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
