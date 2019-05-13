@@ -12,7 +12,7 @@
   <div class="row" id="idHalamanPreview">
       <div class="col-md-12">
           <form class="form-horizontal">
-              <div class="panel panel-default">
+              <div class="panel panel-default tabs">
                   <div class="cHalamanSurtug" >
                     <div id="idKonversi" class="panel-body tab-content">
                       <style>
@@ -52,9 +52,9 @@
                       <p>Bersama ini disampaikan rencana perjalanan dinas dalam rangka {{$formjln->perihal}}:</p>
                       <ol>
                         <li>Sub Bagian/Seksi : {{$formjln->getSeksi->seksi}}</li>
-                        <li>Program : {{$formjln->program_kode}}</li>
-                        <li>Keluaran (output) : {{$formjln->output_kode}}</li>
-                        <li>Komponen : {{$formjln->komponen_kode}}</li>
+                        <li>Program : {{$formjln->getProgram->program}}</li>
+                        <li>Keluaran (output) : {{ucwords(strtolower($formjln->getOutput->output))}}</li>
+                        <li>Komponen : {{ucwords(strtolower($formjln->getKomponen->komponen))}}</li>
                         <li>Pembebanan MAK : {{$formjln->mak}}</li>
                         <li>Jumlah Sisa anggaran di POK : Rp. {{$formjln->sisa_anggaran}}</li>
                       </ol>
@@ -86,14 +86,26 @@
 
                         </tr>
                         @foreach($userjlns as $userjln)
-                          @php(\Jenssegers\Date\Date::setLocale('id'))
                           <tr style="height: 21px;">
                             <td width="38">{{$loop->iteration}}.</td>
                             <td width="134">{{$userjln->getUser->name}}</td>
                             <td width="159">{{$userjln->getUser->nip}}</td>
                             <td width="61">{{Date::parse($userjln->tgl_dari)->format('d F Y')}}</td>
                             <td style="height: 21px; width: 60px">{{Date::parse($userjln->tgl_sampai)->format('d F Y')}}</td>
-                            <td width="102">{{$userjln->getTujuanDlm->desa}}</td>
+                            <td width="102">
+                            @if(isset($userjln->tujuan_dlm))
+                              @if($userjln->tujuan_dlm==10002 or $userjln->tujuan_dlm==10005 or $userjln->tujuan_dlm==40026)
+                                Kelurahan
+                              @else
+                                Desa
+                              @endif
+                              {{$userjln->getTujuanDlm->desa}}
+                            @elseif(isset($userjln->tujuan_luar))
+                              {{$userjln->getTujuanLuar->tujuan}}
+                            @else
+                              {{$userjln->getTujuanPerusahaan->perusahaan}}
+                            @endif
+                            </td>
                             <td width="78">{{$userjln->lamanya}}</td>
                           </tr>
                         @endforeach
@@ -139,10 +151,10 @@
                     </div>
                   </div>
               </div>
+            <div class="panel panel-footer">
+              <a type="button" class="btn btn-info pull-right jquery-word-export" href="javascript:void(0)"> Download File </a>
+            </div>
           </form>
-          <div class="panel-footer">
-              <button class="btn btn-primary pull-right"><a class="btn jquery-word-export" href="javascript:void(0)"> Download File </a></button>
-          </div>
       </div>
     </div>
 @endsection

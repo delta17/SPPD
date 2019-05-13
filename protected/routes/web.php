@@ -33,9 +33,11 @@ Route::get('/approval-form-jln',              'KPAController@showApprovalJLN')->
 Route::get('/form-jln/{id}',                  'KPAController@showDetailJLN')->middleware('auth');
 Route::patch('/form-jln/{id}/approval',       'KPAController@inputApprovalJLN')->name('approval')->middleware('auth');
 Route::get('/buat-laporan/{id}',              'LaporanController@showBuatLaporan')->middleware('auth');
-//Route::get('buat-form-jln/{id}',        'JLNController@showSubKomponen')->middleware('auth');
+Route::patch('/buat-laporan/{id}/update',     'LaporanController@update')->name('update')->middleware('auth');
 Route::get('/json-subKomponen',               'JLNController@showSubKomponen')->middleware('auth');
 Route::get('/json-perihalKeg',                'JLNController@showPerihalKeg')->middleware('auth');
+Route::get('/preview-laporan/{id}',           'LaporanController@showPreviewLaporan')->middleware('auth');
+
 
 //Route::get('/home', 'HomeController@index')->name('home');
 

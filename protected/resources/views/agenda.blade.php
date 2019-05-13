@@ -27,7 +27,7 @@
               <th>Seksi</th>
               <th>Perihal</th>
               <th>Tanggal</th>
-              <th>Personal/Grup</th>
+{{--              <th>Personal/Grup</th>--}}
               <th>Pelaksana</th>
               <th>Action</th>
             </tr>
@@ -40,7 +40,7 @@
                 <td>{{$agenda->getFormJLN->getSeksi->seksi}}</td>
                 <td>{{$agenda->perihal}}</td>
                 <td>{{Date::parse($agenda->updated_at)->format('d/m/Y')}}</td>
-                <td>{{$agenda->personal}}</td>
+{{--                <td>{{$agenda->personal}}</td>--}}
                 <td>{{$agenda->pelaksana}}</td>
                 <td>
                 @switch($agenda->action)
@@ -54,7 +54,7 @@
                     <a class="btn btn-success" target="_blank" href="{{url('preview-spd/'.$loop->iteration)}}">Cetak SPD dan Surat Tugas</a>
                     @break
                   @case (3)
-                    <a href="#">Ditolak</a>
+                    Ditolak
                     @break
                   @default
                 @endswitch

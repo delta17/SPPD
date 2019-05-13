@@ -7,7 +7,19 @@
 @section('content')
   <div class="row" id="idHalamanPreview">
     <div class="col-md-12">
-      <form class="form-horizontal">
+      @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+
+      <form role="form" class="form-horizontal" method="post" action="{{route('update', $id)}}" enctype="multipart/form-data">
+        {{csrf_field()}}
+        {{method_field('PATCH')}}
         <ul class="nav nav-tabs" role="tablist">
           <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Laporan</a></li>
           <li><a href="#tab-second" role="tab" data-toggle="tab">Upload Foto</a></li>
@@ -43,6 +55,7 @@
                     <div id="idIsiLaporan">
                       <h5>A. Pendahuluan</h5>
                       <h5 class="classSubPoin">1.	Umum</h5>
+                      <input type="hidden" name="id" value="{{$userjln->id}}">
                       <p class="classIsiLaporan">Dalam rangka pelaksanaan tugas penyelenggaraan kegiatan statistik, maka dipandang perlu melakukan perjalanan dinas dalam rangka {{$userjln->getUraianKegiatan->uraian}} di
                         @if(isset($userjln->tujuan_dlm))
                           @if($userjln->tujuan_dlm==10002 or $userjln->tujuan_dlm==10005 or $userjln->tujuan_dlm==40026)
@@ -142,7 +155,10 @@
                   </div>
               </div>
               <div class="tab-pane" id="tab-second">
-                <h5>Upload Foto</h5>
+                <h5>Upload Foto Dokumentasi kegiatan</h5>
+                <div class="col-md-12">
+                  <input type="file" name="foto[]" multiple class="file" data-preview-file-type="any"/>
+                </div>
               </div>
             </div>
           </div>

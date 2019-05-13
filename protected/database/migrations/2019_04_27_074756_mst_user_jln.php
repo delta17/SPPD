@@ -39,6 +39,9 @@ class MstUserJln extends Migration
         $table->integer('user_id',false,11)->nullable();
         $table->foreign('user_id')->references('id')->on('users');
         $table->string('no_surat')->nullable();
+        $table->string('hasil')->nullable();
+        $table->string('kesimpulan')->nullable();
+        $table->string('penutup')->nullable();
         $table->timestamps();
       });
     }

@@ -81,6 +81,26 @@ class JLNController extends Controller
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function inputJLN(Request $request){
+      $validation = $request->validate([
+        'no_seksi' => 'required|integer',
+        'perihal' => 'required',
+        'seksi' => 'required',
+        'program' => 'required',
+        'kegiatan' => 'required',
+        'output' => 'required',
+        'komponen' => 'required',
+        'akun' => 'required',
+        'sisa_anggaran' => 'required|integer',
+        'keterangan' => 'required',
+        'user_id' => 'required',
+        'tgl_dari' => 'required',
+        'tgl_sampai' => 'required',
+        'uraian_id' => 'required',
+        'kuantitas' => 'required',
+        'lamanya' => 'required',
+        'kendaraan_id' => 'required',
+      ]);
+
         $formJLN = new FormJLN();
         /**
          * fungsi input ke formJLN
@@ -89,24 +109,30 @@ class JLNController extends Controller
         $formJLN->seksi_id        = $request->seksi;
         $no = $request->no_seksi;
         $date = Date::now()->format('m/Y');
+        $count = strlen((string)$no);
+        if($count<3){
+          $no_seksi = str_pad((string)$no,3,"0",STR_PAD_LEFT);
+        } else{
+          $no_seksi = $no;
+        }
         switch ($formJLN->seksi_id){
             case 1:
-                $formJLN->no_seksi = "B-".$no."/62081/".$date;
+                $formJLN->no_seksi = "B-".$no_seksi."/62081/".$date;
                 break;
             case 2:
-                $formJLN->no_seksi = "B-".$no."/62082/".$date;
+                $formJLN->no_seksi = "B-".$no_seksi."/62082/".$date;
                 break;
             case 3:
-                $formJLN->no_seksi = "B-".$no."/62083/".$date;
+                $formJLN->no_seksi = "B-".$no_seksi."/62083/".$date;
                 break;
             case 4:
-                $formJLN->no_seksi = "B-".$no."/62084/".$date;
+                $formJLN->no_seksi = "B-".$no_seksi."/62084/".$date;
                 break;
             case 5:
-                $formJLN->no_seksi = "B-".$no."/62085/".$date;
+                $formJLN->no_seksi = "B-".$no_seksi."/62085/".$date;
                 break;
             case 6:
-                $formJLN->no_seksi = "B-".$no."/62086/".$date;
+                $formJLN->no_seksi = "B-".$no_seksi."/62086/".$date;
                 break;
             default:
                 break;
@@ -175,15 +201,16 @@ class JLNController extends Controller
       /**
        * fungsi input Agenda
        */
-
+      $userjln = UserJLN::where('jln_id',$formJLN->id)->get();
       if($formJLN->isPersonal){
         for($i=1;$i<=$count;$i++ ){
           $agenda = new Agenda();
           $agenda->form_jln_id = $formJLN->id;
-          $agenda->perihal = collect($userJLN->find($user->toArray()[$i-1])->getUraianKegiatan()->get())->first()->uraian;
+//          $agenda->perihal = collect($userJLN->find($user->toArray()[$i-1])->getUraianKegiatan()->get())->first()->uraian;
+          $agenda->perihal = $userjln[$i-1]->getUraianKegiatan->uraian;
           $agenda->personal = "Personal";
-          $agenda->pelaksana = User::find($request->user_id)->first()->name;
-//          $agenda->pelaksana = $request->input('user_id.'.$i);
+//          $agenda->pelaksana = User::find($request->input('user_id.'.$i))->first()->name;
+          $agenda->pelaksana = $userjln[$i-1]->getUser->name;
           $agenda->save();
         }
       }else{

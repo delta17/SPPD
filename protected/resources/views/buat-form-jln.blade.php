@@ -22,6 +22,15 @@
                     {{ session('status') }}
                 </div>
             @endif
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form id="jvalidate" role="form" class="form-horizontal" action="{{url('/upload-form-jln')}}" method="post"
                   novalidate="novalidate">
                 <div class="panel panel-default">
@@ -73,9 +82,9 @@
                                     <option value="" disabled selected >Silahkan pilih program</option>
                                     @if(Auth::user()->seksi_id==1)
                                         @foreach($programs as $program)
-                                            <option value="{{$program->id}}">[{{$program->kode}}] {{$program->program}}</option>
+                                            <option value="{{$program->id}}">[{{$program->kode}}] {{strtoupper($program->program)}}</option>
                                         @endforeach
-                                    @else <option value="{{$programs->id}}">[{{$programs->kode}}] {{$programs->program}}</option>
+                                    @else <option value="{{$programs->id}}">[{{$programs->kode}}] {{strtoupper($programs->program)}}</option>
                                     @endif
                                 </select>
                             </div>
@@ -88,9 +97,9 @@
                                     <option value="" disabled selected>Silahkan pilih kegiatan</option>
                                     @if(Auth::user()->seksi_id==1)
                                         @foreach($kegiatans as $kegiatan)
-                                            <option value="{{$kegiatan->id}}">[{{$kegiatan->kode}}] {{$kegiatan->kegiatan}}</option>
+                                            <option value="{{$kegiatan->id}}">[{{$kegiatan->kode}}] {{strtoupper($kegiatan->kegiatan)}}</option>
                                         @endforeach
-                                    @else <option value="{{$kegiatans->id}}">[{{$kegiatans->kode}}] {{$kegiatans->kegiatan}}</option>
+                                    @else <option value="{{$kegiatans->id}}">[{{$kegiatans->kode}}] {{strtoupper($kegiatans->kegiatan)}}</option>
                                     @endif
                                 </select>
                             </div>
@@ -125,7 +134,6 @@
                             <div class="col-md-6 col-xs-12">
                                 <select class="form-control select" name="subkomponen" id="idPilihSubkomponen">
                                     <option value="" disabled selected>Silahkan pilih subkomponen</option>
-
                                 </select>
                             </div>
                         </div>
@@ -136,7 +144,7 @@
                                 <select class="form-control select" name="akun" id="idPilihAkun">
                                     <option value="" disabled selected>Silahkan pilih akun</option>
                                     @foreach($akuns as $akun)
-                                        <option value="{{$akun->id}}">[{{$akun->kode}}] {{$akun->akun}}</option>
+                                        <option value="{{$akun->id}}">[{{$akun->kode}}] {{strtoupper($akun->akun)}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -270,7 +278,7 @@
                               <option value="" disabled selected>Silahkan pilih jenis kegiatan seksi</option>
                               @foreach($kegSeksis as $kegSeksi )
                                   @if($kegSeksi->seksi_id == Auth::user()->seksi_id)
-                                  <option value="{{$kegSeksi->id}}">{{$kegSeksi->kegiatan_seksi}}</option>
+                                  <option value="{{$kegSeksi->id}}">{{ucwords(strtolower($kegSeksi->kegiatan_seksi))}}</option>
                                   @endif
                               @endforeach
                           </select>

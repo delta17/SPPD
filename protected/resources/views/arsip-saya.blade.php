@@ -11,7 +11,13 @@
 @section('content')
   <div class="row">
     <div class="col-md-12">
-
+      @if (session('status'))
+        <div class="alert alert-info">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <strong>Sukses!</strong>
+          {{ session('status') }}
+        </div>
+      @endif
       <!-- START DATATABLE EXPORT -->
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -51,7 +57,6 @@
                         <div class="btn-group">
                           <a href="{{url('preview-surtug-personal/'.$userjln->id)}}" target="_blank" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="print surat tugas"><i class="fa fa-print"></i></a>
                           <a href="{{url('buat-laporan/'.$userjln->id)}}" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="buat laporan"><i class="fa fa-edit"></i></a>
-
                           <a href="{{url('preview-laporan/'.$userjln->id)}}" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="preview laporan"><i class="fa fa-file-text-o"></i></a>
                         </div>
                       </td>
@@ -60,8 +65,13 @@
                       <td>
                         <div class="btn-group">
                           <a href="{{url('preview-spd/'.$userjln->id)}}" target="_blank" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="print spd"><i class="fa fa-print"></i></a>
-                          <a href="{{url('buat-laporan/'.$userjln->id)}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="buat laporan"><i class="fa fa-edit"></i></a>
-                          <a href="{{url('preview-laporan')}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="preview laporan"><i class="fa fa-file-text-o"></i></a>
+                          @if(isset($userjln->hasil))
+                            <a href="{{url('buat-laporan/'.$userjln->id)}}" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="buat laporan"><i class="fa fa-edit"></i></a>
+                            <a href="{{url('preview-laporan/'.$userjln->id)}}" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="preview laporan"><i class="fa fa-file-text-o"></i></a>
+                          @else
+                            <a href="{{url('buat-laporan/'.$userjln->id)}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="buat laporan"><i class="fa fa-edit"></i></a>
+                            <a href="{{url('preview-laporan/'.$userjln->id)}}" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="preview laporan"><i class="fa fa-file-text-o"></i></a>
+                          @endif
                         </div>
                       </td>
                     @endif
