@@ -157,10 +157,10 @@ class KegiatanUraianSeeder extends Seeder
         ['id'=>'143','uraian'=>'Pengawasan Pencacahan survei PMTB Kuesioner MIRT','kegiatan_id'=>'41','waktu_kegiatan'=>0.75,'satuan'=>'ruta'],
         ['id'=>'144','uraian'=>'Pencacahan survei PMTB Kuesioner Desa','kegiatan_id'=>'41','waktu_kegiatan'=>0.89,'satuan'=>'Desa/Kel'],
         ['id'=>'145','uraian'=>'Pengawasan Pencacahan survei PMTB Desa','kegiatan_id'=>'41','waktu_kegiatan'=>0.5,'satuan'=>'Desa/Kel'],
-        ['id'=>'146','uraian'=>'Pengurusan  Administrasi Ke KPPN','kegiatan_id'=>'42','waktu_kegiatan'=>0.88,'satuan'=>'kegiatan'],
-        ['id'=>'147','uraian'=>'REVISI ANGGARAN KE DJPB','kegiatan_id'=>'43','waktu_kegiatan'=>1,'satuan'=>'kegiatan'],
-        ['id'=>'148','uraian'=>'KONSULTASI/SOSIALISASI DI KPKNL','kegiatan_id'=>'44','waktu_kegiatan'=>2,'satuan'=>'kegiatan'],
-        ['id'=>'149','uraian'=>'PENGURUSAN ADMINISTRASI KEPEGAWAIAN KE BKN','kegiatan_id'=>'45','waktu_kegiatan'=>2,'satuan'=>'kegiatan'],
+        ['id'=>'146','uraian'=>'Pengurusan  Administrasi Ke KPPN','kegiatan_id'=>'42','waktu_kegiatan'=>0.88,'satuan'=>'Kegiatan'],
+        ['id'=>'147','uraian'=>'REVISI ANGGARAN KE DJPB','kegiatan_id'=>'43','waktu_kegiatan'=>1,'satuan'=>'Kegiatan'],
+        ['id'=>'148','uraian'=>'KONSULTASI/SOSIALISASI DI KPKNL','kegiatan_id'=>'44','waktu_kegiatan'=>2,'satuan'=>'Kegiatan'],
+        ['id'=>'149','uraian'=>'PENGURUSAN ADMINISTRASI KEPEGAWAIAN KE BKN','kegiatan_id'=>'45','waktu_kegiatan'=>2,'satuan'=>'Kegiatan'],
       ];
 
       foreach ($data as $dt)

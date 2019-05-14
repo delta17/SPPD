@@ -90,8 +90,9 @@ class JLNController extends Controller
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function inputJLN(Request $request){
+//      dd($request);
       $validation = $request->validate([
-        'no_seksi' => 'required|integer',
+        'no_seksi' => 'required',
         'perihal' => 'required',
         'seksi' => 'required',
         'program' => 'required',
@@ -188,8 +189,9 @@ class JLNController extends Controller
         $userJLN->tgl_sampai          = $request->input('tgl_sampai.'.$i);
         $userJLN->uraian_id           = $x;
 //            $userJLN->uraian_id           = 1;
-
         $userJLN->tujuan_dlm          = $request->input('tujuan.'.$i);
+        $userJLN->tujuan_luar         = $request->input('tujuan_luar.'.$i);
+        $userJLN->tujuan_perusahaan   = $request->input('tujuan_perusahaan.'.$i);
         $userJLN->lamanya             = $request->input('lamanya.'.$i);
         $userJLN->kendaraan_id        = $request->input('kendaraan_id.'.$i);
 //            $userJLN->kendaraan_id        = 1;

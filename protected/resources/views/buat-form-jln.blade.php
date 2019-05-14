@@ -111,7 +111,7 @@
                                 <select class="form-control select" name="output" id="idPilihOutput">
                                     <option value="" disabled selected >Silahkan pilih output</option>
                                     @foreach($outputs as $output)
-                                        <option value="{{$output->kode}}">[{{$output->kode}}] {{$output->output}}</option>
+                                        <option value="{{$output->id}}">[{{$output->kode}}] {{strtoupper($output->output)}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -123,7 +123,7 @@
                                 <select class="form-control  select" name="komponen" id="idPilihKomponen">
                                     <option value="" disabled selected>Silahkan pilih komponen</option>
                                     @foreach($komponens as $komponen)
-                                        <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{$komponen->komponen }}</option>
+                                        <option value="{{$komponen->id}}">[{{$komponen->kode}}] {{strtoupper($komponen->komponen)}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -294,7 +294,7 @@
                               <option value="" disabled selected>Silahkan pilih jenis kegiatan seksi</option>
                               @foreach($kegSeksis as $kegSeksi )
                                   @if($kegSeksi->seksi_id == Auth::user()->seksi_id)
-                                  <option value="{{$kegSeksi->id}}">{{ucwords(strtolower($kegSeksi->kegiatan_seksi))}}</option>
+                                  <option value="{{$kegSeksi->id}}">{{$kegSeksi->kegiatan_seksi}}</option>
                                   @endif
                               @endforeach
                           </select>

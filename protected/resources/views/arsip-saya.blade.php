@@ -48,7 +48,13 @@
                       <td>{{$userjln->getUser->name}}</td>
                     @endif
                     <td>{{$userjln->getUraianKegiatan->uraian}}</td>
-                    <td>{{$userjln->getTujuanDlm->desa}}</td>
+                    @if(isset($userjln->tujuan_dlm))
+                      <td>{{$userjln->getTujuanDlm->desa}}</td>
+                    @elseif(isset($userjln->tujuan_luar))
+                      <td>{{$userjln->getTujuanLuar->tujuan}}</td>
+                    @else
+                      <td>{{$userjln->getTujuanPerusahaan->perusahaan}}</td>
+                    @endif
                     <td>{{Date::parse($userjln->tgl_dari)->format('d/m/Y')}}</td>
                     <td>{{Date::parse($userjln->tgl_sampai)->format('d/m/Y')}}</td>
                     @if($userjln->action == 1)
