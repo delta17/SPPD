@@ -302,7 +302,7 @@
                         <label class="col-md-3 col-xs-12 control-label">Luar Kota</label>
                         <div class="col-md-6 col-xs-12">
                             <select class="form-control select" id="idPesertaLuarKota">
-                                <option value="" disabled selected>Silahkan pilih tujuan</option>
+                                <option value="" disabled selected>Silahkan pilih tujuan luar kota</option>
                                 @foreach($luarkotas as $luarkota )
                                     <option value="{{$luarkota->id}}">{{$luarkota->tujuan}}</option>
                                 @endforeach

@@ -45,7 +45,7 @@ class LaporanController extends Controller
       if($count>1){
         for($i=0; $i<$count; $i++){
           $foto = new Foto();
-          $foto->user_jln_id_id = $userjln->id;
+          $foto->user_jln_id = $userjln->id;
           $file = $request->file('foto.'.$i);
           $filename = $foto->user_jln_id.'.'.$file->getClientOriginalExtension();
           $file->storeAs('dokumentasi', $filename);

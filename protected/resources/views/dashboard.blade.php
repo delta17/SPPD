@@ -23,4 +23,6 @@
   <script type="text/javascript" src="{{asset('js/plugins/moment.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/plugins/fullcalendar/fullcalendar.min.js')}}"></script>
   <!-- END THIS PAGE PLUGINS-->
+
+
 @endsection
