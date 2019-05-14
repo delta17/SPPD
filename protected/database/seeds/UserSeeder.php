@@ -38,6 +38,7 @@ class UserSeeder extends Seeder
         ['name'=>'Seksi Stat. Distribusi','nip'=>'-','email' =>'distribusi@bps.go.id','seksi_id'=>'4','level_id'=>'6','phone'=>'-','password'=>\Illuminate\Support\Facades\Hash::make('12345678'),'jabatan'=>'Seksi Statistik Distribusi','pangkat'=>''],
         ['name'=>'Seksi Stat. Sosial','nip'=>'-','email' =>'sosial@bps.go.id','seksi_id'=>'5','level_id'=>'6','phone'=>'-','password'=>\Illuminate\Support\Facades\Hash::make('12345678'),'jabatan'=>'Seksi Statistik Sosial','pangkat'=>''],
         ['name'=>'Seksi IPDS','nip'=>'-','email' =>'ipds@bps.go.id','seksi_id'=>'6','level_id'=>'6','phone'=>'-','password'=>\Illuminate\Support\Facades\Hash::make('12345678'),'jabatan'=>'Seksi IPDS','pangkat'=>''],
+        ['name'=>'Admin','nip'=>'-','email' =>'admin@bps.go.id','seksi_id'=>'0','level_id'=>'1','phone'=>'-','password'=>\Illuminate\Support\Facades\Hash::make('12345678'),'jabatan'=>'Admin','pangkat'=>''],
       ];
 
       foreach ($data as $dt)

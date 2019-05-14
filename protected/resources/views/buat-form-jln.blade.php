@@ -66,11 +66,19 @@
 
                                 <select class="form-control select" name="seksi">
                                     <option value="" disabled selected>Silahkan pilih seksi</option>
-                                    @foreach($seksis as $key => $seksi)
-                                        @if($key == Auth::user()->seksi_id)
-                                            <option value="{{$seksi->id}}">[{{$seksi->id}}] {{$seksi->seksi}}</option>
-                                        @endif
-                                    @endforeach
+                                    @if(Auth::user()->seksi_id==1 or Auth::user()->seksi_id==0)
+                                        @foreach($seksis as $key => $seksi)
+                                            @if($key > 0 and $key <7)
+                                                <option value="{{$seksi->id}}">[{{$seksi->id}}] {{strtoupper($seksi->seksi)}}</option>
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        @foreach($seksis as $key => $seksi)
+                                            @if($key == Auth::user()->seksi_id)
+                                                <option value="{{$seksi->id}}">[{{$seksi->id}}] {{strtoupper($seksi->seksi)}}</option>
+                                            @endif
+                                        @endforeach
+                                    @endif
                                 </select>
                             </div>
                         </div>
@@ -80,11 +88,12 @@
                             <div class="col-md-6 col-xs-12">
                                 <select class="form-control select" name="program" id="idPilihProgram">
                                     <option value="" disabled selected >Silahkan pilih program</option>
-                                    @if(Auth::user()->seksi_id==1)
+                                    @if(Auth::user()->seksi_id==1 or Auth::user()->seksi_id==0)
                                         @foreach($programs as $program)
                                             <option value="{{$program->id}}">[{{$program->kode}}] {{strtoupper($program->program)}}</option>
                                         @endforeach
-                                    @else <option value="{{$programs->id}}">[{{$programs->kode}}] {{strtoupper($programs->program)}}</option>
+                                    @else
+                                        <option value="{{$programs->id}}">[{{$programs->kode}}] {{strtoupper($programs->program)}}</option>
                                     @endif
                                 </select>
                             </div>
@@ -95,11 +104,12 @@
                             <div class="col-md-6 col-xs-12">
                                 <select class="form-control select" name="kegiatan" id="idPilihKegiatan">
                                     <option value="" disabled selected>Silahkan pilih kegiatan</option>
-                                    @if(Auth::user()->seksi_id==1)
+                                    @if(Auth::user()->seksi_id==1 or Auth::user()->seksi_id==0)
                                         @foreach($kegiatans as $kegiatan)
                                             <option value="{{$kegiatan->id}}">[{{$kegiatan->kode}}] {{strtoupper($kegiatan->kegiatan)}}</option>
                                         @endforeach
-                                    @else <option value="{{$kegiatans->id}}">[{{$kegiatans->kode}}] {{strtoupper($kegiatans->kegiatan)}}</option>
+                                    @else
+                                        <option value="{{$kegiatans->id}}">[{{$kegiatans->kode}}] {{strtoupper($kegiatans->kegiatan)}}</option>
                                     @endif
                                 </select>
                             </div>
@@ -292,11 +302,17 @@
                       <div class="col-md-6 col-xs-12" >
                           <select class="form-control select" id="idPesertaKegSeksi">
                               <option value="" disabled selected>Silahkan pilih jenis kegiatan seksi</option>
-                              @foreach($kegSeksis as $kegSeksi )
-                                  @if($kegSeksi->seksi_id == Auth::user()->seksi_id)
-                                  <option value="{{$kegSeksi->id}}">{{$kegSeksi->kegiatan_seksi}}</option>
-                                  @endif
-                              @endforeach
+                              @if(Auth::user()->seksi_id==1 or Auth::user()->seksi_id==0)
+                                  @foreach($kegSeksis as $kegSeksi)
+                                      <option value="{{$kegSeksi->id}}">{{strtoupper($kegSeksi->kegiatan_seksi)}}</option>
+                                  @endforeach
+                              @else
+                                  @foreach($kegSeksis as $key => $kegSeksi)
+                                      @if($key == Auth::user()->seksi_id)
+                                          <option value="{{$kegSeksi->id}}">{{strtoupper($kegSeksi->kegiatan_seksi)}}</option>
+                                      @endif
+                                  @endforeach
+                              @endif
                           </select>
                       </div>
                   </div>
@@ -307,7 +323,6 @@
                         <div class="col-md-6 col-xs-12">
                             <select class="form-control select" id="idPesertaPerihal">
                                 <option value="" disabled selected>Silahkan pilih Perihal Kegiatan</option>
-
                             </select>
                         </div>
                     </div>
@@ -325,7 +340,7 @@
                         <label class="col-md-3 col-xs-12 control-label">Satuan</label>
                         <div class="col-md-6 col-xs-12">
                             <select class="form-control select" id="idPesertaSatuan">
-                                <option value="" disabled selected>Silahkan pilih Perihal Kegiatan</option>
+                                <option value="" disabled selected>Silahkan pilih satuan</option>
 {{--                                @foreach($kegiatans as $kegiatan)--}}
 {{--                                    <option value="{{$kegiatan->id}}">[{{$kegiatan->kode}}] {{$kegiatan->kegiatan}}</option>--}}
 {{--                                @endforeach--}}
@@ -333,7 +348,6 @@
                         </div>
                     </div>
                     <br/>
-
 
                     <div class="form-group">
                         <label class="col-md-3 col-xs-12 control-label">Lama (Hari)</label>
@@ -369,13 +383,11 @@
     <!-- START THIS PAGE PLUGINS-->
     <script type='text/javascript' src="{{asset('js/plugins/icheck/icheck.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')}}"></script>
-
     <script type="text/javascript" src="{{asset('js/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/plugins/validationengine/languages/jquery.validationEngine-en.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/plugins/validationengine/jquery.validationEngine.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/plugins/jquery-validation/jquery.validate.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/plugins/maskedinput/jquery.maskedinput.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/vue.js')}}"></script>
     <!-- END THIS PAGE PLUGINS-->
 
     <script type="text/javascript">
@@ -515,66 +527,6 @@
 
              */
         });
-
-        function notif() {
-            confirm("Apakah Anda yakin?")
-        }
-
-        var jvalidate = $("#jvalidate").validate({
-            ignore: [],
-            rules: {
-                no_seksi: {
-                    required: true,
-                    number: true,
-                    length: 3
-                },
-                perihal: {
-                    required: true
-                },
-                seksi: {
-                    required: true
-                },
-                program: {
-                    required: true
-                },
-                kegiatan: {
-                    required: true
-                },
-                output: {
-                    required: true
-                },
-                komponen: {
-                    required: true
-                },
-                subkomponen: {
-                    required: true
-                },
-                akun: {
-                    required: true
-                },
-                mak: {
-                    required: true
-                },
-                sisa_anggaran: {
-                    required: true,
-                    minlength: 0,
-                    number:true
-                }
-            }
-        });
-
-        var app = new Vue({
-            el : '#jvalidate',
-            data : {
-                mak1: '',
-                mak2: '',
-                mak3: '',
-                mak4: '',
-                mak5: '',
-                mak6: '',
-                mak: ''
-            }
-        });
 /*
             jQuery(document).ready(function ()
             {
@@ -628,7 +580,52 @@
             });
         });
 
+        var jvalidate = $("#jvalidate").validate({
+            ignore: [],
+            rules: {
+                no_seksi: {
+                    required: true,
+                    number: true,
+                    length: 3
+                },
+                perihal: {
+                    required: true
+                },
+                seksi: {
+                    required: true
+                },
+                program: {
+                    required: true
+                },
+                kegiatan: {
+                    required: true
+                },
+                output: {
+                    required: true
+                },
+                komponen: {
+                    required: true
+                },
+                subkomponen: {
+                    required: false
+                },
+                akun: {
+                    required: true
+                },
+                mak: {
+                    required: true
+                },
+                sisa_anggaran: {
+                    required: true,
+                    minlength: 0,
+                    number:true
+                }
+            }
+        });
 
+        function notif() {
+            confirm("Apakah Anda yakin?")
+        }
 
     </script>
 

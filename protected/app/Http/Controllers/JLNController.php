@@ -40,7 +40,12 @@ class JLNController extends Controller
         $kecamatans     = Kecamatan::all();
 
         $seksi_user = Auth::user()->seksi_id;
-        if($seksi_user==1){
+        if($seksi_user==0){
+          $programs     = Program::all();
+          $kegiatans    = Kegiatan::all();
+          $outputs      = Output::all();
+          $komponens    = Komponen::all();
+        } elseif($seksi_user==1){
             $programs     = Program::all();
             $kegiatans    = Kegiatan::all();
             $outputs      = Output::where('seksi_id', 1 )->get();
@@ -100,8 +105,7 @@ class JLNController extends Controller
         'output' => 'required',
         'komponen' => 'required',
         'akun' => 'required',
-        'sisa_anggaran' => 'required|integer',
-        'keterangan' => 'required',
+        'sisa_anggaran' => 'required',
         'user_id' => 'required',
         'tgl_dari' => 'required',
         'tgl_sampai' => 'required',
