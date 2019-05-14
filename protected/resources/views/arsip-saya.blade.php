@@ -38,7 +38,8 @@
             </tr>
             </thead>
             <tbody>
-              @foreach($userjlns as $userjln)
+            @if(isset($userjlns))
+              @foreach($userjlns as $key => $userjln)
                 @if($userjln->action > 0 & $userjln->action < 3)
                   <tr>
                     <td>{{$loop->iteration}}</td>
@@ -84,6 +85,7 @@
                   </tr>
                 @endif
               @endforeach
+            @endif
             </tbody>
           </table>
 

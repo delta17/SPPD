@@ -131,9 +131,7 @@
             </div>
           </div>
         <div class="panel-footer">
-          <button class="btn btn-default" type="submit" style="float: right">Submit</button>
-{{--          <a href="{{url('approval')}}" class="btn btn-info" style="float: right">Submit</a>--}}
-{{--          <input type="hidden" value="PUT" name="_method">--}}
+          <button class="btn btn-info" type="submit" style="float: right">Submit</button>
         </div>
       </div>
 
