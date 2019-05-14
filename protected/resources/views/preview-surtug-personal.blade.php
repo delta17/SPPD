@@ -82,11 +82,11 @@
                                                   @else
                                                       Desa
                                                   @endif
-                                                  {{$userjln->getTujuanDlm->desa}} Kecamatan {{$userjln->getTujuanDlm->getKecamatan->kecamatan}}.
+                                                  {{$userjln->getTujuanDlm->desa}} Kecamatan {{$userjln->getTujuanDlm->getKecamatan->kecamatan}}
                                               @elseif(isset($userjln->tujuan_luar))
-                                                  {{$userjln->getTujuanLuar->tujuan}}.
+                                                  {{$userjln->getTujuanLuar->tujuan}}
                                               @else
-                                                  {{$userjln->getTujuanPerusahaan->perusahaan}}.
+                                                  {{$userjln->getTujuanPerusahaan->perusahaan}}
                                               @endif
                                           </p>
                                       </td>

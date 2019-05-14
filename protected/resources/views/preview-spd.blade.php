@@ -95,11 +95,11 @@
                                                   @else
                                                       Desa
                                                   @endif
-                                                  {{$userjln->getTujuanDlm->desa}} Kecamatan {{$userjln->getTujuanDlm->getKecamatan->kecamatan}}.
+                                                  {{$userjln->getTujuanDlm->desa}} Kecamatan {{$userjln->getTujuanDlm->getKecamatan->kecamatan}}
                                               @elseif(isset($userjln->tujuan_luar))
-                                                  {{$userjln->getTujuanLuar->tujuan}}.
+                                                  {{$userjln->getTujuanLuar->tujuan}}
                                               @else
-                                                  {{$userjln->getTujuanPerusahaan->perusahaan}}.
+                                                  {{$userjln->getTujuanPerusahaan->perusahaan}}
                                               @endif
                                               </p>
                                           </td>
@@ -264,7 +264,20 @@
                                               <p>Maksud perjalanan dinas</p>
                                           </td>
                                           <td colspan="2" width="293">
-                                              <p>{{$userjln->getUraianKegiatan->uraian}} di {{$userjln->getTujuanDlm->desa}}</p>
+                                              <p>{{$userjln->getUraianKegiatan->uraian}} di
+                                                  @if(isset($userjln->tujuan_dlm))
+                                                      @if($userjln->tujuan_dlm==10002 or $userjln->tujuan_dlm==10005 or $userjln->tujuan_dlm==40026)
+                                                          Kelurahan
+                                                      @else
+                                                          Desa
+                                                      @endif
+                                                      {{$userjln->getTujuanDlm->desa}} Kecamatan {{$userjln->getTujuanDlm->getKecamatan->kecamatan}}
+                                                  @elseif(isset($userjln->tujuan_luar))
+                                                      {{$userjln->getTujuanLuar->tujuan}}
+                                                  @else
+                                                      {{$userjln->getTujuanPerusahaan->perusahaan}}
+                                                  @endif
+                                              </p>
                                           </td>
                                       </tr>
                                       <tr>
@@ -294,7 +307,20 @@
                                               <p>b. Tempat tujuan</p>
                                           </td>
                                           <td colspan="2" width="293">
-                                              <p>Desa {{$userjln->getTujuanDlm->desa}}</p>
+                                              <p>
+                                                  @if(isset($userjln->tujuan_dlm))
+                                                      @if($userjln->tujuan_dlm==10002 or $userjln->tujuan_dlm==10005 or $userjln->tujuan_dlm==40026)
+                                                          Kelurahan
+                                                      @else
+                                                          Desa
+                                                      @endif
+                                                      {{$userjln->getTujuanDlm->desa}} Kecamatan {{$userjln->getTujuanDlm->getKecamatan->kecamatan}}
+                                                  @elseif(isset($userjln->tujuan_luar))
+                                                      {{$userjln->getTujuanLuar->tujuan}}
+                                                  @else
+                                                      {{$userjln->getTujuanPerusahaan->perusahaan}}
+                                                  @endif
+                                              </p>
                                           </td>
                                       </tr>
                                       <tr>
