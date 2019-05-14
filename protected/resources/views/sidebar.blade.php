@@ -16,14 +16,18 @@
         </div>
         <div class="profile-data">
           <div class="profile-data-name">{{Auth::user()->name}}</div>
-          @if(Auth::user()->seksi_id==0)
-            <div class="profile-data-title">KPA/{{Auth::user()->getSeksi->seksi}} BPS Kab. Seruyan</div>
-          @elseif(Auth::user()->seksi_id==7)
-            <div class="profile-data-title">{{Auth::user()->getSeksi->seksi}}</div>
-          @elseif(Auth::user()->level_id==3)
-            <div class="profile-data-title">{{Auth::user()->getLevel->level}} BPS Kab. Seruyan</div>
+          @if(Auth::user()->level_id==1)
+            <div class="profile-data-title">Admin</div>
           @else
-            <div class="profile-data-title">Seksi {{Auth::user()->getSeksi->seksi}}</div>
+            @if(Auth::user()->seksi_id==0)
+              <div class="profile-data-title">KPA/{{Auth::user()->getSeksi->seksi}} BPS Kab. Seruyan</div>
+            @elseif(Auth::user()->seksi_id==7)
+              <div class="profile-data-title">{{Auth::user()->getSeksi->seksi}}</div>
+            @elseif(Auth::user()->level_id==3)
+              <div class="profile-data-title">{{Auth::user()->getLevel->level}} BPS Kab. Seruyan</div>
+            @else
+              <div class="profile-data-title">Seksi {{Auth::user()->getSeksi->seksi}}</div>
+            @endif
           @endif
 
         </div>
