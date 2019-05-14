@@ -207,7 +207,8 @@
                                     <th>Nama</th>
                                     <th>Dari <br/> Tanggal</th>
                                     <th>Sampai <br/> Tanggal</th>
-                                    <th>Tujuan</th>
+                                    <th>Tujuan <br/>Dalam Kota</th>
+                                    <th>Tujuan <br/>Luar Kota</th>
                                     {{--                        <th>Kegiatan<br/>seksi</th>--}}
                                     <th>Perihal</th>
                                     <th>Kuantitas</th>
@@ -298,19 +299,30 @@
                     <br/>
 
                     <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Luar Kota</label>
+                        <div class="col-md-6 col-xs-12">
+                            <select class="form-control select" id="idPesertaLuarKota">
+                                <option value="" disabled selected>Silahkan pilih tujuan</option>
+                                @foreach($luarkotas as $luarkota )
+                                    <option value="{{$luarkota->id}}">{{$luarkota->tujuan}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <br/>
+
+                    <div class="form-group">
                       <label class="col-md-3 col-xs-12 control-label">Kegiatan Seksi</label>
                       <div class="col-md-6 col-xs-12" >
                           <select class="form-control select" id="idPesertaKegSeksi">
                               <option value="" disabled selected>Silahkan pilih jenis kegiatan seksi</option>
-                              @if(Auth::user()->seksi_id==1 or Auth::user()->seksi_id==0)
+                              @if(Auth::user()->seksi_id==0)
                                   @foreach($kegSeksis as $kegSeksi)
-                                      <option value="{{$kegSeksi->id}}">{{strtoupper($kegSeksi->kegiatan_seksi)}}</option>
+                                      <option value="{{$kegSeksi->id}}">{{$kegSeksi->kegiatan_seksi}}</option>
                                   @endforeach
                               @else
-                                  @foreach($kegSeksis as $key => $kegSeksi)
-                                      @if($key == Auth::user()->seksi_id)
-                                          <option value="{{$kegSeksi->id}}">{{strtoupper($kegSeksi->kegiatan_seksi)}}</option>
-                                      @endif
+                                  @foreach($kegSeksis as $kegSeksi)
+                                      <option value="{{$kegSeksi->id}}">{{$kegSeksi->kegiatan_seksi}}</option>
                                   @endforeach
                               @endif
                           </select>
@@ -403,6 +415,9 @@
                 var valTujuanDesa = $("#idPesertaDesa").find(":selected").text();
                 var idValTujuanDesa = $("#idPesertaDesa").val();
 
+                var valTujuanLuarKota = $("#idPesertaLuarKota").find(":selected").text();
+                var idValTujuanLuarKota = $("#idPesertaLuarKota").val();
+
                 //var valTujuan = $("#idPesertaTujuan").val();
                 // var valKegSeksi = $('input[id="idPesertaKegSeksi"]').val();
 
@@ -432,6 +447,7 @@
                     '<td><input class="cTabelStandar" type="text" value=' + valTanggalDari + ' name="tgl_dari[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTanggalDari + ' /></td>' +
                     '<td><input class="cTabelStandar" type="text" value=' + valTanggalSampai + ' name="tgl_sampai[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTanggalSampai + ' /></td>' +
                     '<td class="cTabelStandar"><input type="hidden" value=' + idValTujuanDesa + ' name="tujuan[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTujuanDesa + '>'+valTujuanDesa+'</input></td>' +
+                    '<td class="cTabelStandar"><input type="hidden" value=' + idValTujuanLuarKota + ' name="tujuan_luar[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valTujuanLuarKota + '>'+valTujuanLuarKota+'</input></td>' +
                     // '<td><input class="cTabelStandar" type="text" value=' + valKegSeksi + ' name="kegSeksi[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valKegSeksi + ' /></td>' +
                     '<td class="cTabelBesar"><input type="hidden" value=' + idValPerihal + ' name="uraian_id[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valPerihal + '>'+valPerihal+'</input></td>' +
                     '<td><input class="cTabelStandar" type="number" value=' + valKuantitas + ' name="kuantitas[' + i + ']" readonly  data-toggle="tooltip" data-placement="top" title=' + valKuantitas + ' /></td>' +

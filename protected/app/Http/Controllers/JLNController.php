@@ -12,6 +12,7 @@ use App\KegiatanSeksi;
 use App\KegiatanUraian;
 use App\Kendaraan;
 use App\Komponen;
+use App\LuarKota;
 use App\MyArsip;
 use App\MyJLN;
 use App\Output;
@@ -36,8 +37,9 @@ class JLNController extends Controller
         $users        = User::all();
         $kendaraans   = Kendaraan::all();
         //$uraians      = KegiatanUraian::all();
-        $kegSeksis    = KegiatanSeksi::all();
+//        $kegSeksis    = KegiatanSeksi::all();
         $kecamatans     = Kecamatan::all();
+        $luarkotas     = LuarKota::all();
 
         $seksi_user = Auth::user()->seksi_id;
         if($seksi_user==0){
@@ -45,20 +47,23 @@ class JLNController extends Controller
           $kegiatans    = Kegiatan::all();
           $outputs      = Output::all();
           $komponens    = Komponen::all();
+          $kegSeksis    = KegiatanSeksi::all();
         } elseif($seksi_user==1){
             $programs     = Program::all();
             $kegiatans    = Kegiatan::all();
             $outputs      = Output::where('seksi_id', 1 )->get();
             $komponens    = Komponen::where('seksi_id', 1 )->get();
+            $kegSeksis    = KegiatanSeksi::where('seksi_id',1)->get();
         } else{
             $programs     = Program::find(3);
             $kegiatans    = Kegiatan::find(3);
             $outputs      = Output::where('seksi_id', $seksi_user)->get();
             $komponens    = Komponen::where('seksi_id', $seksi_user)->get();
+            $kegSeksis    = KegiatanSeksi::where('seksi_id',$seksi_user)->get();
         };
 
         return view('buat-form-jln',compact('seksis','programs','kegiatans',
-            'outputs','komponens','akuns','users','kendaraans','kegSeksis','kecamatans'));
+            'outputs','komponens','akuns','users','kendaraans','kegSeksis','kecamatans','luarkotas'));
 
     }
 /*
@@ -193,9 +198,21 @@ class JLNController extends Controller
         $userJLN->tgl_sampai          = $request->input('tgl_sampai.'.$i);
         $userJLN->uraian_id           = $x;
 //            $userJLN->uraian_id           = 1;
-        $userJLN->tujuan_dlm          = $request->input('tujuan.'.$i);
-        $userJLN->tujuan_luar         = $request->input('tujuan_luar.'.$i);
-        $userJLN->tujuan_perusahaan   = $request->input('tujuan_perusahaan.'.$i);
+        if($request->input('tujuan.'.$i)=="null"){
+          $userJLN->tujuan_dlm          = null;
+        }else{
+          $userJLN->tujuan_dlm          = $request->input('tujuan.'.$i);
+        }
+        if($request->input('tujuan_luar.'.$i)=="null"){
+          $userJLN->tujuan_luar          = null;
+        }else{
+          $userJLN->tujuan_luar          = $request->input('tujuan_luar.'.$i);
+        }
+        if($request->input('tujuan_perusahaan.'.$i)=="null"){
+          $userJLN->tujuan_perusahaan    = null;
+        }else{
+          $userJLN->tujuan_perusahaan    = $request->input('tujuan_perusahaan.'.$i);
+        }
         $userJLN->lamanya             = $request->input('lamanya.'.$i);
         $userJLN->kendaraan_id        = $request->input('kendaraan_id.'.$i);
 //            $userJLN->kendaraan_id        = 1;
@@ -203,7 +220,15 @@ class JLNController extends Controller
         $userJLN->kuantitas           = $request->input('kuantitas.'.$i);
         $userJLN->user_id             = $request->input('user_id.'.$i);
         $userJLN->jln_id              = $formJLN->id;
-        $userJLN->wkt_standar_dinas   = (int)ceil(($userJLN->getTujuanDlm()->first()->waktu_tempuh*2+$userJLN->getUraianKegiatan()->first()->waktu_kegiatan*$userJLN->kuantitas)/8);
+
+        if(isset($userJLN->tujuan_dlm)){
+          $userJLN->wkt_standar_dinas   = (int)ceil(($userJLN->getTujuanDlm()->first()->waktu_tempuh*2+$userJLN->getUraianKegiatan()->first()->waktu_kegiatan*$userJLN->kuantitas)/8);
+        } elseif (isset($userJLN->tujuan_luar)){
+          $userJLN->wkt_standar_dinas   = (int)ceil(($userJLN->getTujuanLuar()->first()->waktu_tempuh*2+$userJLN->getUraianKegiatan()->first()->waktu_kegiatan*$userJLN->kuantitas)/8);
+        } else{
+          $userJLN->wkt_standar_dinas   = (int)ceil(($userJLN->getTujuanPerusahaan()->first()->waktu_tempuh*2+$userJLN->getUraianKegiatan()->first()->waktu_kegiatan*$userJLN->kuantitas)/8);
+        }
+
 
         $userJLN->save();
         $user->push($userJLN->id);
