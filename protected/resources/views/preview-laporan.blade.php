@@ -12,7 +12,7 @@
   <div class="row" id="idHalamanPreview">
       <div class="col-md-12">
           <form class="form-horizontal">
-              <div class="panel panel-default">
+              <div class="panel panel-default tabs">
                   <div class="cHalamanSurtug" >
                     <div id="idKonversi" class="panel-body tab-content">
                       <style>
@@ -40,20 +40,24 @@
                       <div id="source-html" >
                       <h4 style="text-align: center;">LAPORAN
                       <br/>TENTANG<br/>PERJALANAN DINAS<br/></h4>
-
-                          <h5></h5>
-
-
-
-
+                        <h5>A. Pendahuluan</h5>
+                        <h5>1.	Umum</h5>
+                        <table>
+                          @foreach($fotos as $foto)
+                          <tr>
+                            <td><img src="{{asset('storage/dokumentasi/'.$foto->foto)}}" alt=""></td>
+                            <td></td>
+                          </tr>
+                          @endforeach
+                        </table>
                     </div>
                     </div>
                   </div>
               </div>
+            <div class="panel panel-footer">
+              <a type="button" class="btn btn-info pull-right jquery-word-export" href="javascript:void(0)"> Download File </a>
+            </div>
           </form>
-          <div class="panel-footer">
-              <button class="btn btn-primary pull-right"><a class="btn jquery-word-export" href="javascript:void(0)"> Download File </a></button>
-          </div>
       </div>
     </div>
 @endsection

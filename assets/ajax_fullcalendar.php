@@ -5,12 +5,41 @@
 * by Aqvatarius
 */
 
+use App\UserJLN;
+
+$connect = new PDO('pgsql:host=localhost;dbname=SPPD','postgres','12345678');
+
+$query = "SELECT * FROM 'mst_user_jln' GROUP BY 'action'";
+
+$statement = $connect->prepare($query);
+
+$statement->execute();
+
+$result = $statement->fetchAll();
+
+foreach ($result as $row){
+  $data[] = array(
+    'id'      => $row["id"],
+    'title'   => $row["uraian_id"],
+    'start'   => $row["tgl_dari"],
+    'end'     => $row["tgl_sampai"]
+  );
+}
     $month  = date('m');
     $year   = date('Y');
-    
-    
-    $data = array();
-//    $data[] = array('title'=>'Lorem ipsum dolor sit amet','start'=>$year.'-'.$month.'-01','className'=>'green');
+//    $query = UserJLN::all()->groupBy('action')->get(2);
+//    $count = $query->count();
+    //    dd($query[0]->getUser->name." melakukan ".$query[0]->getUraianKegiatan->uraian);
+    //    dd($query[0]->tgl_sampai);
+
+//    $data = array();
+//    for($i=0; $i<$count; $i++){
+//      $title = $query[$i]->getUser->name." melakukan ".$query[$i]->getUraianKegiatan->uraian;
+//      $data[] = array('title'=>$title,'start'=>$query[$i]->tgl_dari,'end'=>$query[$i]->tgl_sampai);
+//    }
+//    $query = "SELECT * ";
+//    $data = array();
+//    $data[] = array('title'=>'Lorem ipsum dolor sit amet','start'=>$year.'-'.$month.'-02','className'=>'green');
 //    $data[] = array('title'=>'Donec eget ligula','start'=>$year.'-'.$month.'-03','className'=>'blue');
 //    $data[] = array('title'=>'Curabitur dapibus lectus','start'=>$year.'-'.$month.'-03','className'=>'red');
 //    $data[] = array('title'=>'Vivamus non','start'=>$year.'-'.$month.'-03','className'=>'orange');

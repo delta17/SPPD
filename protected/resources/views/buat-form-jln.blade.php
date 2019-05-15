@@ -174,7 +174,7 @@
                         <div class="col-md-6 col-xs-12">
                             <div class="input-group">
                                 <span class="input-group-addon">Rp</span>
-                                <input type="text" class="form-control" placeholder="Silahkan masukkan nilai" name="sisa_anggaran">
+                                <input type="text" class="form-control" placeholder="Silahkan masukkan nilai" id="rupiah" name="sisa_anggaran">
                             </div>
                         </div>
                     </div>
@@ -596,6 +596,30 @@
             });
         });
 
+        var rupiah = document.getElementById('rupiah');
+        rupiah.addEventListener('keyup', function(e){
+
+            rupiah.value = formatRupiah(this.value, '');
+        });
+
+        /* Fungsi formatRupiah */
+        function formatRupiah(angka, prefix){
+            var number_string = angka.replace(/[^,\d]/g, '').toString(),
+                    split   		= number_string.split(','),
+                    sisa     		= split[0].length % 3,
+                    rupiah     		= split[0].substr(0, sisa),
+                    ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+
+            // tambahkan titik jika yang di input sudah menjadi angka ribuan
+            if(ribuan){
+                separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+
+            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+            return prefix == undefined ? rupiah : (rupiah ? '' + rupiah : '');
+        }
+
         var jvalidate = $("#jvalidate").validate({
             ignore: [],
             rules: {
@@ -633,8 +657,6 @@
                 },
                 sisa_anggaran: {
                     required: true,
-                    minlength: 0,
-                    number:true
                 }
             }
         });

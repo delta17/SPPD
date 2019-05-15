@@ -46,22 +46,25 @@ class LaporanController extends Controller
         for($i=0; $i<$count; $i++){
           $foto = new Foto();
           $foto->user_jln_id = $userjln->id;
-          $file = $request->file('foto.'.$i);
-          $filename = $foto->user_jln_id.'.'.$file->getClientOriginalExtension();
-          $file->storeAs('dokumentasi', $filename);
-          $foto->foto = $filename;
-//          dd($foto);
           $foto->save();
+//          dd($request->file('foto.'.$i));
+          $file = $request->file('foto.'.$i);
+          $filename = $foto->id.'.'.$file->getClientOriginalExtension();
+          $file->storeAs('dokumentasi', $filename,'public');
+          $foto->foto = $filename;
+          $foto->update();
+//          dd($foto);
         }
       } else{
         $foto = new Foto();
         $foto->user_jln_id = $userjln->id;
-        $file = $request->file('foto.0');
-        $filename = $foto->user_jln_id.'.'.$file->getClientOriginalExtension();
-        $file->storeAs('dokumentasi', $filename);
-        $foto->foto = $filename;
-//        dd($foto);
         $foto->save();
+        $file = $request->file('foto.0');
+        $filename = $foto->id.'.'.$file->getClientOriginalExtension();
+        $file->storeAs('dokumentasi', $filename,'public');
+        $foto->foto = $filename;
+        $foto->update();
+//        dd($foto);
       }
 
       return redirect('/arsip-saya')->with('status','Data Berhasil Disimpan!');
@@ -69,8 +72,9 @@ class LaporanController extends Controller
 
     public function showPreviewLaporan($id){
       $userjln = UserJLN::find($id)->get();
+      $fotos = Foto::where('user_jln_id',$id)->get();
 
-      return \View::make('preview-laporan',compact('userjln'))->render();
+      return \View::make('preview-laporan',compact('userjln','fotos'))->render();
     }
 
 }

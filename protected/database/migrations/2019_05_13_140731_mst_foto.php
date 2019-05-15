@@ -15,7 +15,7 @@ class MstFoto extends Migration
     {
       Schema::create('mst_foto', function (Blueprint $table) {
         $table->increments('id');
-        $table->string('foto');
+        $table->string('foto')->nullable();
         $table->integer('user_jln_id',false,11)->nullable();
         $table->foreign('user_jln_id')->references('id')->on('mst_user_jln');
         $table->timestamps();

@@ -188,7 +188,7 @@ class JLNController extends Controller
        * fungsi input UserJLN
        */
       $user = collect([]);
-      $count = count($request->input('tujuan.*'));
+      $count = count($request->input('tgl_dari.*'));
       for($i=1; $i<=$count;$i++) {
         $userJLN = new UserJLN();
         $x = $request->input('uraian_id.'.$i);
