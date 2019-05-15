@@ -34,27 +34,29 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($formjlns as $formjln)
-              <tr>
-                <td>{{$loop->iteration}}</td>
-                <td>{{$formjln->no_seksi}}</td>
-                <td>{{$formjln->perihal}}</td>
-                <td>{{$formjln->mak}}</td>
-                <td>{{$formjln->sisa_anggaran}}</td>
-                @if(isset($formjln->keterangan))
-                  <td>{{$formjln->keterangan}}</td>
-                @else
-                  <td>-</td>
-                @endif
-                @if($formjln->isApproved==0)
-                  <td><span class="label label-default label-form">Belum Ditanggapi</span></td>
-                  <td><a href="#" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="print form jln"><i class="fa fa-print"></i></a></td>
-                @else
-                  <td><span class="label label-success label-form">Sudah Ditanggapi</span></td>
-                  <td><a href="{{url('preview-form-jln/'.$formjln->id)}}" target="_blank" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="preview form jln"><i class="fa fa-print"></i></a></td>
-                @endif
-              </tr>
-            @endforeach
+            @if(isset($formjlns))
+              @foreach($formjlns as $formjln)
+                <tr>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$formjln->no_seksi}}</td>
+                  <td>{{$formjln->perihal}}</td>
+                  <td>{{$formjln->mak}}</td>
+                  <td>{{$formjln->sisa_anggaran}}</td>
+                  @if(isset($formjln->keterangan))
+                    <td>{{$formjln->keterangan}}</td>
+                  @else
+                    <td>-</td>
+                  @endif
+                  @if($formjln->isApproved==0)
+                    <td><span class="label label-default label-form">Belum Ditanggapi</span></td>
+                    <td><a href="#" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="print form jln"><i class="fa fa-print"></i></a></td>
+                  @else
+                    <td><span class="label label-success label-form">Sudah Ditanggapi</span></td>
+                    <td><a href="{{url('preview-form-jln/'.$formjln->id)}}" target="_blank" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="preview form jln"><i class="fa fa-print"></i></a></td>
+                  @endif
+                </tr>
+              @endforeach
+            @endif
             </tbody>
           </table>
 

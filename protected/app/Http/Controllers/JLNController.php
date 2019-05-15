@@ -276,7 +276,7 @@ class JLNController extends Controller
     public function showMyJLN(){
       $seksi = Auth::user()->seksi_id;
       $level = Auth::user()->level_id;
-      $formjln = FormJLN::all()->groupBy('seksi_id')->get($seksi);
+
 
       if($level<5)
         $formjlns = FormJLN::all();

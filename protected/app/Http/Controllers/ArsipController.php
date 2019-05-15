@@ -21,12 +21,17 @@ class ArsipController extends Controller
         $userjlns = UserJLN::all();
       } elseif($level==6){
         $formJLN = FormJLN::all()->groupBy('seksi_id')->get($seksi);
-        $count = $formJLN->count();
-        $coll = collect();
-        for($i=0; $i<$count; $i++){
-          $coll->push($formJLN[$i]->relatedUserJLN);
+        if(isset($formJLN)){
+          $count = $formJLN->count();
+          $coll = collect();
+          for($i=0; $i<$count; $i++){
+            $coll->push($formJLN[$i]->relatedUserJLN);
+          }
+          $userjlns = $coll->collapse()->all();
+        } else{
+          $userjlns = null;
         }
-        $userjlns = $coll->collapse()->all();
+//        dd($userjlns);
       }
       else{
         $userjlns = UserJLN::all()->groupBy('user_id')->get($user);
