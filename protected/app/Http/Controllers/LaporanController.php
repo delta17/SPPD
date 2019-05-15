@@ -71,10 +71,12 @@ class LaporanController extends Controller
     }
 
     public function showPreviewLaporan($id){
-      $userjln = UserJLN::find($id)->get();
+      $userjln = UserJLN::find($id);
       $fotos = Foto::where('user_jln_id',$id)->get();
-
-      return \View::make('preview-laporan',compact('userjln','fotos'))->render();
+      $count = $fotos->count();
+      $floor = floor($count/2);
+//      dd(UserJLN::find($id));
+      return \View::make('preview-laporan',compact('userjln','fotos','count','floor'))->render();
     }
 
 }

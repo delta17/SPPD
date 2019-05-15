@@ -44,13 +44,67 @@
 
                                     <h5>A. Pendahuluan</h5>
                                     <h5 style="margin-left: 2.5%;">1. Umum</h5>
-                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">Dalam rangka pelaksanaan tugas penyelenggaraan kegiatan statistik, maka dipandang perlu melakukan perjalanan dinas dalam rangka Pengumpulan Data Publikasi Kabupaten Dalam Angka di Desa Tanjung Rangas Kecamatan Seruyan Hilir.</p>
+                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">Dalam rangka pelaksanaan tugas penyelenggaraan kegiatan statistik, maka dipandang perlu melakukan perjalanan dinas dalam rangka
+                                        {{$userjln->getUraianKegiatan->uraian}} di
+                                        @if(isset($userjln->tujuan_dlm))
+                                            @if($userjln->tujuan_dlm==10002 or $userjln->tujuan_dlm==10005 or $userjln->tujuan_dlm==40026)
+                                                Kelurahan
+                                            @else
+                                                Desa
+                                            @endif
+                                            {{$userjln->getTujuanDlm->desa}} Kecamatan {{$userjln->getTujuanDlm->getKecamatan->kecamatan}}.
+                                        @elseif(isset($userjln->tujuan_luar))
+                                            {{$userjln->getTujuanLuar->tujuan}}
+                                        @else
+                                            {{$userjln->getTujuanPerusahaan->perusahaan}}
+                                        @endif
+                                    </p>
 
                                     <h5 style="margin-left: 2.5%;">2. Maksud dan Tujuan</h5>
-                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">Melakukan Pengumpulan Data Publikasi Kabupaten Dalam Angka di Desa Tanjung Rangas Kecamatan Seruyan Hilir. pada tanggal 16 – 18 Mei 2019.</p>
+                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">Melakukan
+                                        {{$userjln->getUraianKegiatan->uraian}} di
+                                        @if(isset($userjln->tujuan_dlm))
+                                            @if($userjln->tujuan_dlm==10002 or $userjln->tujuan_dlm==10005 or $userjln->tujuan_dlm==40026)
+                                                Kelurahan
+                                            @else
+                                                Desa
+                                            @endif
+                                            {{$userjln->getTujuanDlm->desa}} Kecamatan {{$userjln->getTujuanDlm->getKecamatan->kecamatan}}.
+                                        @elseif(isset($userjln->tujuan_luar))
+                                            {{$userjln->getTujuanLuar->tujuan}}
+                                        @else
+                                            {{$userjln->getTujuanPerusahaan->perusahaan}}
+                                        @endif
+                                        pada tanggal
+                                        @if(Date::parse($userjln->tgl_dari)->format('m')==Date::parse($userjln->tgl_dari)->format('m'))
+                                            {{Date::parse($userjln->tgl_dari)->format('d')}} – {{Date::parse($userjln->tgl_sampai)->format('d F Y')}}.
+                                        @else
+                                            {{Date::parse($userjln->tgl_dari)->format('d F Y')}} – {{Date::parse($userjln->tgl_sampai)->format('d F Y')}}.
+                                        @endif
+                                    </p>
 
                                     <h5 style="margin-left: 2.5%;">3. Ruang Lingkup</h5>
-                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">Pengumpulan Data Publikasi Kabupaten Dalam Angka di Desa Tanjung Rangas Kecamatan Seruyan Hilir pada tanggal 16 – 18 Mei 2019.</p>
+                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">
+                                        {{$userjln->getUraianKegiatan->uraian}} di
+                                        @if(isset($userjln->tujuan_dlm))
+                                            @if($userjln->tujuan_dlm==10002 or $userjln->tujuan_dlm==10005 or $userjln->tujuan_dlm==40026)
+                                                Kelurahan
+                                            @else
+                                                Desa
+                                            @endif
+                                            {{$userjln->getTujuanDlm->desa}} Kecamatan {{$userjln->getTujuanDlm->getKecamatan->kecamatan}}
+                                        @elseif(isset($userjln->tujuan_luar))
+                                            {{$userjln->getTujuanLuar->tujuan}}
+                                        @else
+                                            {{$userjln->getTujuanPerusahaan->perusahaan}}
+                                        @endif
+                                        pada tanggal
+                                        @if(Date::parse($userjln->tgl_dari)->format('m')==Date::parse($userjln->tgl_dari)->format('m'))
+                                            {{Date::parse($userjln->tgl_dari)->format('d')}} – {{Date::parse($userjln->tgl_sampai)->format('d F Y')}}.
+                                        @else
+                                            {{Date::parse($userjln->tgl_dari)->format('d F Y')}} – {{Date::parse($userjln->tgl_sampai)->format('d F Y')}}.
+                                        @endif
+                                    </p>
 
                                     <h5 style="margin-left: 2.5%;">4. Dasar:</h5>
                                     <p style="margin: 5px 5% 20px 5%;">a.	Undang-undang No.16 Tahun 1997 tentang Statistik;<br/>
@@ -58,27 +112,44 @@
 
 
                                     <h5>B.	Kegiatan yang Dilaksanakan</h5>
-                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">Pengumpulan Data Publikasi Kabupaten Dalam Angka di Desa Tanjung Rangas Kecamatan Seruyan Hilir pada tanggal 16 – 18 Mei 2019.</p>
+                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">
+                                        {{$userjln->getUraianKegiatan->uraian}} di
+                                        @if(isset($userjln->tujuan_dlm))
+                                            @if($userjln->tujuan_dlm==10002 or $userjln->tujuan_dlm==10005 or $userjln->tujuan_dlm==40026)
+                                                Kelurahan
+                                            @else
+                                                Desa
+                                            @endif
+                                            {{$userjln->getTujuanDlm->desa}} Kecamatan {{$userjln->getTujuanDlm->getKecamatan->kecamatan}}
+                                        @elseif(isset($userjln->tujuan_luar))
+                                            {{$userjln->getTujuanLuar->tujuan}}
+                                        @else
+                                            {{$userjln->getTujuanPerusahaan->perusahaan}}
+                                        @endif
+                                        pada tanggal
+                                        @if(Date::parse($userjln->tgl_dari)->format('m')==Date::parse($userjln->tgl_dari)->format('m'))
+                                            {{Date::parse($userjln->tgl_dari)->format('d')}} – {{Date::parse($userjln->tgl_sampai)->format('d F Y')}}.
+                                        @else
+                                            {{Date::parse($userjln->tgl_dari)->format('d F Y')}} – {{Date::parse($userjln->tgl_sampai)->format('d F Y')}}.
+                                        @endif
+                                    </p>
 
 
                                     <h5>C.	Hasil yang dicapai</h5>
-                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">Pengumpulan Data Publikasi Kabupaten Dalam Angka di Desa Tanjung Rangas Kecamatan Seruyan Hilir dilaksanakan pada tanggal 16 – 18 Mei 2019.
-                                        Petugas memulai kegiatan pada tanggal 16 Mei 2019 dengan mengunjungi kantor desa untuk meminta izin dan sekaligus meminta arahan untuk memperoleh data-data yang diperlukan dari pihak desa.
-                                        Pada saat mengunjungi kantor desa, staf yang menangani masalah data sedang rapat. Sembari menuggu beliau petugas berusaha menanyakan beberapa bagian kepada staf lain. </p>
-                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">Pengumpulan Data Publikasi Kabupaten Dalam Angka di Desa Tanjung Rangas Kecamatan Seruyan Hilir dilaksanakan pada tanggal 16 – 18 Mei 2019.
-                                        Petugas memulai kegiatan pada tanggal 16 Mei 2019 dengan mengunjungi kantor desa untuk meminta izin dan sekaligus meminta arahan untuk memperoleh data-data yang diperlukan dari pihak desa.
-                                        Pada saat mengunjungi kantor desa, staf yang menangani masalah data sedang rapat. Sembari menuggu beliau petugas berusaha menanyakan beberapa bagian kepada staf lain. </p>
-                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">Pengumpulan Data Publikasi Kabupaten Dalam Angka di Desa Tanjung Rangas Kecamatan Seruyan Hilir dilaksanakan pada tanggal 16 – 18 Mei 2019.
-                                        Petugas memulai kegiatan pada tanggal 16 Mei 2019 dengan mengunjungi kantor desa untuk meminta izin dan sekaligus meminta arahan untuk memperoleh data-data yang diperlukan dari pihak desa.
-                                        Pada saat mengunjungi kantor desa, staf yang menangani masalah data sedang rapat. Sembari menuggu beliau petugas berusaha menanyakan beberapa bagian kepada staf lain. </p>
-
+                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">
+                                        {{$userjln->hasil}}
+                                    </p>
 
                                     <h5>D.	Kesimpulan</h5>
-                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">Secara umum, pelaksanaan Pengumpulan Data Publikasi Kabupaten Dalam Angka di Desa Tanjung Rangas berjalan dengan baik meskipun terdapat beberapa kendala</p>
+                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">
+                                        {{$userjln->kesimpulan}}
+                                    </p>
 
 
                                     <h5>E.	Penutup</h5>
-                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">Demikian laporan tentang perjalanan dinas ini kami sampaikan untuk digunakan sebagai bahan selanjutnya.</p>
+                                    <p class="cJustify" style="margin: 5px 5% 20px 5%;">
+                                        {{$userjln->penutup}}
+                                    </p>
 
 
                                     <table>
@@ -88,7 +159,7 @@
                                                 <p>&nbsp;</p>
                                             </td>
                                             <td style="text-align: center;" width="353">
-                                                <p>Kuala Pembuang, </p>
+                                                <p>Kuala Pembuang, {{Date::parse($userjln->updated_at)->format('d F Y')}}</p>
                                                 <p>Yang melaksanakan tugas,</p>
                                             </td>
                                         </tr>
@@ -100,7 +171,7 @@
                                             <td style="text-align: center;" width="353">
                                                 <p>&nbsp;</p>
                                                 <p>&nbsp;</p>
-                                                <p>Nuur Rokhmat Hidayat</p>
+                                                <p>{{$userjln->getUser->name}}</p>
                                                 <p>&nbsp;</p>
                                                 <p>&nbsp;</p>
                                             </td>
@@ -113,34 +184,24 @@
 
                             <div class="tab-pane" id="tab-second">
                                 <div id="source-html" >
-                                    <h5 style="text-align: center; page-break-before:always">DOKUMENTAS PENGUMPULAN DATA SERUYAN DALAM ANGKA 2019</h5>
+                                    <h5 style="text-align: center; page-break-before:always">DOKUMENTASI KEGIATAN {{strtoupper($userjln->getUraianKegiatan->uraian)}}   </h5>
                                     <br/>
                                     <table style="border-collapse: collapse; border: none;">
                                         <tbody>
-                                        <tr style="height: 198.8pt;">
-                                            <td style="width: 240.1pt; border: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt; height: 198.8pt;" width="320">
-                                                <p style="margin-bottom: .0001pt; text-align: center; line-height: 150%;"><strong><span style="font-family: 'Arial','sans-serif';">&shy;</span></strong></p>
-                                            </td>
-                                            <td style="width: 238.45pt; border: solid windowtext 1.0pt; border-left: none; padding: 0in 5.4pt 0in 5.4pt; height: 198.8pt;" width="318">
-                                                <p style="margin-bottom: .0001pt; text-align: center; line-height: 150%;"><strong><span style="font-family: 'Arial','sans-serif';">&nbsp;</span></strong></p>
-                                            </td>
-                                        </tr>
-                                        <tr style="height: 186.05pt;">
-                                            <td style="width: 240.1pt; border: solid windowtext 1.0pt; border-top: none; padding: 0in 5.4pt 0in 5.4pt; height: 186.05pt;" width="320">
-                                                <p style="margin-bottom: .0001pt; text-align: center; line-height: 150%;">&nbsp;</p>
-                                            </td>
-                                            <td style="width: 238.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt; height: 186.05pt;" width="318">
-                                                <p style="margin-bottom: .0001pt; text-align: center; line-height: 150%;">&nbsp;</p>
-                                            </td>
-                                        </tr>
-                                        <tr style="height: 186.05pt;">
-                                            <td style="width: 240.1pt; border: solid windowtext 1.0pt; border-top: none; padding: 0in 5.4pt 0in 5.4pt; height: 186.05pt;" width="320">
-                                                <p style="margin-bottom: .0001pt; text-align: center; line-height: 150%;">&nbsp;</p>
-                                            </td>
-                                            <td style="width: 238.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt; height: 186.05pt;" width="318">
-                                                <p style="margin-bottom: .0001pt; text-align: center; line-height: 150%;">&nbsp;</p>
-                                            </td>
-                                        </tr>
+                                        @for($i=0; $i<=$floor; $i++)
+                                            <tr style="height: 198.8pt;">
+                                                @foreach($fotos as $key => $foto)
+                                                    <td style="width: 238.45pt; border: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt; height: 198.8pt;" width="318">
+                                                        <p style="margin-bottom: .0001pt; text-align: center; line-height: 150%;">
+                                                            <strong><span style="font-family: 'Arial','sans-serif';"><img src="{{asset('public/dokumentasi/'.$foto->foto)}}" alt="" width="300" height="350"></span></strong>
+                                                        </p>
+                                                    </td>
+                                                    @if($key % 2 == 0)
+                                                        @continue
+                                                    @endif
+                                                @endforeach
+                                            </tr>
+                                        @endfor
                                         </tbody>
                                     </table>
                                 </div>

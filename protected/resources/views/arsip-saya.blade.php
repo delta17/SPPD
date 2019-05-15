@@ -74,7 +74,7 @@
                           <a href="{{url('preview-spd/'.$userjln->id)}}" target="_blank" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="print spd"><i class="fa fa-print"></i></a>
                           @if(isset($userjln->hasil))
                             <a href="{{url('buat-laporan/'.$userjln->id)}}" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="buat laporan"><i class="fa fa-edit"></i></a>
-                            <a href="{{url('preview-laporan/'.$userjln->id)}}" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="preview laporan"><i class="fa fa-file-text-o"></i></a>
+                            <a href="{{url('preview-laporan/'.$userjln->id)}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="preview laporan"><i class="fa fa-file-text-o"></i></a>
                           @else
                             <a href="{{url('buat-laporan/'.$userjln->id)}}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="buat laporan"><i class="fa fa-edit"></i></a>
                             <a href="{{url('preview-laporan/'.$userjln->id)}}" class="btn btn-default disabled" data-toggle="tooltip" data-placement="top" title="preview laporan"><i class="fa fa-file-text-o"></i></a>

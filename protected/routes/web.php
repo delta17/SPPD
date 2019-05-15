@@ -39,6 +39,4 @@ Route::get('/json-perihalKeg',                'JLNController@showPerihalKeg')->m
 Route::get('/preview-laporan/{id}',           'LaporanController@showPreviewLaporan')->middleware('auth');
 Route::get('/json-desa',                      'JLNController@showDesa')->middleware('auth');
 
-//Route::get('/home', 'HomeController@index')->name('home');
-
 Auth::routes();

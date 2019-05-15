@@ -56,7 +56,8 @@
                       <h5>A. Pendahuluan</h5>
                       <h5 class="classSubPoin">1.	Umum</h5>
                       <input type="hidden" name="id" value="{{$userjln->id}}">
-                      <p class="classIsiLaporan">Dalam rangka pelaksanaan tugas penyelenggaraan kegiatan statistik, maka dipandang perlu melakukan perjalanan dinas dalam rangka {{$userjln->getUraianKegiatan->uraian}} di
+                      <p class="classIsiLaporan">Dalam rangka pelaksanaan tugas penyelenggaraan kegiatan statistik, maka dipandang perlu melakukan perjalanan dinas dalam rangka
+                        {{$userjln->getUraianKegiatan->uraian}} di
                         @if(isset($userjln->tujuan_dlm))
                           @if($userjln->tujuan_dlm==10002 or $userjln->tujuan_dlm==10005 or $userjln->tujuan_dlm==40026)
                           Kelurahan
@@ -72,7 +73,8 @@
                       </p>
 
                       <h5 class="classSubPoin">2.	Maksud dan Tujuan</h5>
-                      <p class="classIsiLaporan">Melakukan {{$userjln->getUraianKegiatan->uraian}} di
+                      <p class="classIsiLaporan">Melakukan
+                        {{$userjln->getUraianKegiatan->uraian}} di
                         @if(isset($userjln->tujuan_dlm))
                           @if($userjln->tujuan_dlm==10002 or $userjln->tujuan_dlm==10005 or $userjln->tujuan_dlm==40026)
                             Kelurahan

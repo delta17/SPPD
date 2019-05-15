@@ -31,7 +31,8 @@ class ArsipController extends Controller
       else{
         $userjlns = UserJLN::all()->groupBy('user_id')->get($user);
       }
-
+//      $count = $userjlns->count();
+//      dd($count % 2);
       return view('arsip-saya', compact('userjlns'));
     }
 }
