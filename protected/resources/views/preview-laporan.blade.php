@@ -188,20 +188,30 @@
                                     <br/>
                                     <table style="border-collapse: collapse; border: none;">
                                         <tbody>
-                                        @for($i=0; $i<=$floor; $i++)
                                             <tr style="height: 198.8pt;">
-                                                @foreach($fotos as $key => $foto)
-                                                    <td style="width: 238.45pt; border: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt; height: 198.8pt;" width="318">
-                                                        <p style="margin-bottom: .0001pt; text-align: center; line-height: 150%;">
-                                                            <strong><span style="font-family: 'Arial','sans-serif';"><img src="{{asset('public/dokumentasi/'.$foto->foto)}}" alt="" width="300" height="350"></span></strong>
-                                                        </p>
-                                                    </td>
-                                                    @if($key % 2 == 0)
-                                                        @continue
-                                                    @endif
-                                                @endforeach
+                                                <td style="width: 238.45pt; border: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt; height: 198.8pt;" width="318">
+                                                    <p style="margin-bottom: .0001pt; text-align: center; line-height: 150%;">
+                                                        <strong><span style="font-family: 'Arial','sans-serif';"><img src="{{asset('logo-bps.jpg')}}" alt="" width="300" height="350"></span></strong>
+                                                    </p>
+                                                </td>
+                                                <td style="width: 238.45pt; border: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt; height: 198.8pt;" width="318">
+                                                    <p style="margin-bottom: .0001pt; text-align: center; line-height: 150%;">
+                                                        <strong><span style="font-family: 'Arial','sans-serif';"><img src="{{asset('logo-bps.jpg')}}" alt="" width="300" height="350"></span></strong>
+                                                    </p>
+                                                </td>
                                             </tr>
-                                        @endfor
+                                            <tr style="height: 198.8pt;">
+                                                <td style="width: 238.45pt; border: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt; height: 198.8pt;" width="318">
+                                                    <p style="margin-bottom: .0001pt; text-align: center; line-height: 150%;">
+                                                        <strong><span style="font-family: 'Arial','sans-serif';"><img src="{{asset('logo-bps.jpg')}}" alt="" width="300" height="350"></span></strong>
+                                                    </p>
+                                                </td>
+                                                <td style="width: 238.45pt; border: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt; height: 198.8pt;" width="318">
+                                                    <p style="margin-bottom: .0001pt; text-align: center; line-height: 150%;">
+                                                        <strong><span style="font-family: 'Arial','sans-serif';"><img src="{{asset('logo-bps.jpg')}}" alt="" width="300" height="350"></span></strong>
+                                                    </p>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
