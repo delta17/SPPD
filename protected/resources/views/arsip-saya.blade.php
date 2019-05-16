@@ -42,7 +42,7 @@
               @foreach($userjlns as $key => $userjln)
                 @if($userjln->action > 0 & $userjln->action < 3)
                   <tr>
-                    <td>{{$loop->iteration}}</td>
+                    <td>{{$key+1}}</td>
                     @if(isset($userjln->nama))
                       <td>{{$userjln->nama}}</td>
                     @else
