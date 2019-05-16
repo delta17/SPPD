@@ -35,7 +35,7 @@ class LaporanController extends Controller
 //      $laporan->user_jln_id = $id;
 //      $laporan->save();
 
-      $userjln              = UserJLN::find($id)->first();
+      $userjln              = UserJLN::find($id);
       $userjln->hasil       = $request->hasil;
       $userjln->kesimpulan  = $request->kesimpulan;
       $userjln->penutup     = $request->penutup;
